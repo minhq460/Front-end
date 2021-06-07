@@ -144,3 +144,12 @@ p {
 .spacer {
     margin-left: 12.5rem;
 }
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+    .nav-item {
+        flex: 1;
+        padding: 1.5rem 2.5rem;
+    }
+}
