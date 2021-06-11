@@ -11,6 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { AboutComponent } from './about/about.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     FooterComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
