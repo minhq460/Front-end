@@ -11,6 +11,9 @@ import { ContactComponent } from './contact/contact.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { AboutComponent } from './about/about.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     ContactComponent,
     AboutComponent,
+    RegisterComponent,
+    LoginComponent,
+    SinglePostComponent
   ],
   imports: [
     BrowserModule,
