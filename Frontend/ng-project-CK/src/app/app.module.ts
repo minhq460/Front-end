@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     ContactComponent,
     AboutComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    SinglePostComponent
   ],
   imports: [
     BrowserModule,
