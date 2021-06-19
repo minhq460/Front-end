@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="limiter">
+<!-- <app-header></app-header> -->
+<!-- <div class="limiter">
     <div class="container-login" style="background-color: #04B2D9;">
         <div class="wrap-login">
             <div class="login-form-title" style="background-image: url(images/bg-01.jpg);">
@@ -37,5 +37,34 @@
             </form>
         </div>
     </div>
+</div> -->
+
+<div class="login-content">
+    <div class="login-table">
+        <form class="register-form" id="" method="get" action="register">
+            <span class="login-heading">Đăng Kí </span>
+            <div class="wrap-input ">
+                <input class="pix-text" type="text" placeholder="Họ và tên">
+            </div>
+            <div class="wrap-input">
+                <input class="pix-text" type="text" placeholder="Tên đăng nhập">
+            </div>
+            <div class="wrap-input ">
+                <input class="pix-text" type="text" placeholder="Nhập email">
+            </div>
+            <div class="wrap-input ">
+                <input class="pix-text" id="pass" type="password" name="pass" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="btn">
+                <button class="form-btn">ĐĂNG KÍ</button>
+            </div>
+            <div class="message">
+                <a (click)='openDialogLogin()'> Đăng Nhập</a>
+            </div>
+        </form>
+    </div>
 </div>
-<app-footer></app-footer>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Đóng</button>
+</mat-dialog-actions>
+<!-- <app-footer></app-footer> -->
