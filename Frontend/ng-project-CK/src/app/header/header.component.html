@@ -28,8 +28,8 @@
             <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.png" alt="" style="height: 80px; width: 200px;"></a>
         </div>
         <div class="space"></div>
-        <a mat-button [routerLink]="['/login']" routerLinkActive="router-link-active">Đăng nhập</a>
-        <a mat-button [routerLink]="['/register']" routerLinkActive="router-link">Đăng ký</a>
+        <a mat-button (click)="openDialogLogin()">Đăng nhập</a>
+        <a mat-button (click)="openDialogRegister()">Đăng ký</a>
         <div class="search-form">
             <form action="">
                 <input type="search" name="search" class="form-control" placeholder="Tìm kiếm">
