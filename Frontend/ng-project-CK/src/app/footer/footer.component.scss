@@ -1,37 +1,8 @@
-// .footer-area {
-//     background-color: #02031c;
-//     position: absolute;
-//     bottom: 0;
-//     display: block;
-//     width: 100%;
-//     .main-footer-area {
-//         .footer-widget-area {
-//             flex: 1;
-//             padding-top: 20px;
-//             padding-bottom: 20px;
-//             i:nth-child(1) {
-//                 font-family: 'FontAwesome';
-//                 font-size: 25px;
-//                 padding: 10px 0px 0px 15px;
-//                 width: 45px;
-//                 height: 45px;
-//             }
-//             li {
-//                 list-style: none;
-//                 margin-bottom: 5px;
-//             }
-//         }
-//         .logo {
-//             width: 200px;
-//             height: 80px;
-//             margin-left: -15px;
-//         }
-//     }
-// }
-// a {
-//     text-decoration: none;
-//     color: #fff;
-// }
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+* {
+    font-family: "Roboto", sans-serif;
+}
+
 .footer-area {
     position: relative;
     z-index: 1;

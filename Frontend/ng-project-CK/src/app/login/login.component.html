@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="limiter">
+<!-- <app-header></app-header> -->
+<!-- <div class="limiter">
     <div class="container-login" style="background-color: #04B2D9;">
         <div class="wrap-login">
             <div class="login-form-title" style="background-image: url(images/bg-01.jpg);">
@@ -44,5 +44,79 @@
             </form>
         </div>
     </div>
+</div> -->
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<div class="login-content">
+    <div class="login-table">
+        <!-- LOGIN -->
+        <form class="login-form" id="#login" method="get" action="login">
+            <span class="login-heading">Đăng Nhập </span>
+            <div class="wrap-input" data-validate="Nhập tên đăng nhập">
+                <div class="text-alert alert-missing-uname">
+                    <p>Nhập tên đăng nhập</p>
+                </div>
+                <input class="pix-text" type="text" value="" placeholder="Tên đăng nhập">
+            </div>
+            <div class="wrap-input ">
+                <div class="text-alert alert-missing-pass">
+                    <p>Nhập mật khẩu</p>
+                </div>
+                <input class="pix-text" id="pass" type="password" name="pass" value="" placeholder="Mật khẩu">
+            </div>
+            <div class="forgetPw message">
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+            <div class="btn">
+                <button class="form-btn">ĐĂNG NHẬP</button>
+            </div>
+            <div class="login_btn">
+                <span>Hoặc đăng nhập với</span>
+            </div>
+            <div class="padding_25 right_socials">
+                <ul class="bottom-icons">
+                    <li>
+                        <a class="fab fa-facebook-f circle facebook" href="#fakelink"></a>
+                    </li>
+                    <li>
+                        <a class="fab fa-google circle google" href="#fakelink"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="message">
+                <a (click)="openDialogRegister()"> Đăng Kí Tài Khoản</a>
+            </div>
+        </form>
+
+        <!-- FORGET -->
+        <form class="forget-form" id="forgot">
+            <span class="login-heading">Quên Mật Khẩu </span>
+            <div class="wrap-input ">
+                <input class="pix-text" id="uname2" type="text" name="uname" placeholder="Tên đăng nhập">
+            </div>
+            <div class="wrap-input ">
+                <input class="pix-text" id="email" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="btn">
+                <button class="form-btn">Gửi</button>
+            </div>
+            <div class="message">
+                <a href="#"> Trở về</a>
+            </div>
+        </form>
+    </div>
 </div>
-<app-footer></app-footer>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Đóng</button>
+</mat-dialog-actions>
+<script>
+    $(document).ready(function() {
+        $('.message a').click(function() {
+            $('form').animate({
+                height: "toggle",
+                opacity: "toggle"
+            }, "slow");
+        });
+    });
+</script>
+<!-- <app-footer></app-footer> -->

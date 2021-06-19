@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { CatagoriesComponent } from './catagories/catagories.component';
 import { CatagoriesItemComponent } from './catagories/catagories-item/catagories-item.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CatagoriesItemComponent } from './catagories/catagories-item/catagories
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
