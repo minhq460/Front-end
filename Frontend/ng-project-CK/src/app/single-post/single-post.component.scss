@@ -1,4 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+$breakpoint-xs: 'only screen and (max-width:767px)';
+$breakpoint-md: 'only screen and (min-width:768px) and (max-width:991px)';
 @mixin trans-duration($time) {
     -webkit-transition-duration: $time;
     transition-duration: $time;
@@ -59,7 +61,7 @@ a:focus {
     color: #1c1c1c;
     font-weight: 500;
     font-size: 14px;
-    color: #828282;
+    color: #04B2D9;
 }
 
 ul,
@@ -97,6 +99,81 @@ img {
         background-color: #1c1c1c;
     }
 }
+/*hero*/
+.hero-area {
+    position: relative;
+    z-index: 1;
+    padding: 50px 0 80px;
+    .breaking-news-area {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        padding: 0 0 2% 0;
+        &:last-child {
+            padding-bottom: 0;
+            padding-top: 2%;
+            
+        }
+        .news-title {
+            min-width: 150px;
+            height: 38px;
+            background-color: #0487D9;
+            text-align: center;
+            padding: 0 20px;
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+                color: #fff;
+                line-height: 38px;
+               
+            }
+            &.title2 {
+                background-color: #152535;
+            }
+           
+        }
+        .ticker {
+            width: 100%;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px;
+            background-color: #f3f5f8;
+            
+            ul {
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                li {
+                    display: none;
+                    width: 100%;
+                    a {
+                        display: block;
+                        font-size: 14px;
+                        color: #152535;
+                        height: 38px;
+                        line-height: 38px;
+                        &:hover,
+                        &:focus {
+                            color: #04B2D9;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero-add {
+    position: relative;
+    z-index: 1;
+
+}
+/*end hero*/
+
+
 .blog-area{
     padding: 2% 8%;
     .container{
@@ -133,7 +210,7 @@ img {
                 line-height: 1.9;
                 &:hover,
                 &:focus {
-                    color: #d0d5d8;
+                    color: #04B2D9;
                 }
             }
         }
@@ -476,6 +553,9 @@ img {
 
 .pager {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     z-index: 1;
     a {
         display: inline-block;
