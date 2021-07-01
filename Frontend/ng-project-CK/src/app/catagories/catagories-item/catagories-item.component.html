@@ -1,16 +1,16 @@
 <!-- Single Featured Post -->
-<div class="single-post featured-post">
+<div class="single-post featured-post" *ngFor="let i of rssData!.rss.channel[0].item">
     <div class="post-image">
-        <a href="#"><img class="col-lg-12 col-md-12 col-sm-12" src="assets/img/post-img.jpg" alt=""></a>
+        <a href="#"><img class="col-lg-12 col-md-12 col-sm-12" src="{{i.image}}" alt=""></a>
     </div>
-    <div class="post-data">
-        <a href="#" class="post-catagory">Thể thao</a>
+    <div class="post-data" *ngFor="let a of rssData!.rss.channel">
+        <a href="#" class="post-catagory">{{a.title}}</a>
         <a href="#" class="post-title">
-            <h6>ESPN: "Safawi Rasid sẽ tỏa sáng khi vắng đối thủ Quang Hải?"</h6>
+            <h6>{{i.title}}</h6>
         </a>
         <div class="post-meta">
-            <p class="post-author">Tác giả <a href="#">Thiện Nhân</a></p>
-            <p class="post-excerp">Kênh truyền thông nổi tiếng thế giới ESPN bất ngờ quan tâm đến trận Việt Nam - Malaysia vào 23h45 đêm nay. Họ nhận định việc Quang Hải vắng mặt sẽ là cơ hội cho Safawi Rasid tỏa sáng.</p>
+            <!-- <p class="post-author">Tác giả <a href="#">Thiện Nhân</a></p> -->
+            <p class="post-excerp">{{i.description[0]}}</p>
             <!-- Post Like & Post Comment -->
             <div class="d-flex align-items-center">
                 <a href="#" class="post-like"><img src="assets/img/like.png" alt=""> <span>392</span></a>
@@ -19,3 +19,13 @@
         </div>
     </div>
 </div>
+
+<!-- <h2>
+  {{RssData!.rss.channel[0].title[0]}}
+</h2>
+Total Item: {{RssData!.rss.channel[0].item.length}}
+<ul>
+  <li *ngFor="let o of RssData!.rss.channel[0].item">
+    <a href="{{o.link[0]}}">{{o.title[0]}}</a>
+  </li>
+</ul> -->

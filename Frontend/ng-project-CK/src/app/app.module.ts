@@ -18,6 +18,10 @@ import { CatagoriesComponent } from './catagories/catagories.component';
 import { CatagoriesItemComponent } from './catagories/catagories-item/catagories-item.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavService } from './service/nav.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NewsService } from './service/news.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     SinglePostComponent,
     CatagoriesComponent,
-    CatagoriesItemComponent
+    CatagoriesItemComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +45,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [NavService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
