@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"single-post",component:SinglePostComponent},
-  {path:"catagories",component:CatagoriesComponent},
+  {path:"categories",component:CatagoriesComponent},
 ];
 
 @NgModule({
