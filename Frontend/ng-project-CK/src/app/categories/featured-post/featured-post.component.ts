@@ -1,16 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-import * as xml2js from 'xml2js';
+import { Component, OnInit } from '@angular/core';
 import { NavService } from 'src/app/service/nav.service';
-import { NewsService } from 'src/app/service/news.service';
-import { RssItem } from 'src/app/news-rss';
 
 @Component({
-  selector: 'app-catagories-item',
-  templateUrl: './catagories-item.component.html',
-  styleUrls: ['./catagories-item.component.scss']
+  selector: 'app-featured-post',
+  templateUrl: './featured-post.component.html',
+  styleUrls: ['./featured-post.component.scss']
 })
-export class CatagoriesItemComponent implements OnInit {
+export class FeaturedPostComponent implements OnInit {
 
 
   // @Input()item!:RssItem;
@@ -22,8 +18,7 @@ export class CatagoriesItemComponent implements OnInit {
   //   return this._navService.items;
   // }
   constructor(private _navService:NavService) {
-
-    // this._newsService.getNews('https://thanhnien.vn/rss/' + 'toi-viet' + '.rss', {
+       // this._newsService.getNews('https://thanhnien.vn/rss/' + 'toi-viet' + '.rss', {
     //     headers: new HttpHeaders({
     //       Accept: 'application/xml',
     //     }),
@@ -37,6 +32,7 @@ export class CatagoriesItemComponent implements OnInit {
     //     });
     //   });
   }
+
   get rssData(){
     return this._navService.RssData;
   }
@@ -93,8 +89,6 @@ export class CatagoriesItemComponent implements OnInit {
     //   return rssItem;
     // }
   ngOnInit(): void {
-
   }
-
 
 }

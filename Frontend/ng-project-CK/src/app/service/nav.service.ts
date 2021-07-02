@@ -12,7 +12,7 @@ export class NavService {
 
   currentCategoryChoosen:string = "home";
 
-  categories:any [] = [{name:'Trang Chủ', url:'home'}, {name:'Thời Sự', url:'thoi-su'}, {name:'Thế Giới', url:'the-gioi'}, {name:'Tài Chính - Kinh Doanh', url:'tai-chinh-kinh-doanh'},
+  categories:any [] = [{name:'Video', url:'video'}, {name:'Thời Sự', url:'thoi-su'}, {name:'Thế Giới', url:'the-gioi'}, {name:'Tài Chính - Kinh Doanh', url:'tai-chinh-kinh-doanh'},
   {name:'Đời Sống', url:'doi-song'}, {name:'Văn Hoá', url:'van-hoa'}, {name:'Giải Trí', url:'giai-tri'}, {name:'Giới Trẻ', url:'gioi-tre'},
   {name:'Giáo Dục', url:'giao-duc'}, {name:'Thể Thảo', url:'the-thao'}, {name:'Sức Khoẻ', url:'suc-khoe'}, {name:'Du Lịch', url:'du-lich'},
   {name:'Công Nghệ', url:'cong-nghe'}, {name:'Xe', url:'xe'}, {name:'Game', url:'game'}, {name:'Thời Trang Trẻ', url:'ttt'}];
@@ -61,8 +61,11 @@ export class NavService {
   changeCategory(_k: string){
 
     this.currentCategoryChoosen = _k;
-    // let item1 = this.categories.find(i => i.name === 'xe');
+    // for(let i in this.categories){
+    //   if(this.categories.find( ({ url }) => url === 'xe' || 'video')){
 
+    //   }
+    // }
     this._newsService.getNews('https://thanhnien.vn/rss/'+this.currentCategoryChoosen+'.rss', {
       headers: new HttpHeaders({
         Accept: 'application/xml',
