@@ -1,6 +1,6 @@
 export interface NewsRss {
   rss: IRssObject;
-  items:RssItem;
+  // items:RssItem;
 }
 
 export interface IRssObject {
