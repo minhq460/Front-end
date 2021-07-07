@@ -19,11 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavService } from './service/nav.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './service/news.service';
-import { SidebarComponent } from './sidebar/sidebar.component';
+
 import { CategoriesComponent } from './categories/categories.component';
 import { FeaturedPostComponent } from './categories/featured-post/featured-post.component';
 import { LatestPostsComponent } from './categories/latest-posts/latest-posts.component';
 import { PopularNewsComponent } from './categories/popular-news/popular-news.component';
+import { SidebarComponent } from './header/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,11 @@ import { PopularNewsComponent } from './categories/popular-news/popular-news.com
     RegisterComponent,
     LoginComponent,
     SinglePostComponent,
-    SidebarComponent,
     CategoriesComponent,
     FeaturedPostComponent,
     LatestPostsComponent,
-    PopularNewsComponent
+    PopularNewsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

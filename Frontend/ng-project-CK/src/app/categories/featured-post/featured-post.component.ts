@@ -1,40 +1,53 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavService } from 'src/app/service/nav.service';
-
+import { parse } from 'node-html-parser';
 @Component({
   selector: 'app-featured-post',
   templateUrl: './featured-post.component.html',
   styleUrls: ['./featured-post.component.scss']
 })
-export class FeaturedPostComponent implements OnInit {
+export class FeaturedPostComponent implements OnInit,AfterViewInit {
 
-
-  // @Input()item!:RssItem;
-
-  // items!: RssItem;
-  // topNews:object[]=[];
-  // firstNews:object={};
-  // get item(){
-  //   return this._navService.items;
-  // }
+  dataParse!: HTMLElement;
+  @ViewChild('dataDOM') div!:ElementRef;
+  link!: string;
   constructor(private _navService:NavService) {
-       // this._newsService.getNews('https://thanhnien.vn/rss/' + 'toi-viet' + '.rss', {
-    //     headers: new HttpHeaders({
-    //       Accept: 'application/xml',
-    //     }),
-    //     responseType: 'text',
-    //   })
-    //   .subscribe((data: any) => {
-    //     let parseString = xml2js.parseString;
-    //     parseString(data, (err, result) => {
-
-    //       this.items = result;
-    //     });
-    //   });
+  }
+  ngAfterViewInit(): void {
+    // const root = parse(data);
+    // this.div.nativeElement.innerHTML = data;
+    // console.log(this.div.nativeElement);
+    // return root;
+    throw new Error('Method not implemented.');
   }
 
   get rssData(){
     return this._navService.RssData;
+  }
+  ngAfterContentInit(data:string){
+    console.log(typeof(data));
+    const root = parse(data);
+    console.log(this.div.nativeElement);
+    console.log(root);
+    
+    this.div.nativeElement.innerHTML = data;
+    console.log(this.div.nativeElement);
+    return root;
+  }
+
+  checkData(index: number): any {
+    console.log(this.rssData!.rss.channel[index].item[index].description);
+    const root = parse(this.rssData!.rss.channel[index].item[0].description);
+
+    var parser = new DOMParser();
+    // console.log("index: ",index);
+    // console.log("data:",this.rssData!.rss.channel[0].item[index]);
+    
+	  var doc = parser.parseFromString(this.rssData!.rss.channel[0].item[index].description, 'text/html');
+    // console.log(doc.getElementsByTagName('a')[0].href);
+    // this.link = doc.getElementsByTagName('a')[0].href;
+
+    return doc;
   }
   // get rss(){
   //   return this._navService.items;

@@ -53,6 +53,7 @@ export class NavService {
         let parseString = xml2js.parseString;
         parseString(data, (err, result) => {
           this.RssData = result;
+          console.log(this.RssData);
         });
       });
     /*Read Data*/
@@ -61,11 +62,6 @@ export class NavService {
   changeCategory(_k: string){
 
     this.currentCategoryChoosen = _k;
-    // for(let i in this.categories){
-    //   if(this.categories.find( ({ url }) => url === 'xe' || 'video')){
-
-    //   }
-    // }
     this._newsService.getNews('https://thanhnien.vn/rss/'+this.currentCategoryChoosen+'.rss', {
       headers: new HttpHeaders({
         Accept: 'application/xml',
