@@ -9,30 +9,13 @@
                     <!-- <a class="nav-link active" aria-current="page" href="#">Trang chủ</a> -->
                     <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" style="font-size: 25px;"><i class="fas fa-home-lg-alt" style="margin-top: 3px;"></i></a>
                 </li>
-                <li class="nav-item dropdown"  *ngFor="let k of categories" (click)='this._navService.changeCategory(k.url)'>
-                    <a class="nav-link"[routerLink]="['/categories']" routerLinkActive="router-link-active" [ngClass]="{'active': selectedItemId === k}" (click)="selectedItemId = k" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      {{k.name}}
+                <li class="nav-item dropdown"  *ngFor="let k of categories" (click)='this._navService.changeCategory(k.title[0].url)' (click)='this._navService.changeCategoryItem(k.empty[0].urlItem)'>
+                    <a class="nav-link" [routerLink]="[k.title[0].url]" routerLinkActive="router-link-active" [ngClass]="{'active': selectedItemId === k}" (click)="selectedItemId = k" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{k.title[0].name}}
                     </a>
-                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Thời Sự</a></li>
-                        <li><a class="dropdown-item" href="#">Phóng Sự</a></li>
-                        <li><a class="dropdown-item" href="#">Giải Trí</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Món Ngon</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Thể Thao</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Thế Giới</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Trực Tuyến</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Em Nhảy Ghen Cô Vy</a>
-                        </li>
-                    </ul> -->
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.urlItem)' [routerLink]="[c.urlItem]"><a class="dropdown-item">{{c.nameItem}}</a></li>
+                    </ul>
                 </li>
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

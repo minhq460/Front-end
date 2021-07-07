@@ -9,7 +9,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class RegisterComponent implements OnInit {
 
- 
+
   constructor(public dialog: MatDialog){}
 
   openDialogLogin(){
