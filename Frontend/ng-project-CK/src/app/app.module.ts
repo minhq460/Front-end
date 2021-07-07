@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavService } from './service/nav.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './service/news.service';
+
 import { CategoriesComponent } from './categories/categories.component';
 import { FeaturedPostComponent } from './categories/featured-post/featured-post.component';
 import { LatestPostsComponent } from './categories/latest-posts/latest-posts.component';

@@ -17,7 +17,10 @@ export class NavService {
   {name:'Giáo Dục', url:'giao-duc'}, {name:'Thể Thảo', url:'the-thao'}, {name:'Sức Khoẻ', url:'suc-khoe'}, {name:'Du Lịch', url:'du-lich'},
   {name:'Công Nghệ', url:'cong-nghe'}, {name:'Xe', url:'xe'}, {name:'Game', url:'game'}, {name:'Thời Trang Trẻ', url:'ttt'}];
 
-
+  // newsContainer:any[]=[];
+  // topNews:object[]=[];
+  // firstNews:object={};
+  // countries: any;
 
   RssData!: NewsRss;
   items!:RssItem;
@@ -25,8 +28,25 @@ export class NavService {
   firstNews:object={};
 
   constructor(private _newsService:NewsService) {
+    // this._newsApiService.getNews(this.categories).subscribe((myData)=>{
+    //   console.log(myData);
+    //   this.newsContainer=myData.items;
+    //   this.topNews=this.newsContainer[0];
+    //   for(let i =0; i<this.newsContainer.length;i++){
+    //     if(this.newsContainer[i].thumbnail == null || this.newsContainer[i].thumbnail == undefined ){
+    //       this.newsContainer[i].thumbnail = "./assets/img/placeholder.png";
+    //     }
+    //   }
+    //   for (let i=1;i<3;i++)
+    //   {
+    //     this.topNews.push(this.newsContainer[i])
+    //   }
+    // })
+    /*Read Data*/
     this._newsService.getNews('https://thanhnien.vn/rss/'+this.currentCategoryChoosen+'.rss', {
-        
+        headers: new HttpHeaders({
+          Accept: 'application/xml',
+        }),
         responseType: 'text',
       })
       .subscribe((data: any) => {
@@ -52,9 +72,6 @@ export class NavService {
       let parseString = xml2js.parseString;
       parseString(data, (err, result) => {
         this.RssData = result;
-        for (let i = 0; i < 3; i++) {
-         this.topNews.push(this.RssData.rss.channel[0].item[i]);
-        }
       });
     });
   }
@@ -84,7 +101,6 @@ export class NavService {
 
     // convert tags in description
     let desc = element.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
-
     let parser = new DOMParser();
     let html = parser.parseFromString(desc, "text/html");
 
