@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService } from 'src/app/service/nav.service';
 
 @Component({
   selector: 'app-latest-posts',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestPostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _navService:NavService) {}
 
+  get rssData(){
+    return this._navService.RssData;
+  }
+
+  get categories(){
+    return this._navService.categories;
+  }
   ngOnInit(): void {
   }
 

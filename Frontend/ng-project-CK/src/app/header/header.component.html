@@ -13,8 +13,5 @@
             </form>
         </div>
     </mat-toolbar>
-    <div class="navbar">
-      <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active">Trang Chủ</a>
-      <a class="nav-link" [routerLink]="['/categories']" routerLinkActive="router-link-active" *ngFor="let k of categories" (click)='this._navService.changeCategory(k.url)' [ngClass]="{'active': selectedItemId === k}" (click)="selectedItemId = k" >{{k.name}}</a>
-    </div>
+    <app-sidebar></app-sidebar>
 </header>

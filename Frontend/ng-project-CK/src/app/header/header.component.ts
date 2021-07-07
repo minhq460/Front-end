@@ -22,14 +22,6 @@ export class HeaderComponent implements OnInit {
   }
 
   // getChangeCategory!: (k: any) => void;
-
-  get categories(){
-    return this._navService.categories;
-  }
-
-  get changeCategory(){
-    return this._navService.changeCategory;
-  }
   // get getNews(){
   //   return this._newsService.getNews;
   // }
