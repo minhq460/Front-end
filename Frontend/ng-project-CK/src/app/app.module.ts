@@ -14,10 +14,16 @@ import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { SinglePostComponent } from './single-post/single-post.component';
-import { CatagoriesComponent } from './catagories/catagories.component';
-import { CatagoriesItemComponent } from './catagories/catagories-item/catagories-item.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavService } from './service/nav.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NewsService } from './service/news.service';
+import { CategoriesComponent } from './categories/categories.component';
+import { FeaturedPostComponent } from './categories/featured-post/featured-post.component';
+import { LatestPostsComponent } from './categories/latest-posts/latest-posts.component';
+import { PopularNewsComponent } from './categories/popular-news/popular-news.component';
+import { SidebarComponent } from './header/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +36,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     LoginComponent,
     SinglePostComponent,
-    CatagoriesComponent,
-    CatagoriesItemComponent
+    CategoriesComponent,
+    FeaturedPostComponent,
+    LatestPostsComponent,
+    PopularNewsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +49,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [NavService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

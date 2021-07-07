@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { CatagoriesComponent } from './catagories/catagories.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [
@@ -13,15 +11,13 @@ const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"about",component:AboutComponent},
   {path:"contact",component:ContactComponent},
-  {path:"register",component:RegisterComponent},
-  {path:"login",component:LoginComponent},
   {path:"single-post",component:SinglePostComponent},
-  {path:"catagories",component:CatagoriesComponent},
+  {path:"categories",component:CategoriesComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [HomeComponent, ContactComponent]
+export const routingComponent = [HomeComponent, CategoriesComponent,ContactComponent]
