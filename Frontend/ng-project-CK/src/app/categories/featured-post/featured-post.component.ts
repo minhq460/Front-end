@@ -21,6 +21,7 @@ export class FeaturedPostComponent implements OnInit {
   get changeCategoryItem(){
     return this._navService.changeCategoryItem;
   }
+
   ngOnInit(): void {
   }
 

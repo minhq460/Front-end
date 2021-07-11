@@ -1,8 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
-import { NavService } from '../service/nav.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +11,9 @@ import { NavService } from '../service/nav.service';
 export class HeaderComponent implements OnInit {
   selectedItemId: any
 
-  constructor(public dialog: MatDialog, public _navService:NavService){}
+  constructor(public dialog: MatDialog){}
+
+
   openDialogLogin(){
     this.dialog.open(LoginComponent);
   }
@@ -21,10 +22,6 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(RegisterComponent);
   }
 
-  // getChangeCategory!: (k: any) => void;
-  // get getNews(){
-  //   return this._newsService.getNews;
-  // }
   ngOnInit(): void {
 
   }

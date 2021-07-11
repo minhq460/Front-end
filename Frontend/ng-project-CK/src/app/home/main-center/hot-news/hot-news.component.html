@@ -1,0 +1,9 @@
+<!-- Single Popular Blog -->
+<div *ngFor="let item of itemHome!.rss.channel[0].item; index as i">
+  <div class="single-popular-post" *ngIf="i>=12 && i<18">
+    <a href="#" >
+      <h6><span>&#10148;</span>{{item.title}}</h6>
+    </a>
+    <p>{{item.pubDate}}</p>
+  </div>
+</div>

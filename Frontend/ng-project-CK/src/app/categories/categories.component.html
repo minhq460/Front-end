@@ -11,39 +11,27 @@
         <div class="row">
           <div class="col-12 col-md-6" *ngFor="let i of [1, 2]">
 
-            <!-- <app-top-news></app-top-news> -->
+            <!-- <app-popular-news></app-popular-news> -->
 
           </div>
         </div>
-
-        <!-- <nav>
-          <ul class="pagination mt-50">
-            <li class="page-item active"><a class="page-link" href="">1</a></li>
-            <li class="page-item"><a class="page-link" href="">2</a></li>
-            <li class="page-item"><a class="page-link" href="">3</a></li>
-            <li class="page-item"><a class="page-link" href="">4</a></li>
-            <li class="page-item"><a class="page-link" href="">5</a></li>
-            <li class="page-item"><a class="page-link" href="">...</a></li>
-            <li class="page-item"><a class="page-link" href="">10</a></li>
-          </ul>
-        </nav> -->
       </div>
 
       <div class="col-12 col-lg-4">
         <div class="blog-sidebar-area">
           <!-- Latest Posts -->
           <div class="latest-posts-widget mb-50">
-            <div class="number-news" *ngFor="let i of [1, 2, 3, 4, 5, 6]">
-              <app-latest-posts></app-latest-posts>
+            <div class="number-news">
+              <app-latest-post-categories></app-latest-post-categories>
             </div>
           </div>
 
-          <!-- Popular News -->
-          <div class="popular-news-widget">
+          <!-- Hot News -->
+          <div class="hot-news">
             <h3>Tin Tức Phổ Biến</h3>
-            <div class="number-news" *ngFor="let i of [1, 2, 3, 4]">
-              <app-popular-news></app-popular-news>
-            </div>
+
+              <app-hot-news></app-hot-news>
+
           </div>
         </div>
       </div>

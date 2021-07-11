@@ -26,24 +26,23 @@ ol {
   }
 }
 
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-.single-blog-post {
+.single-post {
   position: relative;
+  // margin-bottom: 30px;
   z-index: 1;
-  .post-thumb {
-    height: 307px;
+  padding: 20px 0px 0px;
+  .post-image {
     overflow: hidden;
     a {
       display: block;
       img {
+        display: block;
         width: 100%;
+        height: 350px;
+        object-fit: cover;
         transition-duration: 500ms;
-        &:hover{
-          opacity: .85;
+        &:hover {
+          opacity: 0.85;
           transition-duration: 500ms;
         }
       }
@@ -110,22 +109,43 @@ img {
       }
     }
   }
-  &.style-3 {
-    margin-bottom: 15px;
-    .post-thumb{
-      max-width: 350px;
-      width: 350px;
-    }
+  &.featured-post {
+    position: relative;
+    z-index: 1;
     .post-data {
-      padding: 15px 0;
+      padding: 30px 0;
       .post-title {
         h6 {
-          font-size: 18px;
-          line-height: 1.7;
-          margin-bottom: 30px;
+          font-size: 30px;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          font-weight: 500;
+          @media (max-width: 767px) {
+            font-size: 24px;
+          }
+        }
+      }
+      .post-author {
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+        a {
+          display: inline-block;
+          color: #0487d9;
+        }
+      }
+      .post-excerp {
+        font-weight: 500;
+        margin-bottom: 40px;
+        display: block;
+        line-height: 2.1;
+        a {
+          width: 1px !important;
+          img {
+            width: 1px !important;
+          }
         }
       }
     }
   }
 }
-
