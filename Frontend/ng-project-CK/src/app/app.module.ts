@@ -34,6 +34,8 @@ import { LatestPostCategoriesComponent } from './categories/latest-post-categori
 import { LatestPostsComponent } from './home/main-top/latest-posts/latest-posts.component';
 import { RegisterComponent } from './header/register/register.component';
 import { LoginComponent } from './header/login/login.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,8 @@ import { LoginComponent } from './header/login/login.component';
     WorldNewsComponent,
     PopularNewsComponent,
     LatestPostsComponent,
-    LatestPostCategoriesComponent
+    LatestPostCategoriesComponent,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,

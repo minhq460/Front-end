@@ -5,15 +5,19 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'home',pathMatch:'full'},
   {path:"home",component:HomeComponent},
-  {path:"",component:HomeComponent},
+  // {path:"",component:HomeComponent},
   {path:"about",component:AboutComponent},
   {path:"contact",component:ContactComponent},
   {path:"single-post",component:SinglePostComponent},
   {path:":url",component: CategoriesComponent},
+  { path: "**", component: NoPageFoundComponent }
+
 ];
 
 @NgModule({
