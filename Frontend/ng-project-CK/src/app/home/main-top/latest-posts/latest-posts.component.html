@@ -1,0 +1,19 @@
+<!-- Single Featured Post -->
+<div *ngFor="let item of itemHome!.rss.channel[0].item; index as i">
+  <div class="single-blog-post small-featured-post d-flex" *ngIf="i>=3 && i<8">
+    <div class="post-thumb">
+      <a href="#"><img src="{{item.image}}" alt="" /></a>
+    </div>
+    <div class="post-data" *ngFor="let a of itemHome!.rss.channel">
+      <a href="#" class="post-catagory">{{a.title}}</a>
+      <div class="post-meta">
+        <a href="#" class="post-title">
+          <h6>
+            {{item.title}}
+          </h6>
+        </a>
+        <p class="post-date"><span>{{item.pubDate}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

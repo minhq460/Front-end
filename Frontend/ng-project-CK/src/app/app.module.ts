@@ -19,16 +19,21 @@ import { ContactComponent } from './contact/contact.component';
 import { NewsService } from './service/news.service';
 import { CategoriesComponent } from './categories/categories.component';
 import { FeaturedPostComponent } from './categories/featured-post/featured-post.component';
-import { LatestPostsComponent } from './categories/latest-posts/latest-posts.component';
-import { PopularNewsComponent } from './categories/popular-news/popular-news.component';
-import { TopNewsComponent } from './categories/top-news/top-news.component';
 import { AboutComponent } from './about/about.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { NavService } from './service/nav.service';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
-
+import { MainSmallComponent } from './home/main-top/main-small/main-small.component';
+import { MainBigComponent } from './home/main-top/main-big/main-big.component';
+import { HotNewsComponent } from './home/main-center/hot-news/hot-news.component';
+import { VideoNewsComponent } from './home/video-news/video-news.component';
+import { FastNewsComponent } from './home/main-bottom/fast-news/fast-news.component';
+import { WorldNewsComponent } from './home/main-bottom/world-news/world-news.component';
+import { PopularNewsComponent } from './home/main-center/popular-news/popular-news.component';
+import { LatestPostCategoriesComponent } from './categories/latest-post-categories/latest-post-categories.component';
+import { LatestPostsComponent } from './home/main-top/latest-posts/latest-posts.component';
+import { RegisterComponent } from './header/register/register.component';
+import { LoginComponent } from './header/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +49,15 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     CategoriesComponent,
     FeaturedPostComponent,
     LatestPostsComponent,
+    MainBigComponent,
+    MainSmallComponent,
+    HotNewsComponent,
+    VideoNewsComponent,
+    FastNewsComponent,
+    WorldNewsComponent,
     PopularNewsComponent,
-    TopNewsComponent
+    LatestPostsComponent,
+    LatestPostCategoriesComponent
   ],
   imports: [
     BrowserModule,
