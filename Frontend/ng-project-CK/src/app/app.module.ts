@@ -28,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { NavService } from './service/nav.service';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     FeaturedPostComponent,
     LatestPostsComponent,
     PopularNewsComponent,
-    TopNewsComponent
+    TopNewsComponent,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,
