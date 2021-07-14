@@ -1,56 +1,8 @@
-<!-- <app-header></app-header> -->
-<!-- <div class="limiter">
-    <div class="container-login" style="background-color: #04B2D9;">
-        <div class="wrap-login">
-            <div class="login-form-title" style="background-image: url(images/bg-01.jpg);">
-                <span class="login-form-title-1">
-                    Đăng Nhập
-                </span>
-            </div>
-
-            <form class="login-form validate-form">
-                <div class="wrap-input validate-input m-b-26" data-validate="Username is required">
-                    <span class="label-input">Tài khoản:</span>
-                    <input class="input" type="text" name="username" placeholder="Nhập tài khoản">
-                    <span class="focus-input"></span>
-                </div>
-
-                <div class="wrap-input validate-input m-b-18" data-validate="Password is required">
-                    <span class="label-input">Mật khẩu</span>
-                    <input class="input" type="password" name="pass" placeholder="Nhập mật khẩu">
-                    <span class="focus-input"></span>
-                </div>
-
-                <div class="flex-sb-m w-full p-b-30">
-                    <div class="contact-form-checkbox">
-                        <input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
-                        <label class="label-checkbox" for="ckb1">
-                            Ghi nhớ
-                        </label>
-                    </div>
-
-                    <div>
-                        <a href="#" class="txt1">
-                            Quên mật khẩu?
-                        </a>
-                    </div>
-                </div>
-
-                <div class="container-login-form-btn">
-                    <button class="login-form-btn">
-                        Đăng nhập
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div> -->
-
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 <div class="login-content">
-    <div class="login-table">
-        <!-- LOGIN -->
-        <form class="login-form" id="#login" method="get" action="login">
+    <div class="login-table"> -->
+<!-- LOGIN -->
+<!-- <form class="login-form" id="#login" method="get" action="login">
             <span class="login-heading">Đăng Nhập </span>
             <div class="wrap-input" data-validate="Nhập tên đăng nhập">
                 <div class="text-alert alert-missing-uname">
@@ -86,10 +38,10 @@
             <div class="message">
                 <a (click)="openDialogRegister()"> Đăng Kí Tài Khoản</a>
             </div>
-        </form>
+        </form> -->
 
-        <!-- FORGET -->
-        <form class="forget-form" id="forgot">
+<!-- FORGET -->
+<!-- <form class="forget-form" id="forgot">
             <span class="login-heading">Quên Mật Khẩu </span>
             <div class="wrap-input ">
                 <input class="pix-text" id="uname2" type="text" name="uname" placeholder="Tên đăng nhập">
@@ -118,5 +70,28 @@
             }, "slow");
         });
     });
-</script>
-<!-- <app-footer></app-footer> -->
+</script> -->
+
+
+
+
+<!-- test -->
+<div class="box">
+    <div class="box__title">
+        <p style="margin-left: 25%;font-size: 25px;">Đăng nhập</p>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Nhập email" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mật khẩu</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Mật khẩu" ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem; margin-left: 32%">Đăng nhập</button>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Đóng</button>
+</mat-dialog-actions>

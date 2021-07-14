@@ -25,7 +25,9 @@ import { FeaturedPostComponent } from './categories/featured-post/featured-post.
 import { LatestPostsComponent } from './categories/latest-posts/latest-posts.component';
 import { PopularNewsComponent } from './categories/popular-news/popular-news.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
-
+import { ScrolltopComponent } from './scrolltop/scrolltop.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StickyNavModule } from 'ng2-sticky-nav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,9 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     FeaturedPostComponent,
     LatestPostsComponent,
     PopularNewsComponent,
-    SidebarComponent
+    SidebarComponent,
+    ScrolltopComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,9 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     BrowserAnimationsModule,
     MatDialogModule,
     HttpClientModule,
+    StickyNavModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [NavService, NewsService],
   bootstrap: [AppComponent]
