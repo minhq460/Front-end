@@ -1,0 +1,30 @@
+
+<div class="login-content">
+    <div class="login-table">
+        <form class="register-form" id="" method="get" action="register">
+            <span class="login-heading">Đăng Kí </span>
+            <div class="wrap-input ">
+                <input class="pix-text" type="text" placeholder="Họ và tên">
+            </div>
+            <div class="wrap-input">
+                <input class="pix-text" type="text" placeholder="Tên đăng nhập">
+            </div>
+            <div class="wrap-input ">
+                <input class="pix-text" type="text" placeholder="Nhập email">
+            </div>
+            <div class="wrap-input ">
+                <input class="pix-text" id="pass" type="password" name="pass" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="btn">
+                <button class="form-btn">ĐĂNG KÍ</button>
+            </div>
+            <div class="message">
+                <a (click)='openDialogLogin()'> Đăng Nhập</a>
+            </div>
+        </form>
+    </div>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Đóng</button>
+</mat-dialog-actions>
+

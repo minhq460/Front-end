@@ -1,0 +1,21 @@
+
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-6 col-md-3" *ngFor="let item of itemVideo!.rss.channel[0].item; index as i">
+    <div class="single-video-post" *ngIf="i<8">
+      <div class="img-video-size">
+        <img src="../../../assets/img/avatar.jpg" alt="" />
+      </div>
+      <div class="post-meta">
+        <a href="" class="post-title">{{item.title}}</a>
+        <p class="post-date">{{item.pubDate}}</p>
+      </div>
+
+      <!-- Video Button -->
+      <div class="videobtn">
+        <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"
+          ><i class="fa fa-play" aria-hidden="true"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   openDialogRegister(){
     this.dialog.open(RegisterComponent);
   }
+
   ngOnInit(): void {
     this.userService.currentUser.subscribe(user => this.currentUser = user);
     this.userService.currentIndex.subscribe(value => this.currentIndex = value);

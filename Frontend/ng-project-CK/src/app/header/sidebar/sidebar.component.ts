@@ -19,4 +19,8 @@ export class SidebarComponent implements OnInit {
   get changeCategory(){
     return this._navService.changeCategory;
   }
+
+  get changeCategoryItem(){
+    return this._navService.changeCategoryItem;
+  }
 }

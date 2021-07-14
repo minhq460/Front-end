@@ -1,221 +1,104 @@
-<!-- <app-header></app-header> -->
-<!-- <app-sidebar></app-sidebar> -->
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-<div class="hero-area">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-8">
-                <div class="breaking-news-area d-flex align-items-center">
-                    <div class="news-title">
-                        <p>Breaking News</p>
-                    </div>
-                    <div id="breakingNewsTicker" class="ticker">
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                            <li><a href="#">Welcome to Colorlib Family.</a></li>
-                            <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- ##### Main Top Start ##### -->
+    <div class="main-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-8">
+                  <div class="row">
+                      <div class="col-12 col-lg-7">
+                        <!-- Main Big -->
+                        <app-main-big></app-main-big>
+                      </div>
 
-                <div class="breaking-news-area d-flex align-items-center mt-15">
-                    <div class="news-title title2">
-                        <p>International</p>
-                    </div>
-                    <div id="internationalTicker" class="ticker">
-                        <ul>
-                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                            <li><a href="#">Welcome to Colorlib Family.</a></li>
-                            <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                      <div class="col-12 col-lg-5">
+                        <!-- Main Small -->
+                          <app-main-small></app-main-small>
+                      </div>
+                  </div>
+              </div>
 
-            <div class="col-12 col-lg-4">
-                <div class="hero-add">
-                    <a href="#"><img src="img/bg-img/hero-add.gif" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+              <div class="col-12 col-md-6 col-lg-4">
+                  <!-- Latest post home -->
+                  <app-latest-posts></app-latest-posts>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Top End ##### -->
 
-<div class="featured-post-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-8">
-                <div class="row">
+  <!-- ##### Main Center Start ##### -->
+  <div class="main-center padding-80-50">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-lg-8">
+                  <div class="section-heading">
+                      <h6>Tin Tức Phổ Biến</h6>
+                  </div>
+                      <!-- Popular News -->
+                  <app-popular-news></app-popular-news>
+              </div>
 
-                    <div class="col-12 col-lg-7">
-                        <div class="single-blog-post featured-post">
-                            <div class="post-thumb">
-                                <a href="#"><img src="" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6></h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper
-                                        ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
+              <div class="col-12 col-lg-4">
+                  <div class="section-heading">
+                      <h6>Tin Mới</h6>
+                  </div>
+                  <!-- Hot News -->
+                  <div class="hot-news mb-30">
+                      <h3>Tin Tức Phổ Biến</h3>
+                      <app-hot-news></app-hot-news>
+                  </div>
 
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Center End ##### -->
 
-                    <div class="col-12 col-lg-5">
-                        <div class="single-blog-post featured-post-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac...</h6>
-                                    </a>
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  <!-- ##### Video News Start ##### -->
+  <div class="video-post-area bg-img bg-overlay" style="background-image: url(../../assets/img/bg1.jpg);">
+      <div class="container">
+        <!-- Single Video Post -->
+        <app-video-news></app-video-news>
 
-                        <div class="single-blog-post featured-post-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac...</h6>
-                                    </a>
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+  </div>
+  <!-- ##### Video News End ##### -->
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="latest-posts-widget mb-50">
-                    <div class="number-news" *ngFor="let i of [1, 2, 3, 4, 5, 6]">
-                        <app-latest-posts></app-latest-posts>
-                    </div>
-                </div>
+  <!-- ##### Main Bottom Start ##### -->
+  <div class="main-bottom padding-80-50">
+      <div class="container">
+          <div class="row">
+              <!-- Fast News -->
+              <div class="col-12 col-md-7 col-lg-9">
+                  <div class="section-heading">
+                      <h6>Tin Nhanh</h6>
+                  </div>
+                  <!-- Fast News -->
+                  <app-fast-news></app-fast-news>
+              </div>
 
+              <!-- World News -->
+              <div class="col-12 col-md-5 col-lg-3">
+                  <div class="section-heading">
+                      <h6>Tin Thế Giới</h6>
+                  </div>
+                  <!-- Single Post -->
+                    <app-world-news></app-world-news>
 
-            </div>
-        </div>
-    </div>
-</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Bottom End ##### -->
 
-<div class="popular-news-area section-padding-80-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <div class="row">
-
-                    <div class="col-12 col-md-6">
-                        <div class="single-blog-post style-3">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <div class="post-meta d-flex align-items-center">
-                                    <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                    <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <div class="single-blog-post style-3">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/13.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <div class="post-meta d-flex align-items-center">
-                                    <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                    <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <div class="single-blog-post style-3">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/14.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <div class="post-meta d-flex align-items-center">
-                                    <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                    <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <div class="single-blog-post style-3">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/15.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <div class="post-meta d-flex align-items-center">
-                                    <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                    <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-4">
-                <div class="popular-news-widget mb-30">
-                    <div class="popular-news-widget">
-                        <h3>Tin Tức Phổ Biến</h3>
-                        <div class="number-news" *ngFor="let i of [1, 2, 3, 4]">
-                            <app-popular-news></app-popular-news>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- <app-catagories></app-catagories> -->
-<!-- <app-footer></app-footer> -->
+  <!-- ##### Footer Add Area Start ##### -->
+  <div class="footer-add-area">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="footer-add">
+                      <a href="#"><img src="img/bg-img/footer-add.gif" alt=""></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

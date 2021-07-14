@@ -8,12 +8,13 @@ import { NavService } from 'src/app/service/nav.service';
 })
 export class LatestPostsComponent implements OnInit {
 
-  constructor(private _navService:NavService) { }
+  constructor(public _navService:NavService) {}
+
+  get itemHome(){
+    return this._navService.itemHome;
+  }
 
   ngOnInit(): void {
-  }
-  get rssData(){
-    return this._navService.RssData;
   }
 
 }

@@ -1,0 +1,115 @@
+a,
+a:hover,
+a:focus {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  text-decoration: none;
+  outline: 0 solid transparent;
+  color: #1c1c1c;
+  font-weight: 500;
+  font-size: 14px;
+  color: #828282;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.single-blog-post {
+  position: relative;
+  z-index: 1;
+  .post-image {
+    overflow: hidden;
+    a {
+      display: block;
+      img {
+        width: 100%;
+        transition-duration: 500ms;
+        &:hover {
+          opacity: 0.85;
+          transition-duration: 500ms;
+        }
+      }
+    }
+  }
+  .post-data {
+    padding: 30px 0;
+    .post-catagory {
+      font-size: 14px;
+      color: #0487d9;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .post-title {
+      display: block;
+      h6 {
+        transition-duration: 500ms;
+        line-height: 1.9;
+        color: #152535;
+        &:hover,
+        &:focus {
+          color: #0487d9;
+        }
+      }
+    }
+    .post-meta {
+      .post-date {
+        a {
+          display: block;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+      .post-like {
+        display: flex;
+        align-items: flex-end;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          color: #828282;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+      .post-comment {
+        margin-left: 20px;
+        display: flex;
+        align-items: flex-end;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          color: #828282;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+    }
+  }
+  &.style-3 {
+    margin-bottom: 15px;
+    .post-image {
+      max-width: 350px;
+      width: 350px;
+    }
+    .post-data {
+      padding: 15px 0;
+      .post-title {
+        h6 {
+          font-size: 18px;
+          line-height: 1.7;
+          margin-bottom: 30px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
