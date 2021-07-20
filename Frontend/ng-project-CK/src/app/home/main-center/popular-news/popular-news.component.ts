@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavService } from 'src/app/service/nav.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { RssItem } from 'src/app/news-rss';
 
 @Component({
   selector: 'app-popular-news',
@@ -8,11 +8,10 @@ import { NavService } from 'src/app/service/nav.service';
 })
 export class PopularNewsComponent implements OnInit {
 
-  constructor(public _navService:NavService) {}
+  @Input('itemPopular')item!:RssItem;
 
-  get itemHome(){
-    return this._navService.itemHome;
-  }
+  constructor() { }
+
 
   ngOnInit(): void {
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { RssItem } from 'src/app/news-rss';
 import { NavService } from 'src/app/service/nav.service';
 
 @Component({
@@ -12,14 +12,13 @@ export class FeaturedPostComponent implements OnInit {
   currentPage:any;
   totalLenght:any;
   p:number=1;
+  items!: RssItem[];
 
-  constructor(private _navService:NavService) {}
+  constructor(public _navService:NavService) {
+  }
 
   get rssData(){
     return this._navService.RssData;
-  }
-  get changeCategoryItem(){
-    return this._navService.changeCategoryItem;
   }
 
   ngOnInit(): void {

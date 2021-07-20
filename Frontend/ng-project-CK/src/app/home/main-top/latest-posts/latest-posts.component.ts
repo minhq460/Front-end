@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { RssItem } from 'src/app/news-rss';
 import { NavService } from 'src/app/service/nav.service';
 
 @Component({
@@ -8,11 +9,10 @@ import { NavService } from 'src/app/service/nav.service';
 })
 export class LatestPostsComponent implements OnInit {
 
-  constructor(public _navService:NavService) {}
+  @Input('itemLatestPost')item!:RssItem;
 
-  get itemHome(){
-    return this._navService.itemHome;
-  }
+  constructor() { }
+
 
   ngOnInit(): void {
   }

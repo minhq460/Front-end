@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RssItem } from '../news-rss';
+import { NavService } from '../service/nav.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  items!:RssItem[];
+  itemVideo!:RssItem[];
+  itemWorld!:RssItem[];
+
+  constructor(private _navService: NavService) {
+    this.items = this._navService.getItemHome();
+    this.itemVideo = this._navService.getItemVideo();
+    this.itemWorld = this._navService.getItemWorld();
+  }
 
   ngOnInit(): void {
   }

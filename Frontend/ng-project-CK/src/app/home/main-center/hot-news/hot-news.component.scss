@@ -8,7 +8,6 @@ a:focus {
   color: #1c1c1c;
   font-weight: 500;
   font-size: 14px;
-  color: #828282;
 }
 
 
@@ -42,6 +41,16 @@ a:focus {
     color: #828282;
     margin-left: 30px;
     line-height: 1;
+  }
+  .post-date {
+    display: block;
+    span {
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: #0487d9;
+      }
+    }
   }
   // &:last-child {
   //   margin-bottom: 0;

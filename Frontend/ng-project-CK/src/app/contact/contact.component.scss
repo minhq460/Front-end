@@ -1,4 +1,4 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+
 @mixin trans-duration($time) {
     -webkit-transition-duration: $time;
     transition-duration: $time;
@@ -72,7 +72,7 @@ img {
         &:last-child {
             padding-bottom: 0;
             padding-top: 2%;
-            
+
         }
         .news-title {
             min-width: 150px;
@@ -85,12 +85,12 @@ img {
                 font-weight: 500;
                 color: #fff;
                 line-height: 38px;
-               
+
             }
             &.title2 {
                 background-color: #152535;
             }
-           
+
         }
         .ticker {
             width: 100%;
@@ -99,7 +99,7 @@ img {
             overflow: hidden;
             padding: 0 20px;
             background-color: #f3f5f8;
-            
+
             ul {
                 width: 100%;
                 position: relative;
@@ -117,7 +117,7 @@ img {
                         &:focus {
                             color: #04B2D9;
                         }
-                        
+
                     }
                 }
             }

@@ -47,6 +47,15 @@ a {
       }
     }
     .post-meta {
+      .post-date {
+        a {
+          display: block;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
       .post-like {
         display: flex;
         align-items: flex-end;
@@ -109,6 +118,7 @@ a {
         a {
           img {
             width: 1px !important;
+            height: 1px !important;
           }
         }
       }

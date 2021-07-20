@@ -24,21 +24,25 @@ a:focus {
   overflow: hidden;
   margin-bottom: 30px;
   .img-video-size {
-    object-fit: cover;
     height: 250px;
     width: 350;
     overflow: hidden;
     img {
+      object-fit: cover;
+      height: 175px;
       -webkit-transition-duration: 2000ms;
       transition-duration: 2000ms;
       width: 100%;
     }
   }
   .post-meta {
+    width: 261px;
+    height: 97.6px;
     position: absolute;
     bottom: -20px;
     padding: 10px;
-    background: #03296374;
+    // background: #03296374;
+    background: #102248;
     .post-title {
       font-size: 13px;
       font-weight: 500;

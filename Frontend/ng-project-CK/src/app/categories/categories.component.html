@@ -30,7 +30,9 @@
           <div class="hot-news">
             <h3>Tin Tức Phổ Biến</h3>
 
-              <app-hot-news></app-hot-news>
+            <ng-container *ngFor="let item of items; index as id">
+              <app-hot-news *ngIf="id>=12 && id<18" [itemHot]='item'></app-hot-news>
+            </ng-container>
 
           </div>
         </div>
