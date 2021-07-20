@@ -62,8 +62,9 @@ a:focus {
     }
     .post-meta {
       .post-date {
-        a {
-          display: block;
+        display: block;
+        span {
+          cursor: pointer;
           &:hover,
           &:focus {
             color: #0487d9;

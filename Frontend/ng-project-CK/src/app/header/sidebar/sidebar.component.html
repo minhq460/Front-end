@@ -16,53 +16,17 @@
                         <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.linkItem)' [routerLink]="[c.linkItem]"><a class="dropdown-item">{{c.nameItem}}</a></li>
                     </ul>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Thời sự
-            </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item"  routerLinkActive="router-link-active">Pháp Luật</a></li>
-                        <li><a class="dropdown-item" href="#">Phóng Sự / Điều Tra</a></li>
-                        <li><a class="dropdown-item" href="#">Quốc Phòng</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Dân Sinh</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Quyền Được Biết</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Lao Động - Việc Làm</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Cần Biết</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Nghề Hot</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Kỹ Năng Tìm Việc</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Tuyển Dụng</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Săn Việc</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Chính Trị</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Đại Hội XIII</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Tôi Đón Tết</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Vượt Qua Covid-19</a>
-                        </li>
-                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" [routerLink]="['/about/']" routerLinkActive="router-link-active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Thông Tin
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
+                  <a class="nav-link" [routerLink]="['/contact/']" routerLinkActive="router-link-active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Liên Hệ
+                  </a>
+                </li>
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Thế giới
             </a>

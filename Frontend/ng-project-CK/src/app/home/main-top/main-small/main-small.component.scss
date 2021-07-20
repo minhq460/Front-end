@@ -71,6 +71,16 @@ ol {
       }
     }
     .post-meta {
+      .post-date {
+        display: block;
+        span {
+          cursor: pointer;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
       .post-like {
         display: flex;
         align-items: flex-end;
@@ -110,7 +120,7 @@ ol {
         h6 {
           font-size: 18px;
           line-height: 1.55;
-          margin-bottom: 20px;
+          // margin-bottom: 20px;
           font-weight: 500;
         }
       }

@@ -24,6 +24,8 @@ img {
     a {
       display: block;
       img {
+        object-fit: cover;
+        height: 300px;
         width: 100%;
         transition-duration: 500ms;
         &:hover {
@@ -55,16 +57,18 @@ img {
         }
       }
     }
-    .post-meta {
-      .post-date {
-        a {
-          display: block;
-          &:hover,
-          &:focus {
-            color: #0487d9;
-          }
+    .post-date {
+      display: block;
+      span {
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          color: #0487d9;
         }
       }
+    }
+    .post-meta {
+
       .post-like {
         display: flex;
         align-items: flex-end;
@@ -106,7 +110,7 @@ img {
         h6 {
           font-size: 18px;
           line-height: 1.7;
-          margin-bottom: 30px;
+          // margin-bottom: 30px;
           font-weight: 700;
         }
       }

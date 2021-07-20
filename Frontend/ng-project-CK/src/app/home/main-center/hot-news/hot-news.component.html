@@ -1,9 +1,13 @@
 <!-- Single Popular Blog -->
-<div *ngFor="let item of itemHome!.rss.channel[0].item; index as i">
-  <div class="single-popular-post" *ngIf="i>=12 && i<18">
+  <div class="single-popular-post">
     <a href="#" >
       <h6><span>&#10148;</span>{{item.title}}</h6>
     </a>
-    <p>{{item.pubDate}}</p>
+    <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+      <span>{{item.getTime()}}</span>
+    </p>
+    <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+        <span>{{item.getTime()}}, </span>{{item.getDate()}}
+    </p>
   </div>
-</div>
+
