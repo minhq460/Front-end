@@ -1,0 +1,18 @@
+<!-- Single Featured Post -->
+<div class="single-blog-post small-featured-post d-flex" *ngFor="let i of rssData!.rss.channel[0].item">
+    <div class="post-thumb">
+        <a href="#"><img src="{{i.image}}" alt="" /></a>
+    </div>
+    <div class="post-data" *ngFor="let a of rssData!.rss.channel">
+        <a href="#" class="post-catagory">{{a.title}}</a>
+        <div class="post-meta">
+            a
+            <a href="#" class="post-title">
+                <h6>
+                    {{i.title}}
+                </h6>
+            </a>
+            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+        </div>
+    </div>
+    

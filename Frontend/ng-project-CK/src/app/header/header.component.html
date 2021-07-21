@@ -5,6 +5,9 @@
 
         </div>
         <div class="space"></div>
+        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ currentUser.account }}
+          </a>
         <a mat-button (click)="openDialogLogin()">Đăng nhập</a>
         <a mat-button (click)="openDialogRegister()">Đăng ký</a>
         <div class="search-form">
