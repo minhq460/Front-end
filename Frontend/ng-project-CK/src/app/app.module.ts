@@ -30,10 +30,14 @@ import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './header/register/register.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+
 import { SinglePostComponent } from './single-post/single-post.component';
 import { NewsService } from './service/news.service';
 import { NavService } from './service/nav.service';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { ScrolltopComponent } from './scrolltop/scrolltop.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StickyNavModule } from 'ng2-sticky-nav';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     SidebarComponent,
     NoPageFoundComponent,
     SinglePostComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    ScrolltopComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,9 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     BrowserAnimationsModule,
     LoadingBarHttpClientModule,
     NgxPaginationModule,
+   	StickyNavModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [NewsService, NavService],
   bootstrap: [AppComponent],

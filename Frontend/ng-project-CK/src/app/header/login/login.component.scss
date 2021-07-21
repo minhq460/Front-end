@@ -456,3 +456,48 @@
     width: 97%;
     margin: 0px 0px 0px 150px !important;
 }
+
+.box {
+    &--spacing {
+        margin-top: 1.3rem;
+        .row {
+            padding: 12px;
+            margin: 0 !important;
+        }
+    }
+    &__title {
+        font-family: Roboto, sans-serif;
+        font-size: 1.6rem;
+        margin: 0px;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__decoration {
+        border-bottom: 1px solid #000;
+        margin: 0.5rem 7rem;
+        margin-bottom: 1rem;
+    }
+    @media screen and (min-width:600px) {
+        &--spacing {
+            margin-top: 1.3rem;
+            .row {
+                padding: 12px;
+                margin: 0 61.136px !important;
+            }
+        }
+        &__title {
+            font-family: Roboto, sans-serif;
+            font-size: 1.6rem;
+            margin: 1.2rem 0 0 4.8rem;
+            font-weight: bold;
+            text-align: left;
+        }
+        form {
+            margin: 1rem 4.6rem;
+        }
+    }
+}
+
+.form-control {
+    width: 300px;
+}
