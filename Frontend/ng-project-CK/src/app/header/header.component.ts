@@ -1,10 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
 import { NavService } from '../service/nav.service';
 import { User } from 'src/app/service/user';
 import { UserService } from '../service/user.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-header',
