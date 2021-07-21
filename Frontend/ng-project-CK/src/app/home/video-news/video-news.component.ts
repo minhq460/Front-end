@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavService } from 'src/app/service/nav.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { RssItem } from 'src/app/news-rss';
 
 @Component({
   selector: 'app-video-news',
@@ -8,11 +8,9 @@ import { NavService } from 'src/app/service/nav.service';
 })
 export class VideoNewsComponent implements OnInit {
 
-  constructor(private _navService: NavService) { }
+  @Input('itemVideo')item!:RssItem;
 
-  get itemVideo(){
-    return this._navService.itemVideo;
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

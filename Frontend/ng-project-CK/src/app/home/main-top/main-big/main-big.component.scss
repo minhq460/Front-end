@@ -72,8 +72,9 @@ ol {
     }
     .post-meta {
       .post-date {
-        a {
-          display: block;
+        display: block;
+        span {
+          cursor: pointer;
           &:hover,
           &:focus {
             color: #0487d9;
@@ -136,7 +137,7 @@ ol {
       }
       .post-excerp {
         font-weight: 500;
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
         display: block;
         line-height: 2.1;
         a {

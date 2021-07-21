@@ -37,6 +37,7 @@ export class RssItem {
   "atom:link":string;
 
   constructor( title: string, description: string, link: string, image: string, pubDate: Date) {
+    // this.category = category;
     this.title = title;
     this.description = description;
     this.link = link;
@@ -70,7 +71,6 @@ export class RssItem {
       let year=this.pubDate.getFullYear();
       let now: Date = new Date();
       if (now.getDate() == this.pubDate.getDate() && now.getMonth() == this.pubDate.getMonth() && now.getFullYear() == this.pubDate.getFullYear()) {
-
         return 'Hôm nay'
       }  if(parseInt(day)<10){
           day='0'+day;

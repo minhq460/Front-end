@@ -1,30 +1,30 @@
-import { HttpHeaders } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
-import { RssItem, NewsRss } from '../news-rss';
-import { NewsService } from './news.service';
-import * as xml2js from 'xml2js';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NewsRss, RssItem } from '../news-rss';
+import * as xml2js from 'xml2js';
+import { NewsService } from './news.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class NavService implements OnInit{
+export class NavService {
 
   categories: any[] = [
-    {
-      title: [{ name: 'Video', url: 'video', link:'video'}],
-      child: [
-        { nameItem: 'Thời Sự', urlItem:'video/thoi-su',  linkItem: '/thoi-su'},
-        { nameItem: 'Phóng Sự', urlItem:'video/phong-su', linkItem: '/phong-su' },
-        { nameItem: 'Giải Trí', urlItem:'video/giai-tri', linkItem: '/giai-tri' },
-        { nameItem: 'Món Ngon', urlItem:'video/mon-ngon', linkItem: '/mon-ngon' },
-        { nameItem: 'Thể Thao', urlItem:'video/video-the-theo', linkItem: '/video-the-thao' },
-        { nameItem: 'Thế Giới', urlItem:'video/the-gioi', linkItem: '/the-gioi' },
-        { nameItem: 'Trực Tuyến', urlItem:'video/truc-tuyen', linkItem: '/truc-tuyen' },
-        { nameItem: 'Em Nhảy Ghen Cô Vy', urlItem:'video/em-nhay-ghen-co-vy', linkItem: '/em-nhay-ghen-co-vy' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
+    // {
+    //   title: [{ name: 'Video', url: 'video', link:'video'}],
+    //   child: [
+    //     { nameItem: 'Thời Sự', urlItem:'video/thoi-su',  linkItem: '/thoi-su'},
+    //     { nameItem: 'Phóng Sự', urlItem:'video/phong-su', linkItem: '/phong-su' },
+    //     { nameItem: 'Giải Trí', urlItem:'video/giai-tri', linkItem: '/giai-tri' },
+    //     { nameItem: 'Món Ngon', urlItem:'video/mon-ngon', linkItem: '/mon-ngon' },
+    //     { nameItem: 'Thể Thao', urlItem:'video/video-the-theo', linkItem: '/video-the-thao' },
+    //     { nameItem: 'Thế Giới', urlItem:'video/the-gioi', linkItem: '/the-gioi' },
+    //     { nameItem: 'Trực Tuyến', urlItem:'video/truc-tuyen', linkItem: '/truc-tuyen' },
+    //     { nameItem: 'Em Nhảy Ghen Cô Vy', urlItem:'video/em-nhay-ghen-co-vy', linkItem: '/em-nhay-ghen-co-vy' },
+    //   ],
+    //   empty:[{ nameItem: '', linkItem: '' }],
+    // },
     {
       title: [{ name: 'Thời Sự', url: 'thoi-su', link:'rss/thoi-su' }],
       child: [
@@ -128,30 +128,30 @@ export class NavService implements OnInit{
         // { nameItem: 'Hộp Thư Tư Vấn 24/7', urlItem:'giao-duc/hop-thu-tu-van-24-7', linkItem: '/hop-thu-tu-van-24-7' },
         // { nameItem: ' Ôn Thi THPT Quốc Gia 2019', urlItem:'giao-duc/on-thi-thpt-quoc-gia-2019', linkItem: '/on-thi-thpt-quoc-gia-2019'},
         // { nameItem: 'Tra Cứu Điểm Thi 2021', urlItem:'giao-duc/tuyen-sinh/2021/tra-cuu', linkItem: '/tuyen-sinh/2021/tra-cuu'},
-        { nameItem: 'Tuyển Sinh 2021', urlItem:'giao-duc/tuyen-sinh/2021', linkItem: '/tuyen-sinh/2021' },
+        // { nameItem: 'Tuyển Sinh 2021', urlItem:'giao-duc/tuyen-sinh/2021', linkItem: '/tuyen-sinh/2021' },
         { nameItem: 'Sức Khoẻ Học Đường', urlItem:'giao-duc/suc-khoe-hoc-duong', linkItem: '/suc-khoe-hoc-duong' },
         // { nameItem: 'Cẩm Nang Tuyển Sinh 2021', urlItem:'giao-duc/cam-nang-tuyen-sinh-2021', linkItem: '/cam-nang-tuyen-sinh-2021'},
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
-    {
-      title: [{ name: 'Thể Thao', url: 'the-thao', link:'the-thao' }],
-      child: [
-        { nameItem: 'Bóng Đá Việt Nam', urlItem:'the-thao/bong-da-viet-nam', linkItem: '/bong-da-viet-nam' },
-        { nameItem: 'Bóng Đá Quốc Tế', urlItem:'the-thao/bong-da-quoc-te', linkItem: '/bong-da-quoc-te' },
-        { nameItem: 'Bình Luận', urlItem:'the-thao/binh-luan', linkItem: '/binh-luan' },
-        { nameItem: 'Quần Vợt', urlItem:'the-thao/quan-vot', linkItem: '/quan-vot' },
-        { nameItem: 'Hậu Trường', urlItem:'the-thao/hau-truong', linkItem: '/hau-truong' },
-        { nameItem: 'Thể Thao Khác', urlItem:'the-thao/toan-canh-the-thao', linkItem: '/toan-canh-the-thao' },
-        { nameItem: 'Sea Game 2019', urlItem:'the-thao/sea-games-2019', linkItem: '/sea-games-2019' },
-        { nameItem: 'Tin Chuyển Nhượng', urlItem:'the-thao/tin-chuyen-nhuong', linkItem: '/tin-chuyen-nhuong' },
-        { nameItem: 'Thể Thao & Cộng Đồng', urlItem:'the-thao/the-thao-cong-dong', linkItem: '/the-thao-cong-dong' },
-        { nameItem: 'Bóng Rổ', urlItem:'the-thao/bong-ro', linkItem: '/bong-ro' },
-        { nameItem: 'Sôi Động Cùng V-League', urlItem:'the-thao/soi-dong-cung-vleague', linkItem: '/soi-dong-cung-vleague' },
-        { nameItem: 'Euro 2020', urlItem:'the-thao/euro-2020', linkItem: '/euro-2020' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
+    // {
+    //   title: [{ name: 'Thể Thao', url: 'the-thao', link:'the-thao' }],
+    //   child: [
+    //     { nameItem: 'Bóng Đá Việt Nam', urlItem:'the-thao/bong-da-viet-nam', linkItem: '/bong-da-viet-nam' },
+    //     { nameItem: 'Bóng Đá Quốc Tế', urlItem:'the-thao/bong-da-quoc-te', linkItem: '/bong-da-quoc-te' },
+    //     { nameItem: 'Bình Luận', urlItem:'the-thao/binh-luan', linkItem: '/binh-luan' },
+    //     { nameItem: 'Quần Vợt', urlItem:'the-thao/quan-vot', linkItem: '/quan-vot' },
+    //     { nameItem: 'Hậu Trường', urlItem:'the-thao/hau-truong', linkItem: '/hau-truong' },
+    //     { nameItem: 'Thể Thao Khác', urlItem:'the-thao/toan-canh-the-thao', linkItem: '/toan-canh-the-thao' },
+    //     { nameItem: 'Sea Game 2019', urlItem:'the-thao/sea-games-2019', linkItem: '/sea-games-2019' },
+    //     { nameItem: 'Tin Chuyển Nhượng', urlItem:'the-thao/tin-chuyen-nhuong', linkItem: '/tin-chuyen-nhuong' },
+    //     { nameItem: 'Thể Thao & Cộng Đồng', urlItem:'the-thao/the-thao-cong-dong', linkItem: '/the-thao-cong-dong' },
+    //     { nameItem: 'Bóng Rổ', urlItem:'the-thao/bong-ro', linkItem: '/bong-ro' },
+    //     { nameItem: 'Sôi Động Cùng V-League', urlItem:'the-thao/soi-dong-cung-vleague', linkItem: '/soi-dong-cung-vleague' },
+    //     { nameItem: 'Euro 2020', urlItem:'the-thao/euro-2020', linkItem: '/euro-2020' },
+    //   ],
+    //   empty:[{ nameItem: '', linkItem: '' }],
+    // },
     {
       title: [{ name: 'Sức Khoẻ', url: 'suc-khoe', link:'rss/suc-khoe' }],
       child: [
@@ -182,45 +182,45 @@ export class NavService implements OnInit{
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
-    {
-      title: [{ name: 'Xe', url: 'xe', link:'xe' }],
-      child: [
-        { nameItem: 'Thị Trường Xe', urlItem:'xe/thi-truong-xe', linkItem: '/thi-truong-xe' },
-        { nameItem: 'Tư Vấn Xe', urlItem:'xe/tu-van-xe', linkItem: '/tu-van-xe' },
-        { nameItem: 'Đánh Giá Xe', urlItem:'xe/danh-gia-xe', linkItem: '/danh-gia-xe' },
-        { nameItem: 'Khám Phá Xe', urlItem:'xe/kham-pha-xe', linkItem: '/kham-pha-xe' },
-        // { nameItem: 'Video', urlItem:'xe/video-xe', linkItem: '/video-xe' },
-        { nameItem: 'Diễn Đàn Xe', urlItem:'xe/dien-dan-xe', linkItem: '/dien-dan-xe' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
-    {
-      title: [{ name: 'Game', url: 'game', link:'game' }],
-      child: [
-        { nameItem: 'Tin Tức', urlItem:'game/tin-tuc-game', linkItem: '/tin-tuc-game' },
-        { nameItem: 'Lịch Thi Đấu', urlItem:'game/lich-thi-dau', linkItem: '/lich-thi-dau' },
-        { nameItem: 'Thủ Thuật', urlItem:'game/thu-thuat', linkItem: '/thu-thuat' },
-        { nameItem: 'Phòng Máy', urlItem:'game/phong-may', linkItem: '/phong-may' },
-        { nameItem: 'Công Nghệ Game', urlItem:'game/cong-nghe', linkItem: '/cong-nghe' },
-        { nameItem: 'Cộng Đồng', urlItem:'game/cong-dong', linkItem: '/cong-dong' },
-        { nameItem: 'Video', urlItem:'game/video-game', linkItem: '/video-game' },
-        { nameItem: 'ESport', urlItem:'game/esports', linkItem: '/esports' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
-    {
-      title: [{ name: 'Thời Trang Trẻ', url: 'ttt', link:'rss/ttt' }],
-      child: [
-        { nameItem: 'Phong Cách', urlItem:'ttt/phong-cach', linkItem: '/phong-cach' },
-        { nameItem: 'Sống Khoẻ', urlItem:'ttt/song-khoe', linkItem: '/song-khoe' },
-        { nameItem: 'Chân Dung', urlItem:'ttt/chan-dung', linkItem: '/chan-dung' },
-        { nameItem: 'Kỹ Năng Sống', urlItem:'ttt/ky-nang-song', linkItem: '/ky-nang-song' },
-        { nameItem: 'Tận Hưởng', urlItem:'ttt/tan-huong', linkItem: '/tan-huong' },
-        { nameItem: 'Tin Tức', urlItem:'ttt/tin-tuc-ttt', linkItem: '/tin-tuc-ttt' },
-        // { nameItem: 'Video', urlItem:'ttt/video', linkItem: '/video' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
+    // {
+    //   title: [{ name: 'Xe', url: 'xe', link:'xe' }],
+    //   child: [
+    //     { nameItem: 'Thị Trường Xe', urlItem:'xe/thi-truong-xe', linkItem: '/thi-truong-xe' },
+    //     { nameItem: 'Tư Vấn Xe', urlItem:'xe/tu-van-xe', linkItem: '/tu-van-xe' },
+    //     { nameItem: 'Đánh Giá Xe', urlItem:'xe/danh-gia-xe', linkItem: '/danh-gia-xe' },
+    //     { nameItem: 'Khám Phá Xe', urlItem:'xe/kham-pha-xe', linkItem: '/kham-pha-xe' },
+    //     // { nameItem: 'Video', urlItem:'xe/video-xe', linkItem: '/video-xe' },
+    //     { nameItem: 'Diễn Đàn Xe', urlItem:'xe/dien-dan-xe', linkItem: '/dien-dan-xe' },
+    //   ],
+    //   empty:[{ nameItem: '', linkItem: '' }],
+    // },
+    // {
+    //   title: [{ name: 'Game', url: 'game', link:'game' }],
+    //   child: [
+    //     { nameItem: 'Tin Tức', urlItem:'game/tin-tuc-game', linkItem: '/tin-tuc-game' },
+    //     { nameItem: 'Lịch Thi Đấu', urlItem:'game/lich-thi-dau', linkItem: '/lich-thi-dau' },
+    //     { nameItem: 'Thủ Thuật', urlItem:'game/thu-thuat', linkItem: '/thu-thuat' },
+    //     { nameItem: 'Phòng Máy', urlItem:'game/phong-may', linkItem: '/phong-may' },
+    //     { nameItem: 'Công Nghệ Game', urlItem:'game/cong-nghe', linkItem: '/cong-nghe' },
+    //     { nameItem: 'Cộng Đồng', urlItem:'game/cong-dong', linkItem: '/cong-dong' },
+    //     { nameItem: 'Video', urlItem:'game/video-game', linkItem: '/video-game' },
+    //     { nameItem: 'ESport', urlItem:'game/esports', linkItem: '/esports' },
+    //   ],
+    //   empty:[{ nameItem: '', linkItem: '' }],
+    // },
+    // {
+    //   title: [{ name: 'Thời Trang Trẻ', url: 'ttt', link:'rss/ttt' }],
+    //   child: [
+    //     { nameItem: 'Phong Cách', urlItem:'ttt/phong-cach', linkItem: '/phong-cach' },
+    //     { nameItem: 'Sống Khoẻ', urlItem:'ttt/song-khoe', linkItem: '/song-khoe' },
+    //     { nameItem: 'Chân Dung', urlItem:'ttt/chan-dung', linkItem: '/chan-dung' },
+    //     { nameItem: 'Kỹ Năng Sống', urlItem:'ttt/ky-nang-song', linkItem: '/ky-nang-song' },
+    //     { nameItem: 'Tận Hưởng', urlItem:'ttt/tan-huong', linkItem: '/tan-huong' },
+    //     { nameItem: 'Tin Tức', urlItem:'ttt/tin-tuc-ttt', linkItem: '/tin-tuc-ttt' },
+    //     // { nameItem: 'Video', urlItem:'ttt/video', linkItem: '/video' },
+    //   ],
+    //   empty:[{ nameItem: '', linkItem: '' }],
+    // },
     {
       title: [{ name: 'Bạn Cần Biết', url: 'ban-can-biet', link:'rss/ban-can-biet' }],
       child: [
@@ -239,19 +239,20 @@ export class NavService implements OnInit{
   ];
 
   currentCategoryChoosen: any = 'rss/home';
-  currentCategoryItemChoosen: string='';
+  currentCategoryItemChoosen: any='';
 
   RssData!: NewsRss;
   itemHome!: NewsRss;
   itemVideo!: NewsRss;
   itemWorldNews!: NewsRss;
 
-  items!: RssItem;
+  items: RssItem[] = [];
   topNews: object[] = [];
   firstNews: any={};
   url: string='';
+  api:string='https://api-cors-cross.herokuapp.com/api?url='
 
-  constructor(private _newsService: NewsService, public actRoute: ActivatedRoute) {
+  constructor(private _newsService: NewsService, public actRoute: ActivatedRoute, private _http: HttpClient) {
     /*Read Data*/
     this._newsService.getNews('https://thanhnien.vn/'  + this.currentCategoryChoosen + this.currentCategoryItemChoosen + '.rss',{
           headers: new HttpHeaders({
@@ -262,64 +263,24 @@ export class NavService implements OnInit{
       .subscribe((data: any) => {
         let parseString = xml2js.parseString;
         parseString(data, (err, result) => {
-          this.RssData = result;
+          console.log(result)
+          this.RssData=result;
         });
       });
 
-    /*get item home*/
-    this._newsService.getNews('https://thanhnien.vn/rss/home.rss',
-        {
-          headers: new HttpHeaders({
-            Accept: 'application/xml',
-          }),
-          responseType: 'text',
-        })
-      .subscribe((data: any) => {
-        let parseString = xml2js.parseString;
-        parseString(data, (err, result) => {
-          this.itemHome = result;
-          this.firstNews= this.itemHome.rss.channel[0].item;
-        });
-      });
-
-    /*get item video*/
-    this._newsService.getNews('https://video.thanhnien.vn/rss/home.rss',
-    {
-      headers: new HttpHeaders({
-        Accept: 'application/xml',
-      }),
-      responseType: 'text',
-        })
-      .subscribe((data: any) => {
-        let parseString = xml2js.parseString;
-        parseString(data, (err, result) => {
-          this.itemVideo = result;
-        });
-      });
-
-    /*get item world new*/
-    this._newsService.getNews('https://thanhnien.vn/rss/the-gioi.rss',
-    {
-      headers: new HttpHeaders({
-        Accept: 'application/xml',
-      }),
-      responseType: 'text',
-        })
-      .subscribe((data: any) => {
-        let parseString = xml2js.parseString;
-        parseString(data, (err, result) => {
-          this.itemWorldNews = result;
-        });
-      });
   }
 
   ngOnInit(): void {
     this.actRoute.paramMap.subscribe(params =>{
       this.url = params.get('url')??'';
+      // this.urlItem = params.get('urlItem')??'';
       this.changeCategory(this.currentCategoryChoosen);
       this.changeCategoryItem(this.currentCategoryItemChoosen);
+      // this.getItems;
     })
+
   }
+
   changeCategory(_k: string) {
     this.currentCategoryChoosen = _k;
     this._newsService.getNews('https://thanhnien.vn/' + this.currentCategoryChoosen + this.currentCategoryItemChoosen + '.rss',{
@@ -353,43 +314,81 @@ export class NavService implements OnInit{
       }).unsubscribe();
   }
 
-  getItems(): RssItem {
-    this._newsService
-      .getNews('https://thanhnien.vn/rss/thoi-su/chinh-tri.rss', {
+  getItemHome(): RssItem[] {
+    this._newsService.getNews('https://thanhnien.vn/rss/home.rss',
+      {
         headers: new HttpHeaders({
-          Accept: 'application/xml',
+          'Accept': 'application/xml',
         }),
-        responseType: 'text',
+        responseType: 'text'
       })
-      .subscribe((data: any) => {
-        let parseString = xml2js.parseString;
-        parseString(data, (err, result) => {
-          this.items = this.convertToItem(result);
-        });
+      .subscribe((data) => {
+        let parser = new DOMParser();
+        let xml = parser.parseFromString(data, "application/xhtml+xml");
+        // list item from rss
+        let itemsArr = xml.getElementsByTagName('item');
+
+        for (let i = 0; i < itemsArr.length; i++) {
+          this.items.push(this.convertToItem(itemsArr[i]))
+        }
       });
-    return this.items;
+    return this.items
   }
 
-  private convertToItem(element: any): RssItem {
-    let title = element.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
-    let link = element.getElementsByTagName('link')[0].innerHTML;
-    // let image=element.getElementsByTagName('link')[0].innerHTML
+  getItemVideo(): RssItem[] {
+    this._newsService.getNews('https://video.thanhnien.vn/rss/home.rss',
+      {
+        headers: new HttpHeaders({
+          'Accept': 'application/xml',
+        }),
+        responseType: 'text'
+      })
+      .subscribe((data) => {
+        let parser = new DOMParser();
+        let xml = parser.parseFromString(data, "application/xhtml+xml");
+        // list item from rss
+        let itemsArr = xml.getElementsByTagName('item');
+        for (let i = 0; i <itemsArr.length; i++) {
+          this.items.push(this.convertToItem(itemsArr[i]))}
+      });
+    return this.items
+  }
 
-    // convert tags in description
-    let desc = element
-      .getElementsByTagName('description')[0]
-      .innerHTML.slice(9, -3);
+  getItemWorld(): RssItem[] {
+    this._newsService.getNews('https://thanhnien.vn/rss/the-gioi.rss',
+      {
+        headers: new HttpHeaders({
+          'Accept': 'application/xml',
+        }),
+        responseType: 'text'
+      })
+      .subscribe((data) => {
+        let parser = new DOMParser();
+        let xml = parser.parseFromString(data, "application/xhtml+xml");
+        // list item from rss
+        let itemsArr = xml.getElementsByTagName('item');
+        for (let i = 0; i <itemsArr.length; i++) {
+          this.items.push(this.convertToItem(itemsArr[i]))}
+      });
+    return this.items
+  }
+
+ private convertToItem(ele: any): RssItem {
+    let title = ele.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
+    let linkDetail = ele.getElementsByTagName('link')[0].innerHTML;
+    // description tag contain diversity element need to parse
+    let desc = ele.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
     let parser = new DOMParser();
-    let html = parser.parseFromString(desc, 'text/html');
-
+    let html = parser.parseFromString(desc, "text/html");
     //convert image link with full width
-    let image = html.getElementsByTagName('img')[0].src;
-    let indexc = image.indexOf('uploaded');
-    image = 'https://image.thanhnien.vn/' + image.slice(indexc);
 
+    let linkImg = html.getElementsByTagName('img')[0].src;
+    let indexc = linkImg.indexOf('uploaded');
+    linkImg = "https://image.thanhnien.vn/" + linkImg.slice(indexc);
     // get pubdate
-    let pubDate = element.getElementsByTagName('pubDate')[0].innerHTML.trim();
+    let pubDate = ele.getElementsByTagName('pubDate')[0].innerHTML.trim();
     let date: Date = new Date(pubDate);
+
 
     // get text desciption need to remove orther text content
     let body = html.getElementsByTagName('body')[0];
@@ -397,14 +396,10 @@ export class NavService implements OnInit{
     if (rem != null) {
       rem.remove();
     }
-
     let description = body.textContent;
-    //object RssItem
-    let rssItem = new RssItem(title, description ?? '', link, image, date);
-    return rssItem;
+    // object item
+    let itm: RssItem = new RssItem(title, description ?? '', linkDetail, linkImg, date);
+    console.log(itm.getTime())
+    return itm;
   }
 }
-function _k(_k: any) {
-  throw new Error('Function not implemented.');
-}
-

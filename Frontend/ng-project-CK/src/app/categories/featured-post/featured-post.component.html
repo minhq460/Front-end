@@ -10,7 +10,8 @@
       </a>
       <div class="post-meta">
           <!-- <p class="post-author">Tác giả <a href="#">Thiện Nhân</a></p> -->
-          <p class="post-excerp" innerHtml="{{item.description}}" ></p>
+          <p class="post-date"><span>{{item.pubDate | dateAgo}}</span> | <span>{{item.pubDate | date:'HH:mm, dd/MM/yyyy'}}</span></p>
+          <!-- <p class="post-excerp" innerHtml="{{item.description}}" ></p> -->
           <!-- Post Like & Post Comment -->
           <div class="d-flex align-items-center">
               <a href="#" class="post-like"><img src="assets/img/like.png" alt=""> <span>392</span></a>
@@ -20,4 +21,6 @@
   </div>
 </div>
 <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
+
+
 
