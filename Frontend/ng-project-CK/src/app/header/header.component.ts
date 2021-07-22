@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NavService } from '../service/nav.service';
-import { User } from 'src/app/service/user';
+import { User } from 'src/app/model/user.model';
 import { UserService } from '../service/user.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';

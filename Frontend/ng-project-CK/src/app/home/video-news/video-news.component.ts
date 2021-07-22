@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RssItem } from 'src/app/news-rss';
+import { RssItem } from 'src/app/model/news-rss';
 
 @Component({
   selector: 'app-video-news',

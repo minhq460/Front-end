@@ -7,6 +7,8 @@ import { NavService } from '../../service/nav.service';
 })
 export class SidebarComponent implements OnInit {
   selectedItemId: any
+  a:any;
+  b:any;
 
   constructor(public _navService: NavService) { }
 
