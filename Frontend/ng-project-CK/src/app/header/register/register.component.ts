@@ -4,7 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { User } from 'src/app/service/user';
+import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({

@@ -101,9 +101,11 @@
                       <h6>Tin Thế Giới</h6>
                   </div>
                   <!-- Single Post -->
-                  <ng-container *ngFor="let item of itemWorld; index as id">
-                    <app-world-news *ngIf="id<5" [itemWorld]='item'></app-world-news>
-                  </ng-container>
+                  <div class="scrolling">
+                    <ng-container *ngFor="let item of itemWorld; index as id">
+                      <app-world-news *ngIf="id<5" [itemWorld]='item'></app-world-news>
+                    </ng-container>
+                  </div>
               </div>
           </div>
       </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RssItem } from './news-rss';
+import { RssItem } from './model/news-rss';
 import { NavService } from './service/nav.service';
 
 @Component({

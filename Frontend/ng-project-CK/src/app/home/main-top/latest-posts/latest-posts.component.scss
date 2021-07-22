@@ -31,13 +31,17 @@ ol {
   position: relative;
   border-bottom: 1px solid #d0d5d8;
   z-index: 1;
-  .post-thumb {
+  .post-image {
     a {
       display: block;
       img {
         object-fit: cover;
         height: 90px;
         width: 100%;
+        &:hover {
+          opacity: 0.85;
+          transition-duration: 500ms;
+        }
       }
     }
   }
@@ -79,7 +83,7 @@ ol {
     position: relative;
     z-index: 1;
     padding: 20px 0;
-    .post-thumb {
+    .post-image {
       overflow: hidden;
       flex: 0 0 90px;
       max-width: 90px;

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NewsRss, RssItem } from '../news-rss';
+import { NewsRss, RssItem } from '../model/news-rss';
 import * as xml2js from 'xml2js';
 import { NewsService } from './news.service';
 
@@ -242,21 +242,17 @@ export class NavService {
   currentCategoryItemChoosen: any='';
 
   RssData!: NewsRss;
-  itemHome!: NewsRss;
-  itemVideo!: NewsRss;
-  itemWorldNews!: NewsRss;
 
+  detailNews!: any[];
   items: RssItem[] = [];
-  topNews: object[] = [];
-  firstNews: any={};
   url: string='';
   api:string='https://api-cors-cross.herokuapp.com/api?url='
 
   constructor(private _newsService: NewsService, public actRoute: ActivatedRoute, private _http: HttpClient) {
     /*Read Data*/
     this._newsService.getNews('https://thanhnien.vn/'  + this.currentCategoryChoosen + this.currentCategoryItemChoosen + '.rss',{
-          headers: new HttpHeaders({
-            Accept: 'application/xml',
+        headers: new HttpHeaders({
+          Accept: 'application/xml',
           }),
           responseType: 'text',
         })
@@ -280,6 +276,17 @@ export class NavService {
     })
 
   }
+
+  // getNewsDetail(){
+  //   this._newsService.getNews('http://localhost:4200/assets/data.json')
+  //     .subscribe(value => {
+  //       console.log(value)
+  //       for (const [k, v] of Object.entries(value)) {
+  //         this.detailNews.push(v);
+  //         console.log(v);
+  //       }
+  //     });
+  // }
 
   changeCategory(_k: string) {
     this.currentCategoryChoosen = _k;
@@ -373,33 +380,33 @@ export class NavService {
     return this.items
   }
 
- private convertToItem(ele: any): RssItem {
-    let title = ele.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
-    let linkDetail = ele.getElementsByTagName('link')[0].innerHTML;
-    // description tag contain diversity element need to parse
-    let desc = ele.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
-    let parser = new DOMParser();
-    let html = parser.parseFromString(desc, "text/html");
-    //convert image link with full width
+  private convertToItem(ele: any): RssItem {
+      let title = ele.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
+      let linkDetail = ele.getElementsByTagName('link')[0].innerHTML;
+      // description tag contain diversity element need to parse
+      let desc = ele.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
+      let parser = new DOMParser();
+      let html = parser.parseFromString(desc, "text/html");
+      //convert image link with full width
 
-    let linkImg = html.getElementsByTagName('img')[0].src;
-    let indexc = linkImg.indexOf('uploaded');
-    linkImg = "https://image.thanhnien.vn/" + linkImg.slice(indexc);
-    // get pubdate
-    let pubDate = ele.getElementsByTagName('pubDate')[0].innerHTML.trim();
-    let date: Date = new Date(pubDate);
+      let linkImg = html.getElementsByTagName('img')[0].src;
+      let indexc = linkImg.indexOf('uploaded');
+      linkImg = "https://image.thanhnien.vn/" + linkImg.slice(indexc);
+      // get pubdate
+      let pubDate = ele.getElementsByTagName('pubDate')[0].innerHTML.trim();
+      let date: Date = new Date(pubDate);
 
 
-    // get text desciption need to remove orther text content
-    let body = html.getElementsByTagName('body')[0];
-    let rem = html.getElementsByTagName('div')[0];
-    if (rem != null) {
-      rem.remove();
-    }
-    let description = body.textContent;
-    // object item
-    let itm: RssItem = new RssItem(title, description ?? '', linkDetail, linkImg, date);
-    console.log(itm.getTime())
-    return itm;
+      // get text desciption need to remove orther text content
+      let body = html.getElementsByTagName('body')[0];
+      let rem = html.getElementsByTagName('div')[0];
+      if (rem != null) {
+        rem.remove();
+      }
+      let description = body.textContent;
+      // object item
+      let itm: RssItem = new RssItem(title, description ?? '', linkDetail, linkImg, date);
+      // console.log(itm.getTime())
+      return itm;
   }
 }
