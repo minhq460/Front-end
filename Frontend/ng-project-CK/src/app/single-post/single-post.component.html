@@ -1,43 +1,43 @@
-    <!-- ##### Blog Area Start ##### -->
-    <div class="blog-area padding-0-80">
-      <div class="container">
-          <div class="row">
-              <div class="col-12 col-lg-8">
-                  <div class="blog-posts-area">
-                      <!-- Single Featured Post -->
-                      <ng-container *ngFor="let item of newsDetail; index as id">
+<!-- ##### Blog Area Start ##### -->
+<div class="blog-area padding-0-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="blog-posts-area">
+                    <!-- Single Featured Post -->
+                    <ng-container *ngFor="let item of newsDetail; index as id">
                         <app-article-content *ngIf="id<=10" [newsDetailItem]='item'></app-article-content>
-                      </ng-container>
-                      <div class="section-heading">
+                    </ng-container>
+                    <div class="section-heading">
                         <h6>Tin Liên Quan</h6>
                     </div>
-                      <div class="row">
+                    <div class="row">
                         <div class="col-12 col-md-6" *ngFor="let item of items; index as id">
-                          <app-popular-news *ngIf="id>=8 && id<12" [itemPopular]='item'></app-popular-news>
+                            <app-popular-news *ngIf="id>=8 && id<12" [itemPopular]='item'></app-popular-news>
                         </div>
-                      </div>
+                    </div>
 
-                  </div>
-              </div>
+                </div>
+            </div>
 
-              <div class="col-12 col-lg-4">
-                  <div class="blog-sidebar-area">
+            <div class="col-12 col-lg-4">
+                <div class="blog-sidebar-area">
 
-                      <!-- Latest Posts Widget -->
-                      <div class="latest-posts-widget mb-50">
+                    <!-- Latest Posts Widget -->
+                    <div class="latest-posts-widget mb-50">
                         <app-latest-post-categories></app-latest-post-categories>
-                      </div>
+                    </div>
 
-                      <!-- Popular News Widget -->
-                      <div class="hot-news mb-50">
+                    <!-- Popular News Widget -->
+                    <div class="hot-news mb-50">
                         <h3>Tin Tức Phổ Biến</h3>
                         <ng-container *ngFor="let item of items; index as id">
-                          <app-hot-news *ngIf="id>=12 && id<18" [itemHot]='item'></app-hot-news>
+                            <app-hot-news *ngIf="id>=12 && id<18" [itemHot]='item'></app-hot-news>
                         </ng-container>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- ##### Blog Area End ##### -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Blog Area End ##### -->
