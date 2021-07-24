@@ -20,7 +20,7 @@ export class NewsService {
   }
 
   getNewsDetail(): Observable<NewsDetail[]> {
-    const url = `${this.REST_API_SERVER}/newsd`;
+    const url = `${this.REST_API_SERVER}/newsDetail`;
     return this._http.get<NewsDetail[]>(url, this.httpOptions);
   }
 }
