@@ -21,6 +21,10 @@ export class SidebarComponent implements OnInit {
   get changeCategory(){
     return this._navService.changeCategory;
   }
+  clicktop(){
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop=0;
+  }
 
   get changeCategoryItem(){
     return this._navService.changeCategoryItem;
