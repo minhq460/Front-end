@@ -1,26 +1,23 @@
 <!-- Single Featured Post -->
 <div class="single-post featured-post" *ngFor="let item of rssData!.rss.channel[0].item | paginate: { itemsPerPage: 5, currentPage: p, totalItems:totalLenght }">
-  <div class="post-image">
-      <a href="#" target="_blank"><img class="col-lg-12 col-md-12 col-sm-12" src="{{item.image}}" alt=""></a>
-  </div>
-  <div class="post-data" *ngFor="let a of rssData!.rss.channel">
-      <a href="#" class="post-catagory" target="_blank">{{a.title}}</a>
-      <a href="#" class="post-title" target="_blank">
-          <h6>{{item.title}}</h6>
-      </a>
-      <div class="post-meta">
-          <!-- <p class="post-author">Tác giả <a href="#">Thiện Nhân</a></p> -->
-          <p class="post-date"><span>{{item.pubDate | dateAgo}}</span> | <span>{{item.pubDate | date:'HH:mm, dd/MM/yyyy'}}</span></p>
-          <!-- <p class="post-excerp" innerHtml="{{item.description}}" ></p> -->
-          <!-- Post Like & Post Comment -->
-          <div class="d-flex align-items-center">
-              <a href="#" class="post-like"><img src="assets/img/like.png" alt=""> <span>392</span></a>
-              <a href="#" class="post-comment"><img src="assets/img/chat.png" alt=""> <span>10</span></a>
-          </div>
-      </div>
-  </div>
+    <div class="post-image">
+        <a href="#" target="_blank"><img class="col-lg-12 col-md-12 col-sm-12" src="{{item.image}}" alt=""></a>
+    </div>
+    <div class="post-data" *ngFor="let a of rssData!.rss.channel">
+        <a href="#" class="post-catagory" target="_blank">{{a.title}}</a>
+        <a class="post-title" (click)="getTitle(item.title)">
+            <h6>{{item.title}}</h6>
+        </a>
+        <div class="post-meta">
+            <!-- <p class="post-author">Tác giả <a href="#">Thiện Nhân</a></p> -->
+            <p class="post-date"><span>{{item.pubDate | dateAgo}}</span> | <span>{{item.pubDate | date:'HH:mm, dd/MM/yyyy'}}</span></p>
+            <!-- <p class="post-excerp" innerHtml="{{item.description}}" ></p> -->
+            <!-- Post Like & Post Comment -->
+            <div class="d-flex align-items-center">
+                <a href="#" class="post-like"><img src="assets/img/like.png" alt=""> <span>392</span></a>
+                <a href="#" class="post-comment"><img src="assets/img/chat.png" alt=""> <span>10</span></a>
+            </div>
+        </div>
+    </div>
 </div>
 <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>
-
-
-

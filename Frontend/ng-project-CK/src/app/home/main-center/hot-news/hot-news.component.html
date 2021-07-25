@@ -1,13 +1,12 @@
 <!-- Single Popular Blog -->
-  <div class="single-popular-post">
-    <a href="#" >
-      <h6><span>&#10148;</span>{{item.title}}</h6>
+<div class="single-popular-post">
+    <a (click)="getTitle(item.title)">
+        <h6><span>&#10148;</span>{{item.title}}</h6>
     </a>
     <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
-      <span>{{item.getTime()}}</span>
+        <span>{{item.getTime()}}</span>
     </p>
     <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
         <span>{{item.getTime()}}, </span>{{item.getDate()}}
     </p>
-  </div>
-
+</div>
