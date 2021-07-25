@@ -277,16 +277,6 @@ export class NavService {
 
   }
 
-  // getNewsDetail(){
-  //   this._newsService.getNews('http://localhost:4200/assets/data.json')
-  //     .subscribe(value => {
-  //       console.log(value)
-  //       for (const [k, v] of Object.entries(value)) {
-  //         this.detailNews.push(v);
-  //         console.log(v);
-  //       }
-  //     });
-  // }
 
   changeCategory(_k: string) {
     this.currentCategoryChoosen = _k;

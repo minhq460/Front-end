@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public _navService:NavService, private userService : UserService){}
   openDialogLogin(){
-    this.dialog.open(LoginComponent);
+    let dialog = this.dialog.open(LoginComponent);
   }
 
   openDialogRegister(){

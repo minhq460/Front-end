@@ -1,5 +1,22 @@
 var readlineSync = require('readline-sync');
 var fs = require('fs');
+var data = fs.readFileSync('./data.json', { encoding: 'utf8' });
+let file = JSON.parse(data);
+// console.log(file.newsd.newTitle);
+for (var i of file.newsd) {
+    console.log(i.newTitle);
+    console.log("-----------------");
+}
+
+
+
+// fs.readFile('links.json', (err, data) => {
+//     if (err) throw err;
+
+//     console.log(student);
+// });
+
+
 // var img = {
 //     "name": "quỳnh",
 //     "age": 24,
@@ -27,25 +44,4 @@ var fs = require('fs');
 //         });
 //     }
 
-// });
-
-
-
-
-var data = fs.readFileSync('./data.json', { encoding: 'utf8' });
-let web = JSON.parse(data);
-for (var i of web) {
-    console.log(i);
-    console.log("-----------------");
-}
-
-
-// for (var i of detail) {
-//     console.log(i.trung);
-//     console.log("-----------------");
-// }
-// fs.readFile('links.json', (err, data) => {
-//     if (err) throw err;
-
-//     console.log(student);
 // });

@@ -239,3 +239,17 @@ p {
         }
     }
 }
+
+.dialog-container-custom {
+    padding: 0!important;
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.fa-search:before {
+    font-family: 'Font Awesome 5 Pro';
+}
+
+.dropdown-toggle {
+    display: none;
+}
