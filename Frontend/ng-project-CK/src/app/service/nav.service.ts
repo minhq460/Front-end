@@ -292,6 +292,7 @@ export class NavService {
           this.RssData = result;
         });
       });
+    
   }
 
   changeCategoryItem(_c: string) {

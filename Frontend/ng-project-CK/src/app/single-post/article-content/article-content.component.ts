@@ -8,7 +8,6 @@ import { NewsService } from 'src/app/service/news.service';
   styleUrls: ['./article-content.component.scss']
 })
 export class ArticleContentComponent implements OnInit {
-
   // currentNews!: NewsDetail;
 
   @Input() item!:NewsDetail;

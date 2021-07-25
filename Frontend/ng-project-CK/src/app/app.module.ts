@@ -39,6 +39,7 @@ import { ScrolltopComponent } from './scrolltop/scrolltop.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { ArticleContentComponent } from './single-post/article-content/article-content.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { ArticleContentComponent } from './single-post/article-content/article-c
     StickyNavModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [NewsService, NavService],
   bootstrap: [AppComponent],

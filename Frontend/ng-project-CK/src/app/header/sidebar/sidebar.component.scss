@@ -1,9 +1,124 @@
 a {
     cursor: pointer;
+    padding: 10px;
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    border: none;
+}
+
+#navbarDropdownMenuLink:hover {
+    font-weight: bold;
+    font-size: 15px;
+    color: red;
+}
+
+.active {
+    cursor: pointer;
+}
+
+.not-active {
+    cursor: pointer;
 }
 
 .dropdown:hover>.dropdown-menu {
     display: block;
+    font-weight: 400;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 2;
+        }
+    }
+}
+
+.dropdown-menu li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dropdown-menu li:nth-child(1) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.dropdown-menu li:nth-child(2) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+}
+
+.dropdown-menu li:nth-child(3) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.175s;
+}
+
+.dropdown-menu li:nth-child(4) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.25s;
+}
+
+.dropdown-menu li:nth-child(5) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.325s;
+}
+
+.dropdown-menu li:nth-child(6) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+}
+
+.dropdown-menu li:nth-child(7) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.475s;
+}
+
+.dropdown-menu li:nth-child(8) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.55s;
+}
+
+.dropdown-menu li:nth-child(9) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.625s;
+}
+
+@keyframes example {
+    0% {
+        left: 0px;
+        width: 100%;
+        border-radius: 5px;
+        background: grey;
+        transform: translateX(-8px);
+    }
+    100% {
+        left: 10px;
+        width: 100%;
+        background: #fff;
+        transform: translateX(0);
+    }
 }
 
 .nav-item {
