@@ -19,7 +19,7 @@ export class MainBigComponent implements OnInit {
   getTitle(title: any){
     let a = title.trim();
     console.log('a:',a);
-    
+
     this._newsService.setCurrentTitle(a);
     setTimeout(() => {
       this.router.navigate(['/single-post']);

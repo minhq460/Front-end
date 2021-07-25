@@ -10,7 +10,7 @@ export class NewsService {
   currentTitle!: string;
   currentNewsList!: NewsDetail[];
   currentNews!: NewsDetail;
-  
+
   private REST_API_SERVER = 'http://localhost:3000';
 
   private httpOptions = {
@@ -31,7 +31,7 @@ export class NewsService {
   // lay title khi click vao bai bao
   async setCurrentTitle(title: string){
     console.log('service run');
-    
+
     this.currentTitle = title;
     this.getNewsDetail().subscribe(async data => {
       this.currentNewsList = data;
@@ -42,7 +42,7 @@ export class NewsService {
         }
       });
       console.log('current News:',this.currentNews);
-      
+
     })
   }
 }

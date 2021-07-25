@@ -2,15 +2,13 @@
 <div *ngFor="let item of RssData!.rss.channel[0].item; index as i">
   <div class="single-blog-post small-featured-post d-flex" *ngIf="i<6">
     <div class="post-thumb">
-      <a href="#"><img src="{{item.image}}" alt="" /></a>
+      <a><img src="{{item.image}}" alt="" /></a>
     </div>
     <div class="post-data">
-      <a href="#" class="post-catagory"></a>
+      <a class="post-catagory"></a>
       <div class="post-meta">
-        <a href="#" class="post-title">
-          <h6>
-            {{item.title}}
-          </h6>
+        <a class="post-title">
+          <h6>{{item.title}}</h6>
         </a>
         <!-- <p class="post-date" *ngIf="item.getDate()"><span>{{item.pubDate | date:'h:mm: a dd//MM/yyyy'}}</span></p> -->
         <p class="post-date"><span>{{item.pubDate | dateAgo}}</span> | <span>{{item.pubDate | date:'HH:mm, dd/MM/yyyy'}}</span></p>
