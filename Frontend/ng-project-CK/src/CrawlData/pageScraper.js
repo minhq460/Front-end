@@ -17,15 +17,15 @@ const scraperObject = {
             });
             //Mảng chứa url truy xuất từ 1 trang
             //thay urls thành 1 khi chỉ muốn crawl giới hạn
-            const urls = await page.$$eval("a.story__title", results =>
+            const urls1 = await page.$$eval("a.story__title", results =>
                 Array.from(results)
                 .map(r => r.href)
             );
-            console.log("Total url: ", urls);
-            // const urls = [];
-            // for (let i = 0; i < 5; i++) {
-            //     urls[i] = urls1[i];
-            // }
+            console.log("Total url: ", urls1);
+            const urls = [];
+            for (let i = 0; i < 5; i++) {
+                urls[i] = urls1[i];
+            }
             console.log(urls);
             //Lấy dữ liệu từ các class trong từng bài báo
             let pagePromise = (link) => new Promise(async(resolve, reject) => {
