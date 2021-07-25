@@ -38,6 +38,10 @@ ol {
         object-fit: cover;
         height: 90px;
         width: 100%;
+        &:hover {
+          opacity: 0.85;
+          transition-duration: 500ms;
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RssItem } from 'src/app/model/news-rss';
-import { NavService } from 'src/app/service/nav.service';
+import { NewsService } from 'src/app/service/news.service';
 
 @Component({
   selector: 'app-main-big',
@@ -11,9 +11,11 @@ export class MainBigComponent implements OnInit {
 
   @Input('itemMainBig')item!:RssItem;
 
-  constructor() { }
+  constructor(private _newsService: NewsService) { }
 
   ngOnInit(): void {
   }
-
+  get getTitle(){
+    return this._newsService.getTitle;
+  }
 }

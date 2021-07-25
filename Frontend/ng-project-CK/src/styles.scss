@@ -1,5 +1,11 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
@@ -54,5 +60,32 @@ img {
   max-width: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// .pswp-content__wrapimage {
+//   .pswp-content__image {
+//     figure {
+//       a {
+//         img {
+//           height: 100px;
+//           width: 100px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.post-excerp {
+  a {
+    img {
+      display: none;
+    }
+  }
+}

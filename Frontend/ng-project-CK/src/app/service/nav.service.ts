@@ -134,24 +134,24 @@ export class NavService {
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
-    // {
-    //   title: [{ name: 'Thể Thao', url: 'the-thao', link:'the-thao' }],
-    //   child: [
-    //     { nameItem: 'Bóng Đá Việt Nam', urlItem:'the-thao/bong-da-viet-nam', linkItem: '/bong-da-viet-nam' },
-    //     { nameItem: 'Bóng Đá Quốc Tế', urlItem:'the-thao/bong-da-quoc-te', linkItem: '/bong-da-quoc-te' },
-    //     { nameItem: 'Bình Luận', urlItem:'the-thao/binh-luan', linkItem: '/binh-luan' },
-    //     { nameItem: 'Quần Vợt', urlItem:'the-thao/quan-vot', linkItem: '/quan-vot' },
-    //     { nameItem: 'Hậu Trường', urlItem:'the-thao/hau-truong', linkItem: '/hau-truong' },
-    //     { nameItem: 'Thể Thao Khác', urlItem:'the-thao/toan-canh-the-thao', linkItem: '/toan-canh-the-thao' },
-    //     { nameItem: 'Sea Game 2019', urlItem:'the-thao/sea-games-2019', linkItem: '/sea-games-2019' },
-    //     { nameItem: 'Tin Chuyển Nhượng', urlItem:'the-thao/tin-chuyen-nhuong', linkItem: '/tin-chuyen-nhuong' },
-    //     { nameItem: 'Thể Thao & Cộng Đồng', urlItem:'the-thao/the-thao-cong-dong', linkItem: '/the-thao-cong-dong' },
-    //     { nameItem: 'Bóng Rổ', urlItem:'the-thao/bong-ro', linkItem: '/bong-ro' },
-    //     { nameItem: 'Sôi Động Cùng V-League', urlItem:'the-thao/soi-dong-cung-vleague', linkItem: '/soi-dong-cung-vleague' },
-    //     { nameItem: 'Euro 2020', urlItem:'the-thao/euro-2020', linkItem: '/euro-2020' },
-    //   ],
-    //   empty:[{ nameItem: '', linkItem: '' }],
-    // },
+    {
+      title: [{ name: 'Thể Thao', url: 'the-thao', link:'the-thao' }],
+      child: [
+        { nameItem: 'Bóng Đá Việt Nam', urlItem:'the-thao/bong-da-viet-nam', linkItem: '/bong-da-viet-nam' },
+        { nameItem: 'Bóng Đá Quốc Tế', urlItem:'the-thao/bong-da-quoc-te', linkItem: '/bong-da-quoc-te' },
+        { nameItem: 'Bình Luận', urlItem:'the-thao/binh-luan', linkItem: '/binh-luan' },
+        { nameItem: 'Quần Vợt', urlItem:'the-thao/quan-vot', linkItem: '/quan-vot' },
+        { nameItem: 'Hậu Trường', urlItem:'the-thao/hau-truong', linkItem: '/hau-truong' },
+        { nameItem: 'Thể Thao Khác', urlItem:'the-thao/toan-canh-the-thao', linkItem: '/toan-canh-the-thao' },
+        { nameItem: 'Sea Game 2019', urlItem:'the-thao/sea-games-2019', linkItem: '/sea-games-2019' },
+        { nameItem: 'Tin Chuyển Nhượng', urlItem:'the-thao/tin-chuyen-nhuong', linkItem: '/tin-chuyen-nhuong' },
+        { nameItem: 'Thể Thao & Cộng Đồng', urlItem:'the-thao/the-thao-cong-dong', linkItem: '/the-thao-cong-dong' },
+        { nameItem: 'Bóng Rổ', urlItem:'the-thao/bong-ro', linkItem: '/bong-ro' },
+        { nameItem: 'Sôi Động Cùng V-League', urlItem:'the-thao/soi-dong-cung-vleague', linkItem: '/soi-dong-cung-vleague' },
+        { nameItem: 'Euro 2020', urlItem:'the-thao/euro-2020', linkItem: '/euro-2020' },
+      ],
+      empty:[{ nameItem: '', linkItem: '' }],
+    },
     {
       title: [{ name: 'Sức Khoẻ', url: 'suc-khoe', link:'rss/suc-khoe' }],
       child: [
@@ -182,18 +182,18 @@ export class NavService {
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
-    // {
-    //   title: [{ name: 'Xe', url: 'xe', link:'xe' }],
-    //   child: [
-    //     { nameItem: 'Thị Trường Xe', urlItem:'xe/thi-truong-xe', linkItem: '/thi-truong-xe' },
-    //     { nameItem: 'Tư Vấn Xe', urlItem:'xe/tu-van-xe', linkItem: '/tu-van-xe' },
-    //     { nameItem: 'Đánh Giá Xe', urlItem:'xe/danh-gia-xe', linkItem: '/danh-gia-xe' },
-    //     { nameItem: 'Khám Phá Xe', urlItem:'xe/kham-pha-xe', linkItem: '/kham-pha-xe' },
-    //     // { nameItem: 'Video', urlItem:'xe/video-xe', linkItem: '/video-xe' },
-    //     { nameItem: 'Diễn Đàn Xe', urlItem:'xe/dien-dan-xe', linkItem: '/dien-dan-xe' },
-    //   ],
-    //   empty:[{ nameItem: '', linkItem: '' }],
-    // },
+    {
+      title: [{ name: 'Xe', url: 'xe', link:'xe' }],
+      child: [
+        { nameItem: 'Thị Trường Xe', urlItem:'xe/thi-truong-xe', linkItem: '/thi-truong-xe' },
+        { nameItem: 'Tư Vấn Xe', urlItem:'xe/tu-van-xe', linkItem: '/tu-van-xe' },
+        { nameItem: 'Đánh Giá Xe', urlItem:'xe/danh-gia-xe', linkItem: '/danh-gia-xe' },
+        { nameItem: 'Khám Phá Xe', urlItem:'xe/kham-pha-xe', linkItem: '/kham-pha-xe' },
+        // { nameItem: 'Video', urlItem:'xe/video-xe', linkItem: '/video-xe' },
+        { nameItem: 'Diễn Đàn Xe', urlItem:'xe/dien-dan-xe', linkItem: '/dien-dan-xe' },
+      ],
+      empty:[{ nameItem: '', linkItem: '' }],
+    },
     // {
     //   title: [{ name: 'Game', url: 'game', link:'game' }],
     //   child: [
