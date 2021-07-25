@@ -1,20 +1,20 @@
 <div class="single-post">
-  <div class="post-image">
-    <a href="#" target="_blank"><img src="{{ item.image }}" alt="" /></a>
-  </div>
-  <div class="post-data">
-    <a href="#" class="post-title" target="_blank">
-      <h6>{{ item.title }}</h6>
-    </a>
-    <div class="post-meta">
-      <div class="post-date">
-        <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
-          <span>{{item.getTime()}}</span>
-        </p>
-        <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
-            <span>{{item.getTime()}}, </span>{{item.getDate()}}
-        </p>
-      </div>
+    <div class="post-image">
+        <a href="#" target="_blank"><img src="{{ item.image }}" alt="" /></a>
     </div>
-  </div>
+    <div class="post-data">
+        <a class="post-title" (click)="getTitle(item.title)">
+            <h6>{{ item.title }}</h6>
+        </a>
+        <div class="post-meta">
+            <div class="post-date">
+                <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+                    <span>{{item.getTime()}}</span>
+                </p>
+                <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+                    <span>{{item.getTime()}}, </span>{{item.getDate()}}
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

@@ -16,10 +16,16 @@ const scraperObject = {
                 timeout: 0
             });
             //Mảng chứa url truy xuất từ 1 trang
+            //thay urls thành 1 khi chỉ muốn crawl giới hạn
             const urls = await page.$$eval("a.story__title", results =>
                 Array.from(results)
                 .map(r => r.href)
             );
+            console.log("Total url: ", urls);
+            // const urls = [];
+            // for (let i = 0; i < 5; i++) {
+            //     urls[i] = urls1[i];
+            // }
             console.log(urls);
             //Lấy dữ liệu từ các class trong từng bài báo
             let pagePromise = (link) => new Promise(async(resolve, reject) => {
@@ -30,10 +36,6 @@ const scraperObject = {
                     timeout: 0
                 });
 
-                // const pageClicked = await newPage.evaluate(() => {
-                //     return document.querySelector('.sapo').textContent;
-                // })
-                // console.log(pageClicked);
                 if (await newPage.$('.breadcrumbs')) {
                     dataObj['categories'] = await newPage.$eval('.breadcrumbs > span > a >span', text => text.textContent);
                     console.log('có thẻ categories');
@@ -78,7 +80,7 @@ const scraperObject = {
                     console.log('không tìm thấy images');
                 }
 
-                if (await newPage.$('.left')) {
+                if (await newPage.$('.left > h4')) {
                     dataObj['author'] = await newPage.$eval('.left > h4', text => text.textContent);
                     console.log('có thẻ author');
                 } else {
@@ -123,7 +125,6 @@ const scraperObject = {
                         const file = JSON.parse(data);
                         let isExist = file.newsDetail.some(item => item.newsTitle == currentPageData['newsTitle'])
                         console.log('isExist ======== ', isExist)
-                        console.log('đã có trong json');
                         if (!isExist) {
                             file['newsDetail'].push(currentPageData);
                             const json = JSON.stringify(file);
@@ -139,15 +140,9 @@ const scraperObject = {
                     }
                 });
             }
-            await newPage.close();
+            await page.close();
 
         }
-        //Ghi dữ liệu vào file json
-        // let data = JSON.stringify(arr);
-        // fs.writeFile('data.json', data, (err) => {
-        //     if (err) throw err;
-        //     console.log('Dữ liệu đã được ghi vào tệp data.json');
-        // });
     }
 }
 module.exports = scraperObject;

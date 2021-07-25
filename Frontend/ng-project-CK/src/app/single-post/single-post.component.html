@@ -5,8 +5,8 @@
             <div class="col-12 col-lg-8">
                 <div class="blog-posts-area">
                     <!-- Single Featured Post -->
-                    <ng-container *ngFor="let item of newsDetail; index as id">
-                        <app-article-content *ngIf="id<=10" [newsDetailItem]='item'></app-article-content>
+                    <ng-container>
+                        <app-article-content [item]="currentNews"></app-article-content>
                     </ng-container>
                     <div class="section-heading">
                         <h6>Tin Liên Quan</h6>
