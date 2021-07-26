@@ -35,7 +35,6 @@ import { SinglePostComponent } from './single-post/single-post.component';
 import { NewsService } from './service/news.service';
 import { NavService } from './service/nav.service';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
-import { ScrolltopComponent } from './scrolltop/scrolltop.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { ArticleContentComponent } from './single-post/article-content/article-content.component';
@@ -66,7 +65,6 @@ import { BreakingNewsComponent } from './header/breaking-news/breaking-news.comp
     NoPageFoundComponent,
     SinglePostComponent,
     DateAgoPipe,
-    ScrolltopComponent,
     ArticleContentComponent,
     BreakingNewsComponent,
   ],

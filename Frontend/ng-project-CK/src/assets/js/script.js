@@ -5,7 +5,7 @@
       easing: 'swing',
       effectType: 'roll'
   });
-  $.simpleTicker($("#internationalTicker"), {
+    $.simpleTicker($("#internationalTicker"), {
       speed: 1000,
       delay: 4000,
       easing: 'swing',

@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { RssItem } from './model/news-rss';
-import { NavService } from './service/nav.service';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +8,29 @@ import { NavService } from './service/nav.service';
 export class AppComponent {
   title = 'news-project';
 
-  items!:RssItem[];
-  constructor(private _navService: NavService){
-    this.items=this._navService.getItemHome();
+  isShow!: boolean;
+  topPosToStartShowing = 100;
+
+  @HostListener('window:scroll')
+  checkScroll() {
+
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop >20 || document.body.scrollTop >20 || 0 ;
+
+    console.log('[scroll]', scrollPosition);
+
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
   }
+
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
 }
