@@ -78,3 +78,15 @@ body {
     background: #fff;
     color: #000;
 }
+
+.post-title {
+    cursor: pointer;
+}
+
+.single-popular-post {
+    a {
+        h6 {
+            cursor: pointer;
+        }
+    }
+}
