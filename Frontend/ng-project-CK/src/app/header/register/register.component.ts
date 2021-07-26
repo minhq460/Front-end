@@ -14,7 +14,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class RegisterComponent implements OnInit {
   message: string = "";
-
+  data: any;
   constructor(public dialog: MatDialog,private userService: UserService, private route: Router){}
 
   openDialogLogin(){
@@ -27,6 +27,9 @@ export class RegisterComponent implements OnInit {
     this.userService.addUser(new User(form.value.account,form.value.email,form.value.fullName,form.value.password,form.value.phoneNumber,2));
     this.route.navigate(['home']);
     console.log(this.register);
+    if(form.valid){
+      this.data = form.value;
+    }
   }
 
 }

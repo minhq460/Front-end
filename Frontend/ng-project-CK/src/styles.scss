@@ -123,3 +123,15 @@ body {
     }
   }
 }
+
+.post-title {
+    cursor: pointer;
+}
+
+.single-popular-post {
+    a {
+        h6 {
+            cursor: pointer;
+        }
+    }
+}

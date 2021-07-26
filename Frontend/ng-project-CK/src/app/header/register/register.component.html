@@ -32,32 +32,33 @@
     <div class="box__title">
         <p style="margin-left: 35%;font-size: 25px;">Đăng ký</p>
     </div>
-    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <form #registerForm="ngForm" (ngSubmit)="registerForm" novalidate>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" name="email" ngModel>
+                <input type="email" class="form-control" required email #email="ngModel"  id="inputEmail4" name="email" placeholder="abc@gmail.com" ngModel>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Mật khẩu</label>
-                <input type="password" class="form-control" id="inputPassword4" name="password" ngModel>
+                <input type="password" class="form-control" required minlength="8" #password="ngModel" id="inputPassword4" name="password" placeholder="Mật khẩu tối thiểu 8 kí tự" ngModel>
             </div>
         </div>
         <div class="form-group">
             <label for="inputAccount">Tài khoản</label>
-            <input type="text" class="form-control" id="inputAccount" name="account" ngModel>
+            <input type="text" class="form-control" id="inputAccount" name="account" placeholder="Tên tài khoản" ngModel>
         </div>
         <div class="form-group">
             <label for="inputFullName">Tên đầy đủ</label>
-            <input type="text" class="form-control" id="inputFullName" name="fullName" ngModel>
+            <input type="text" class="form-control" id="inputFullName" name="fullName"  placeholder="Tên đầy đủ" ngModel>
         </div>
         <div class="form-group">
             <label for="inputPhoneNumber">Số điện thoại</label>
-            <input type="text" class="form-control" id="inputPhoneNumber" name="phoneNumber" ngModel>
+            <input type="text" class="form-control" required minlength="10" maxlength="12" pattern="^[0-9]+$" id="inputPhoneNumber" name="phoneNumber" placeholder="Nhập số điện thoại" ngModel>
         </div>
 
-        <button type="submit" style="margin-left: 35%;margin-top: 10px;" class="btn btn-primary">Đăng ký</button>
+        <button type="submit" id="submit" style="margin-left: 35%;margin-top: 10px;" class="btn btn-primary">Đăng ký</button>
     </form>
+    
 </div>
 <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close>Đóng</button>
