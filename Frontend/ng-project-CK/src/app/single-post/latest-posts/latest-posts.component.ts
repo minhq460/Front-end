@@ -15,6 +15,7 @@ export class LatestPostsComponent implements OnInit {
   constructor(private router: Router, private _newsService: NewsService) {}
 
   ngOnInit(): void {}
+
   getTitle(title: any) {
     let a = title.trim();
     console.log('a:', a);

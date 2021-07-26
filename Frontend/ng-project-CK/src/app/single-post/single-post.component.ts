@@ -15,7 +15,7 @@ export class SinglePostComponent implements OnInit {
   newsDetail: NewsDetail[]=[];
   items!:RssItem[];
   currentNews!: NewsDetail;
-  
+
 
   constructor(private _navService: NavService, private newsdService: NewsService ) {
     this.items = this._navService.getItemHome();
@@ -25,15 +25,15 @@ export class SinglePostComponent implements OnInit {
     // this.getNewsDetailItems();
     this.currentNews = this.newsdService.currentNews;
     console.log('SinglePost running');
-    
+
   }
 
   getNewsDetailItems() {
     this.newsdService.getNewsDetail().subscribe((res: any) => {
       this.newsDetail = res;
-      console.log("res",res); 
+      console.log("res",res);
     });
   }
-  
+
 
 }

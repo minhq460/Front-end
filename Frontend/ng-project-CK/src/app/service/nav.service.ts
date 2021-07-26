@@ -49,7 +49,7 @@ export class NavService {
     {
       title: [{ name: 'Thế Giới', url: 'the-gioi', link:'rss/the-gioi' }],
       child: [
-        { nameItem: 'Người VIệt Năm Châu', urlItem:'the-gioi/nguoi-viet-nam-chau', linkItem: '/nguoi-viet-nam-chau' },
+        { nameItem: 'Người Việt Năm Châu', urlItem:'the-gioi/nguoi-viet-nam-chau', linkItem: '/nguoi-viet-nam-chau' },
         { nameItem: 'Góc Nhìn', urlItem:'the-gioi/goc-nhin', linkItem: '/goc-nhin' },
         { nameItem: 'Hồ Sơ', urlItem:'the-gioi/ho-so', linkItem: '/ho-so' },
         { nameItem: 'Quân Sự', urlItem:'the-gioi/quan-su', linkItem: '/quan-su' },
@@ -248,7 +248,7 @@ export class NavService {
   url: string='';
   api:string='https://api-cors-cross.herokuapp.com/api?url='
 
-  constructor(private _newsService: NewsService, public actRoute: ActivatedRoute, private _http: HttpClient) {
+  constructor(private _newsService: NewsService, public actRoute: ActivatedRoute) {
     /*Read Data*/
     this._newsService.getNews('https://thanhnien.vn/'  + this.currentCategoryChoosen + this.currentCategoryItemChoosen + '.rss',{
         headers: new HttpHeaders({
@@ -292,7 +292,7 @@ export class NavService {
           this.RssData = result;
         });
       });
-    
+
   }
 
   changeCategoryItem(_c: string) {

@@ -7,6 +7,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StickyNavModule } from 'ng2-sticky-nav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,13 +32,10 @@ import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './header/register/register.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
-
 import { SinglePostComponent } from './single-post/single-post.component';
 import { NewsService } from './service/news.service';
 import { NavService } from './service/nav.service';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StickyNavModule } from 'ng2-sticky-nav';
 import { ArticleContentComponent } from './single-post/article-content/article-content.component';
 import { BreakingNewsComponent } from './header/breaking-news/breaking-news.component';
 
@@ -81,7 +80,6 @@ import { BreakingNewsComponent } from './header/breaking-news/breaking-news.comp
     StickyNavModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
   ],
   providers: [NewsService, NavService],
   bootstrap: [AppComponent],

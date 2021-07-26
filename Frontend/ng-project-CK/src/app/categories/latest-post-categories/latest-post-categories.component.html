@@ -7,10 +7,9 @@
     <div class="post-data">
       <a class="post-catagory"></a>
       <div class="post-meta">
-        <a class="post-title">
+        <a class="post-title" (click)="getTitle(item.title)">
           <h6>{{item.title}}</h6>
         </a>
-        <!-- <p class="post-date" *ngIf="item.getDate()"><span>{{item.pubDate | date:'h:mm: a dd//MM/yyyy'}}</span></p> -->
         <p class="post-date"><span>{{item.pubDate | dateAgo}}</span> | <span>{{item.pubDate | date:'HH:mm, dd/MM/yyyy'}}</span></p>
       </div>
     </div>
