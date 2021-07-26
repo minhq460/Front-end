@@ -60,6 +60,12 @@
     width: 130%;
 }
 
+input.ng-invalid{
+    border-color: red;
+}
+input.ng-untouched{
+    border-color: #ced4ce;
+}
 .wrap-input {
     display: -webkit-box;
     display: -webkit-flex;
