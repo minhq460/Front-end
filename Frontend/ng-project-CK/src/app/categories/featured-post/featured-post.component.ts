@@ -26,7 +26,9 @@ export class FeaturedPostComponent implements OnInit {
     return this._navService.RssData;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.clicktop();
+  }
 
   getTitle(title: any) {
     let a = title[0].trim();
@@ -39,8 +41,11 @@ export class FeaturedPostComponent implements OnInit {
   }
 
   clicktop(){
-    document.body.scrollTop=0;
-    document.documentElement.scrollTop=0;
+    setTimeout(() => {
+      document.body.scrollTop=0;
+      document.documentElement.scrollTop>=0;
+    }, 5000);
+
   }
 
 }

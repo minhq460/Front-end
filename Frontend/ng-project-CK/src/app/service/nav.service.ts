@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewsRss, RssItem } from '../model/news-rss';
@@ -243,8 +243,11 @@ export class NavService {
 
   RssData!: NewsRss;
 
-  detailNews!: any[];
   items: RssItem[] = [];
+  itemSport: RssItem[] = [];
+  itemWorld: RssItem[] = [];
+  itemVideo: RssItem[] = [];
+
   url: string='';
   api:string='https://api-cors-cross.herokuapp.com/api?url='
 
@@ -276,7 +279,6 @@ export class NavService {
     })
 
   }
-
 
   changeCategory(_k: string) {
     this.currentCategoryChoosen = _k;
@@ -347,9 +349,28 @@ export class NavService {
         // list item from rss
         let itemsArr = xml.getElementsByTagName('item');
         for (let i = 0; i <itemsArr.length; i++) {
-          this.items.push(this.convertToItem(itemsArr[i]))}
+          this.itemVideo.push(this.convertToItem(itemsArr[i]))}
       });
-    return this.items
+    return this.itemVideo
+  }
+
+  getItemSport(): RssItem[] {
+    this._newsService.getNews('https://thethao.thanhnien.vn/rss/home.rss',
+      {
+        headers: new HttpHeaders({
+          'Accept': 'application/xml',
+        }),
+        responseType: 'text'
+      })
+      .subscribe((data) => {
+        let parser = new DOMParser();
+        let xml = parser.parseFromString(data, "application/xhtml+xml");
+        // list item from rss
+        let itemsArr = xml.getElementsByTagName('item');
+        for (let i = 0; i <itemsArr.length; i++) {
+          this.itemSport.push(this.convertToItem(itemsArr[i]))}
+      });
+    return this.itemSport
   }
 
   getItemWorld(): RssItem[] {
@@ -366,13 +387,13 @@ export class NavService {
         // list item from rss
         let itemsArr = xml.getElementsByTagName('item');
         for (let i = 0; i <itemsArr.length; i++) {
-          this.items.push(this.convertToItem(itemsArr[i]))}
+          this.itemWorld.push(this.convertToItem(itemsArr[i]))}
       });
-    return this.items
+    return this.itemWorld
   }
 
   private convertToItem(ele: any): RssItem {
-      let title = ele.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
+      let title = ele.getElementsByTagName('title')[0].innerHTML;
       let linkDetail = ele.getElementsByTagName('link')[0].innerHTML;
       // description tag contain diversity element need to parse
       let desc = ele.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
@@ -400,4 +421,5 @@ export class NavService {
       // console.log(itm.getTime())
       return itm;
   }
+
 }

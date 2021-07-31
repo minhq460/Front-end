@@ -11,12 +11,12 @@ export class HomeComponent implements OnInit {
 
   items!:RssItem[];
   itemVideo!:RssItem[];
-  itemWorld!:RssItem[];
+  itemSport!:RssItem[];
 
   constructor(private _navService: NavService) {
     this.items = this._navService.getItemHome();
     this.itemVideo = this._navService.getItemVideo();
-    this.itemWorld = this._navService.getItemWorld();
+    this.itemSport = this._navService.getItemSport();
   }
 
   ngOnInit(): void {

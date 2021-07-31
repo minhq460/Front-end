@@ -23,7 +23,7 @@ const scraperObject = {
             );
             console.log("Total url: ", urls1);
             const urls = [];
-            for (let i = 0; i < 7; i++) {
+            for (let i = 0; i < 10; i++) {
                 urls[i] = urls1[i];
             }
             console.log(urls);

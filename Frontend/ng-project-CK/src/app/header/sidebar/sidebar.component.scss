@@ -3,39 +3,37 @@ a {
   padding: 10px;
 }
 
+.navbar-brand {
+  margin: 0;
+}
+.dropdown-item:hover{
+  color: #0487d9;
+}
+
 #navbarDropdownMenuLink:hover {
-  font-weight: bold;
-  font-size: 15px;
-  color: red;
+  color: #0487d9;
 }
 
 .active {
   cursor: pointer;
 }
 
-.not-active {
-  cursor: pointer;
-}
 
 .dropdown:hover > .dropdown-menu {
   display: block;
-  font-weight: 400;
-  animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-name: example;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
-  @keyframes fadeIn {
+  @keyframes example {
     from {
+      top: 45px;
       opacity: 0;
     }
     to {
-      opacity: 2;
+      top: 40px;
+      opacity: 1;
     }
   }
-}
-
-.nav-item {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .dropdown-toggle::after {

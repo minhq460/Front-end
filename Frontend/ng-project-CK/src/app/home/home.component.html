@@ -98,12 +98,12 @@
               <!-- World News -->
               <div class="col-12 col-md-5 col-lg-3">
                   <div class="section-heading">
-                      <h6>Tin Thế Giới</h6>
+                      <h6>Tin Thể Thao</h6>
                   </div>
                   <!-- Single Post -->
                   <div class="scrolling">
-                    <ng-container *ngFor="let item of itemWorld; index as id">
-                      <app-world-news *ngIf="id<5" [itemWorld]='item'></app-world-news>
+                    <ng-container *ngFor="let item of itemSport; index as id">
+                      <app-sport-news *ngIf="id<4" [itemSport]='item'></app-sport-news>
                     </ng-container>
                   </div>
               </div>

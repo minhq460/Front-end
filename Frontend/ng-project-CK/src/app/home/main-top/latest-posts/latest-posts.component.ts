@@ -10,6 +10,7 @@ import { NewsService } from 'src/app/service/news.service';
   styleUrls: ['./latest-posts.component.scss'],
 })
 export class LatestPostsComponent implements OnInit {
+
   @Input('itemLatestPost') item!: RssItem;
 
   constructor(private router: Router, private _newsService: NewsService) {}

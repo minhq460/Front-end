@@ -33,6 +33,7 @@ export class SinglePostComponent implements OnInit {
       this.newsDetail = res;
       console.log("res",res);
     });
+
   }
 
 

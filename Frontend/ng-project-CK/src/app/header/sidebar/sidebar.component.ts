@@ -10,9 +10,10 @@ export class SidebarComponent implements OnInit {
   a:any;
   b:any;
 
-  constructor(public _navService: NavService) { }
-  ngOnInit(): void {
-  }
+  constructor(public _navService: NavService) {}
+
+  ngOnInit(): void {}
+
   get categories(){
     return this._navService.categories;
   }
@@ -28,5 +29,5 @@ export class SidebarComponent implements OnInit {
   get changeCategoryItem(){
     return this._navService.changeCategoryItem;
   }
-  
+
 }

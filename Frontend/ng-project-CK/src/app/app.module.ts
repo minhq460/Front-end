@@ -37,7 +37,9 @@ import { NewsService } from './service/news.service';
 import { NavService } from './service/nav.service';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { ArticleContentComponent } from './single-post/article-content/article-content.component';
-import { BreakingNewsComponent } from './header/breaking-news/breaking-news.component';
+import { ScrolltopComponent } from './scrolltop/scrolltop.component';
+import { SportNewsComponent } from './home/main-bottom/sport-news/sport-news.component';
+import { HeadlineNewsComponent } from './header/headline-news/headline-news.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { BreakingNewsComponent } from './header/breaking-news/breaking-news.comp
     SinglePostComponent,
     DateAgoPipe,
     ArticleContentComponent,
-    BreakingNewsComponent,
+    ScrolltopComponent,
+    SportNewsComponent,
+    HeadlineNewsComponent
   ],
   imports: [
     BrowserModule,
