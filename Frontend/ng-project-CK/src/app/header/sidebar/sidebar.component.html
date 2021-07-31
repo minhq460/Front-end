@@ -6,14 +6,14 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" style="margin: auto;">
                 <li class="nav-item">
-                    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="clicktop()" style="font-size: 25px;"><i class="fas fa-home-lg-alt" style="margin-top: 3px;"></i></a>
+                    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="clicktop()" style="font-size: 25px;"><i class="fas fa-home-lg-alt" style="margin-top: 4px;"></i></a>
                 </li>
                 <li class="nav-item dropdown dropdown-toggle" *ngFor="let k of categories" (click)='this._navService.changeCategory(k.title[0].link)' (click)='this._navService.changeCategoryItem(k.empty[0].linkItem)' (click)="clicktop()">
-                    <a class="nav-link" [routerLink]="[k.title[0].url]" routerLinkActive="router-link-active" [ngClass]="{'active': selectedItemId === k}" (click)="selectedItemId = k" id="navbarDropdownMenuLink" role="button" data-hover="dropdown" aria-expanded="false">
+                    <a class="nav-link" [routerLink]="[k.title[0].url]" routerLinkActive="router-link-active" (click)="selectedItemId = k" id="navbarDropdownMenuLink" role="button" data-hover="dropdown" aria-expanded="false">
                       {{k.title[0].name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" data-animations="fadeInDown fadeInRight fadeInUp fadeInLeft">
-                        <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.linkItem)' [routerLink]="[c.linkItem]"><a class="dropdown-item">{{c.nameItem}}</a></li>
+                        <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.linkItem)' [routerLink]="[c.linkItem]"><a class="dropdown-item" (click)="clicktop()">{{c.nameItem}}</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -230,3 +230,4 @@
         </div>
     </div>
 </nav>
+<app-headline-news></app-headline-news>

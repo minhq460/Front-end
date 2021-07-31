@@ -4,7 +4,7 @@ async function startBrowser() {
     try {
         console.log("Đang mở browser......");
         browser = await puppeteer.launch({
-            headless: false,
+            headless: true, //ko muốn mở trình duyệt chọn true
             args: ["--disable-setuid-sandbox"],
             'ignoreHTTPSErrors': true,
         });

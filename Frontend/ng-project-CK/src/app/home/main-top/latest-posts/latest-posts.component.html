@@ -2,12 +2,12 @@
 
 <div class="single-blog-post small-featured-post d-flex">
     <div class="post-image">
-        <a href="#"><img src="{{item.image}}" alt="" /></a>
+        <a><img src="{{item.image}}" alt="" /></a>
     </div>
     <div class="post-data">
-        <a href="#" class="post-catagory"></a>
+        <a class="post-catagory"></a>
         <div class="post-meta">
-            <a class="post-title" (click)="getTitle(item.title)">
+            <a class="post-title" (click)="getTitle(item.title)" (click)="clicktop()">
                 <h6>
                     {{item.title}}
                 </h6>

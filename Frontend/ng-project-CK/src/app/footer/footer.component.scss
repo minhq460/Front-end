@@ -1,78 +1,85 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background: #eef8ff;
+  background: #eef8ff;
+}
+p {
+  color: #c0c0c0;
 }
 
 footer {
-    width: 100%;
-    position: absolute;
-    background: linear-gradient(to right, #00093c, #2d0b00);
-    color: #fff;
-    padding: 100px 0 30px;
-    font-size: 15px;
-    line-height: 20px;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
+  padding: 100px 0 30px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .row {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .col {
-    flex-basis: 25%;
-    padding: 10px;
+  flex-basis: 25%;
+  padding: 10px;
 }
 
 .logo {
-    width: 80px;
-    margin-bottom: 30px;
+  width: 80px;
+  margin-bottom: 30px;
 }
 
 .col h3 {
-    width: fit-content;
-    margin-bottom: 40px;
-    position: relative;
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .email-id {
-    width: fit-content;
-    border-bottom: 1px solid #ccc;
-    margin: 20px 0;
+  width: fit-content;
+  border-bottom: 1px solid #c0c0c0;
+  margin: 20px 0;
 }
 
 ul li {
-    list-style: none;
-    margin-bottom: 12px;
+  list-style: none;
+  margin-bottom: 12px;
 }
 
 ul li a {
-    text-decoration: none;
+  text-decoration: none;
+  color: #c0c0c0;
+  &:hover{
+    color: #fff;
+  }
 }
 
 .social-icons .fab {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color: #000;
-    background: #fff;
-    margin-right: 15px;
-    cursor: pointer;
-    margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: #000;
+  background: #fff;
+  margin-right: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .top-tittle {
-    color: #fff;
-    font-weight: 900;
-    font-size: 21px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 21px;
 }

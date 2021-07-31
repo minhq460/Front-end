@@ -6,25 +6,27 @@ import { NewsService } from 'src/app/service/news.service';
 @Component({
   selector: 'app-world-news',
   templateUrl: './world-news.component.html',
-  styleUrls: ['./world-news.component.scss']
+  styleUrls: ['./world-news.component.scss'],
 })
 export class WorldNewsComponent implements OnInit {
+  @Input('itemWorld') item!: RssItem;
 
-  @Input('itemWorld')item!:RssItem;
+  constructor(private router: Router, private _newsService: NewsService) {}
 
-  constructor(private router: Router, private _newsService: NewsService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
- 
-  getTitle(title: any){
+  getTitle(title: any) {
     let a = title.trim();
-    console.log('a:',a);
-    
+    console.log('a:', a);
+
     this._newsService.setCurrentTitle(a);
     setTimeout(() => {
       this.router.navigate(['/single-post']);
-  }, 5000);
+    }, 5000);
   }
 
+  clicktop(){
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop=0;
+  }
 }

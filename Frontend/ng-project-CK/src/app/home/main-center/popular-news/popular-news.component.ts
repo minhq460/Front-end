@@ -6,24 +6,26 @@ import { NewsService } from 'src/app/service/news.service';
 @Component({
   selector: 'app-popular-news',
   templateUrl: './popular-news.component.html',
-  styleUrls: ['./popular-news.component.scss']
+  styleUrls: ['./popular-news.component.scss'],
 })
 export class PopularNewsComponent implements OnInit {
+  @Input('itemPopular') item!: RssItem;
 
-  @Input('itemPopular')item!:RssItem;
+  constructor(private router: Router, private _newsService: NewsService) {}
 
-  constructor(private router: Router, private _newsService: NewsService) { }
-
-
-  ngOnInit(): void {
-  }
-  getTitle(title: any){
+  ngOnInit(): void {}
+  getTitle(title: any) {
     let a = title.trim();
-    console.log('a:',a);
-    
+    console.log('a:', a);
+
     this._newsService.setCurrentTitle(a);
     setTimeout(() => {
       this.router.navigate(['/single-post']);
-  }, 5000);
+    }, 5000);
+  }
+
+  clicktop(){
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop=0;
   }
 }

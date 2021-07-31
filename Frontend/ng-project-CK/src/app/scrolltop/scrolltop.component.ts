@@ -1,6 +1,4 @@
-import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { generate } from 'rxjs';
 
 @Component({
   selector: 'app-scrolltop',
@@ -19,7 +17,7 @@ export class ScrolltopComponent implements OnInit {
     document.documentElement.scrollTop=0;
   }
   functiontop() {
-    var mybutton = document.getElementById("top");
+    var mybutton = document.getElementById("scrollUp");
 
     window.onscroll = function() {
         scrollFunction()
@@ -27,7 +25,7 @@ export class ScrolltopComponent implements OnInit {
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          
+
           if (mybutton === null) {
               alert('oops');
           } else {
@@ -45,6 +43,6 @@ export class ScrolltopComponent implements OnInit {
     }
   }
 
-  
+
 
 }

@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { RssItem } from './model/news-rss';
-import { NavService } from './service/nav.service';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +8,5 @@ import { NavService } from './service/nav.service';
 export class AppComponent {
   title = 'news-project';
 
-  items!:RssItem[];
-  constructor(private _navService: NavService){
-    this.items=this._navService.getItemHome();
-  }
+
 }

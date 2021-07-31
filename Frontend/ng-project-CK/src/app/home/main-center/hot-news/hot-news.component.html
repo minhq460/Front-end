@@ -1,6 +1,6 @@
 <!-- Single Popular Blog -->
 <div class="single-popular-post">
-    <a (click)="getTitle(item.title)">
+    <a (click)="getTitle(item.title)" (click)="clicktop()">
         <h6><span>&#10148;</span>{{item.title}}</h6>
     </a>
     <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">

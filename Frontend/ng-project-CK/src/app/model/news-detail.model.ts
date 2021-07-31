@@ -6,6 +6,7 @@ export class NewsDetail {
   imageUrl: String;
   author:String;
   content: String;
+
   constructor(categories='', newsTitle = '', pubDate='', description = '',imageUrl = '', author='' , content = '') {
     this.categories=categories;
     this.newsTitle = newsTitle;

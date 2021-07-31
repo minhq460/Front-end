@@ -1,43 +1,41 @@
 a {
-    cursor: pointer;
-    padding: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+.dropdown-item:hover{
+  color: #0487d9;
 }
 
 #navbarDropdownMenuLink:hover {
-    font-weight: bold;
-    font-size: 15px;
-    color: red;
+  color: #0487d9;
 }
 
 .active {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.not-active {
-    cursor: pointer;
-}
 
-.dropdown:hover>.dropdown-menu {
-    display: block;
-    font-weight: 400;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 2;
-        }
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  animation-name: example;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  @keyframes example {
+    from {
+      top: 45px;
+      opacity: 0;
     }
-}
-
-.nav-item {
-    padding-left: 10px;
-    padding-right: 10px;
+    to {
+      top: 40px;
+      opacity: 1;
+    }
+  }
 }
 
 .dropdown-toggle::after {
-    display: none;
+  display: none;
 }

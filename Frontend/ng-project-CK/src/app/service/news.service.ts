@@ -6,22 +6,18 @@ import { NewsDetail } from '../model/news-detail.model';
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService implements OnInit{
-  private REST_API_SERVER = 'http://localhost:3000';
-
+export class NewsService {
   currentTitle!: string;
   currentNewsList!: NewsDetail[];
   currentNews!: NewsDetail;
+
+  private REST_API_SERVER = 'http://localhost:3000';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
   constructor(private _http: HttpClient) {}
-
-  ngOnInit(): void {
-  
-  }
 
   getNews(url: string, _header: object = {} ): Observable<any> {
     return this._http.get<any>(url, _header);
@@ -35,7 +31,7 @@ export class NewsService implements OnInit{
   // lay title khi click vao bai bao
   async setCurrentTitle(title: string){
     console.log('service run');
-    
+
     this.currentTitle = title;
     this.getNewsDetail().subscribe(async data => {
       this.currentNewsList = data;
@@ -46,7 +42,7 @@ export class NewsService implements OnInit{
         }
       });
       console.log('current News:',this.currentNews);
-      
+
     })
   }
 }

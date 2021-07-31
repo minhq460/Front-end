@@ -1,9 +1,9 @@
 <div class="single-post style-2">
     <div class="post-image">
-        <a href="#" target="_blank"><img src="{{item.image}}" alt=""></a>
+        <a><img src="{{item.image}}" alt=""></a>
     </div>
     <div class="post-data">
-        <a class="post-title" (click)="getTitle(item.title)">
+        <a class="post-title" (click)="getTitle(item.title)" (click)="clicktop()">
             <h6>{{item.title}}</h6>
         </a>
         <div class="post-meta">
