@@ -1,5 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NewsDetail } from '../model/news-detail.model';
 
@@ -27,22 +27,28 @@ export class NewsService {
     const url = `${this.REST_API_SERVER}/newsDetail`;
     return this._http.get<NewsDetail[]>(url, this.httpOptions);
   }
-
   // lay title khi click vao bai bao
-  async setCurrentTitle(title: string){
-    console.log('service run');
+  // async setCurrentTitle(title: string){
+  //   console.log('service run');
 
-    this.currentTitle = title;
-    this.getNewsDetail().subscribe(async data => {
-      this.currentNewsList = data;
-      await this.currentNewsList.forEach(item => {
-        if (item.newsTitle === this.currentTitle) {
-          this.currentNews = item;
-          console.log('current News1:',this.currentNews);
-        }
-      });
-      console.log('current News:',this.currentNews);
+  //   this.currentTitle = title;
+  //   this.getNewsDetail().subscribe(async data => {
+  //     this.currentNewsList = data;
+  //     await this.currentNewsList.forEach(item => {
+  //       if (item.newsTitle === this.currentTitle) {
+  //         this.currentNews = item;
+  //         console.log('current News1:',this.currentNews);
+  //       }
+  //     });
+  //     console.log('current News:',this.currentNews);
 
-    })
+  //   })
+  // }
+
+  public getNewsSearch(keyword:string): Observable<NewsDetail[]> {
+    const url = `${this.REST_API_SERVER}/newsDetail/?newsTitle_like=${keyword}`;
+    console.log(keyword,"day ne");
+    return this._http.get<NewsDetail[]>(url, this.httpOptions);
   }
+
 }

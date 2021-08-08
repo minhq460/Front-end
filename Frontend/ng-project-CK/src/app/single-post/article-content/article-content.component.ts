@@ -8,7 +8,7 @@ import { NewsDetail } from 'src/app/model/news-detail.model';
 })
 export class ArticleContentComponent implements OnInit {
 
-  @Input() item!:NewsDetail;
+  @Input('itemNewsDetail') item!:NewsDetail;
   constructor() { }
 
   ngOnInit(): void {

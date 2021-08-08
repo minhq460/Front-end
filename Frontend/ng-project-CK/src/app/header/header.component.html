@@ -12,8 +12,8 @@
         <a mat-button (click)="openDialogRegister()">Đăng ký</a>
         <div class="search-form">
             <form action="">
-                <input type="search" name="search" class="form-control" placeholder="Tìm kiếm">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <input #box (keyup.enter)="onInput(box.value)"  type="search" name="search" class="form-control" placeholder="Tìm kiếm">
+                <button type="submit" (click)="onInput(box.value)" ><i class="fal fa-search"></i></button>
             </form>
         </div>
     </mat-toolbar>

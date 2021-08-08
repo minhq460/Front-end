@@ -1,19 +1,20 @@
 <!-- ##### Blog Area Start ##### -->
+<app-headline-news></app-headline-news>
 <div class="blog-area padding-0-80">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
                 <div class="blog-posts-area">
                     <!-- article-content -->
-                    <ng-container>
-                        <app-article-content [item]="currentNews"></app-article-content>
+                    <ng-container *ngFor="let item of newsDetail" >
+                        <app-article-content [itemNewsDetail]="item"></app-article-content>
                     </ng-container>
                     <div class="section-heading mt-30">
                         <h6>Tin Liên Quan</h6>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6" *ngFor="let item of items; index as id">
-                            <app-popular-news *ngIf="id>=8 && id<10" [itemPopular]='item'></app-popular-news>
+                        <div class="col-12 col-md-6">
+                            <!-- <app-related-news></app-related-news> -->
                         </div>
                     </div>
 
@@ -40,4 +41,5 @@
         </div>
     </div>
 </div>
+
 <!-- ##### Blog Area End ##### -->

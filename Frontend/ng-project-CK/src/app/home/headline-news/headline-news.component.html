@@ -1,0 +1,49 @@
+<div class="hero-area">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-12 col-lg-8">
+              <!-- Breaking News Widget -->
+              <div class="breaking-news-area d-flex align-items-center">
+                  <div class="news-title">
+                      <p>Tin Nóng Hổi</p>
+                  </div>
+                  <div class="ticker" style="background: #f3f5f8;">
+                    <ul style="padding-left: 15px;">
+                      <ng-container *ngFor="let item of itemHome; index as id">
+                        <li *ngIf="id<1"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                        <li *ngIf="id>=1 && id<2"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                        <li *ngIf="id>=2 && id<3"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                      </ng-container>
+                    </ul>
+                  </div>
+
+              </div>
+
+              <!-- Breaking News Widget -->
+              <div class="breaking-news-area d-flex align-items-center mt-15">
+                  <div class="news-title title2">
+                      <p>Tin Quốc Tế</p>
+                  </div>
+                  <div class="ticker1" style="background: #f3f5f8;">
+                    <ul style="padding-left: 15px;">
+                      <ng-container *ngFor="let item of itemWorld; index as id">
+                        <li *ngIf="id<1"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                        <li *ngIf="id>=1 && id<2"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                        <li *ngIf="id>=2 && id<3"><a (click)="getTitle(item.title)">{{item.title}}</a></li>
+                      </ng-container>
+
+                    </ul>
+                  </div>
+
+              </div>
+          </div>
+
+          <!-- Hero Add -->
+          <div class="col-12 col-lg-4">
+              <div class="hero-advertisement">
+                  <a href="#"><img src="https://static.thanhnien.vn/v3/App_Themes/event/job_footer/job-bg.png" alt=""></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

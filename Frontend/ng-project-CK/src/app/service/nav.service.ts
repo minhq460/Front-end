@@ -349,7 +349,7 @@ export class NavService {
         // list item from rss
         let itemsArr = xml.getElementsByTagName('item');
         for (let i = 0; i <itemsArr.length; i++) {
-          this.itemVideo.push(this.convertToItem(itemsArr[i]))}
+          this.itemVideo.push(this.convertToItem2(itemsArr[i]))}
       });
     return this.itemVideo
   }
@@ -368,7 +368,7 @@ export class NavService {
         // list item from rss
         let itemsArr = xml.getElementsByTagName('item');
         for (let i = 0; i <itemsArr.length; i++) {
-          this.itemSport.push(this.convertToItem(itemsArr[i]))}
+          this.itemSport.push(this.convertToItem2(itemsArr[i]))}
       });
     return this.itemSport
   }
@@ -420,6 +420,36 @@ export class NavService {
       let itm: RssItem = new RssItem(title, description ?? '', linkDetail, linkImg, date);
       // console.log(itm.getTime())
       return itm;
+  }
+
+  private convertToItem2(ele: any): RssItem {
+    let title = ele.getElementsByTagName('title')[0].innerHTML.slice(9, -3);
+    let linkDetail = ele.getElementsByTagName('link')[0].innerHTML;
+    // description tag contain diversity element need to parse
+    let desc = ele.getElementsByTagName('description')[0].innerHTML.slice(9, -3);
+    let parser = new DOMParser();
+    let html = parser.parseFromString(desc, "text/html");
+    //convert image link with full width
+
+    let linkImg = html.getElementsByTagName('img')[0].src;
+    let indexc = linkImg.indexOf('uploaded');
+    linkImg = "https://image.thanhnien.vn/" + linkImg.slice(indexc);
+    // get pubdate
+    let pubDate = ele.getElementsByTagName('pubDate')[0].innerHTML.trim();
+    let date: Date = new Date(pubDate);
+
+
+    // get text desciption need to remove orther text content
+    let body = html.getElementsByTagName('body')[0];
+    let rem = html.getElementsByTagName('div')[0];
+    if (rem != null) {
+      rem.remove();
+    }
+    let description = body.textContent;
+    // object item
+    let itm: RssItem = new RssItem(title, description ?? '', linkDetail, linkImg, date);
+    // console.log(itm.getTime())
+    return itm;
   }
 
 }

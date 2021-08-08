@@ -1,12 +1,6 @@
 [
 
   {
-    "url": "https://thanhnien.vn/van-hoa/"
-  },
-  {
-    "url": "https://thanhnien.vn/van-hoa/cau-chuyen-van-hoa/"
-  },
-  {
     "url": "https://thanhnien.vn/van-hoa/khao-cuu/"
   },
   {
@@ -35,5 +29,26 @@
   },
   {
     "url": "https://thanhnien.vn/gioi-tre/doan-hoi/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/nguoi-song-quanh-ta/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/gia-dinh/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/am-thuc/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/cong-dong/"
+  },
+  {
+    "url": "https://thanhnien.vn/doi-song/guong-sang-bien-cuong/"
+  },
+  {
+    "url": "https://thanhnien.vn/van-hoa/"
   }
 ]

@@ -15,16 +15,6 @@ export class WorldNewsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getTitle(title: any) {
-    let a = title.trim();
-    console.log('a:', a);
-
-    this._newsService.setCurrentTitle(a);
-    setTimeout(() => {
-      this.router.navigate(['/single-post']);
-    }, 5000);
-  }
-
   clicktop(){
     document.body.scrollTop=0;
     document.documentElement.scrollTop=0;
