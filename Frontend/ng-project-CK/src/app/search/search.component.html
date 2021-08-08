@@ -1,0 +1,42 @@
+<!-- Single Featured Post -->
+<div class="search-result">
+  <div class="container">
+    <div class="row">
+      <!-- search bar -->
+      <div class="search-input">
+        <form action="">
+          <input #box (keyup.enter)="onInput(box.value)" (keyup.enter)="reloadCurrentRoute()" [value]="this.keyword" type="search" name="search" class="form-control" placeholder="Từ khoá tìm kiếm">
+          <button type="submit" class="btn"><i class="fal fa-search"></i></button>
+        </form>
+      </div>
+       <!-- search result -->
+       <div class="col-12 col-lg-12 col-md-12" >
+        <div class="num-result">
+          <span>Tìm thấy {{this.searchResule.length}} kết quả về </span> <strong>{{this.keyword}}</strong>
+        </div>
+        <div class="row featured-post"  *ngFor="let item of searchResule | paginate: { itemsPerPage: 10, currentPage: p, totalItems:totalLenght }">
+          <div class="col-12 col-lg-3 col-md-3 post-imageUrl">
+            <div innerHtml="{{ item.imageUrl }}"></div>
+          </div>
+          <div class="col-12 col-lg-9 col-md-9 post-data">
+            <!-- <a class="post-catagory">{{item.title}}</a> -->
+            <a class="post-title" (click)="getTitle(item.newsTitle)" (Click)="clicktop()">
+                  <h6>{{item.newsTitle}}</h6>
+            </a>
+            <div class="post-meta">
+              <!-- <p class="post-author">Tác giả <a>Thiện Nhân</a></p> -->
+              <p class="post-date"><span>{{item.pubDate}}</span></p>
+              <p class="post-excerp" innerHtml="{{item.description}}" ></p>
+              <!-- Post Like & Post Comment -->
+              <div class="d-flex align-items-center" style="float: right;">
+                <a class="post-like"><img src="assets/img/like.png" alt=""> <span>13</span></a>
+                <a class="post-comment"><img src="assets/img/chat.png" alt=""> <span>0</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel=""></pagination-controls>

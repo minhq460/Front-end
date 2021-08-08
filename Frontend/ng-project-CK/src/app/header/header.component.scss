@@ -1,21 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-* {
-    margin: 0;
-    padding: 0;
-    font-size: 14;
-    font-family: "Roboto", sans-serif;
-}
 
-body {
-    font-family: "Roboto", sans-serif;
-    font-size: 14;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
 
 h1,
 h3 {
@@ -55,10 +39,10 @@ p {
             z-index: 2;
             margin-left: 50px;
             input {
-                width: 100%;
+                width: 80%;
                 height: 100%;
                 border: 1px solid #fff;
-                border-radius: 5px;
+                border-radius: 5px 0px 0px 5px;
                 background-color: transparent;
                 margin: 1.9rem 0 0 0;
                 padding: 0 15px;
@@ -70,17 +54,23 @@ p {
                 }
             }
             button {
-                width: 50px;
+                width: 20%;
                 height: 100%;
                 position: absolute;
                 top: 0;
                 right: 0;
                 z-index: 10;
                 border: 1px solid #fff;
+                border-radius: 0px 5px 5px 0px;
                 background-color: transparent;
                 color: #fff;
                 cursor: pointer;
                 outline: none;
+                &:hover{
+                  i{
+                    font-size: 18px;
+                  }
+                }
             }
             .form-control::-webkit-input-placeholder {
                 color: #fff;

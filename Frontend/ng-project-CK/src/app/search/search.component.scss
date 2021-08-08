@@ -1,0 +1,126 @@
+.container {
+  max-width: 900px;
+}
+
+input, button:focus{
+  box-shadow: none !important;
+}
+
+.search-result {
+  .search-input {
+    background: #f3f5f8;
+    padding: 20px;
+    margin: 30px 0px 0px;
+    form {
+      position: relative;
+      background: #fff;
+      border: 1px solid #ced4da;
+      .form-control {
+        border-radius: 0px;
+        width: 94%;
+        height: 45px;
+        border: 0;
+        outline: none;
+        &:focus{
+            border: 1px solid #9fbddb !important;
+        }
+
+      }
+      .btn {
+        position: absolute;
+        color: #828282;
+        bottom: 0px;
+        right: 3px;
+        font-size: 20px;
+        border-radius: 0;
+        height: 45px;
+        &:hover{
+          color: #9fbddb;
+        }
+      }
+    }
+  }
+  .num-result{
+    margin: 30px 0px;
+
+  }
+  .featured-post {
+    padding: 25px 0px;
+    border-top: 1px solid #d0d5d8;
+    .post-title {
+      display: block;
+      h6 {
+        font-size: 17px;
+        transition-duration: 500ms;
+        line-height: 1.9;
+        color: #152535;
+        &:hover,
+        &:focus {
+          color: #0487d9;
+        }
+      }
+    }
+    .post-meta {
+      .post-date {
+        margin-bottom: 10px;
+        a {
+          display: block;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+      .post-excerp{
+        margin-bottom: 10px;
+      }
+      .post-like {
+        display: flex;
+        align-items: flex-end;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          color: #828282;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+      .post-comment {
+        margin-left: 20px;
+        display: flex;
+        align-items: flex-end;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          color: #828282;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+::ng-deep .ngx-pagination {
+  margin: 60px auto !important;
+  text-align: center !important;
+  padding-left: 0px;
+  li a {
+    padding: 10px 16px !important;
+    font-size: 16px;
+  }
+  .current {
+    padding: 10px 16px !important;
+    background: #152535 !important;
+  }
+
+}
+::placeholder {
+  // color: orange !important;
+  opacity: 0.8;
+}

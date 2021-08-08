@@ -22,10 +22,10 @@ export class LatestPostCategoriesComponent implements OnInit {
     let a = title[0].trim();
     console.log('a:', a);
 
-    this._newsService.setCurrentTitle(a);
+    // this._newsService.setCurrentTitle(a);
     setTimeout(() => {
-      this.router.navigate(['/single-post']);
-    }, 5000);
+      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+    }, 500);
   }
 
   clicktop(){

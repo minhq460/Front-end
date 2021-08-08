@@ -16,7 +16,7 @@ const scraperObject = {
                 timeout: 0
             });
             //Mảng chứa url truy xuất từ 1 trang
-            //thay urls thành 1 khi chỉ muốn crawl giới hạn
+            //thay urls thành urls1 khi chỉ muốn crawl giới hạn
             const urls1 = await page.$$eval("a.story__title", results =>
                 Array.from(results)
                 .map(r => r.href)

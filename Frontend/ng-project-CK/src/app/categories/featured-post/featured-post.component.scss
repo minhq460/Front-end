@@ -125,15 +125,16 @@ a {
     }
   }
 }
+
 ::ng-deep .ngx-pagination {
   margin: 60px 0px 0px;
   padding-left: 0px;
   li a{
-    padding:10px 15px !important;
+    padding:10px 16px !important;
     font-size: 16px ;
   }
   .current {
-    padding:10px 15px !important;
+    padding:10px 16px !important;
     background: #152535 !important;
   }
 }

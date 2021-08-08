@@ -1,8 +1,9 @@
 <footer>
+  <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12 col-lg-4 text-lg-left">
             <img src="../../assets/img/logo.png" alt="" style="height: 80px; width: 200px; margin-top: -20px;">
-            <ul style="margin-left: 15px;">
+            <ul style="padding-left: 15px;">
                 <li>
                     <p style="font-weight: 500;">Tin tức và phong cách sống</p>
                 </li>
@@ -17,34 +18,40 @@
                 </li>
             </ul>
         </div>
-        <div class="col">
-            <h3 class="top-tittle">Liên kết nhanh</h3>
-            <ul>
-                <li><a href="">Trang chủ</a></li>
-                <li><a href="">Giới thiệu</a></li>
-                <li><a href="">Liên hệ</a></li>
-            </ul>
-        </div>
-        <div class="col">
-            <h3 class="top-tittle">Đặc sắc</h3>
-            <ul>
-                <li><a [routerLink]="['/xahoi']" routerLinkActive="router-link-active">Xã hội</a></li>
-                <li><a [routerLink]="['/suckhoe']" routerLinkActive="router-link-active">Sức khỏe</a></li>
-                <li><a [routerLink]="['/phapluat']" routerLinkActive="router-link-active">Pháp luật</a></li>
-                <li><a [routerLink]="['/doisong']" routerLinkActive="router-link-active">Đời sống</a></li>
-                <li><a [routerLink]="['/thethao']" routerLinkActive="router-link-active">Thể thao</a></li>
-                <li><a [routerLink]="['/thegioi']" routerLinkActive="router-link-active">Thế giới</a></li>
-            </ul>
-        </div>
+        <div class="col-sm-12 col-lg-5">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4 class="top-tittle text-md-left">Liên kết nhanh</h4>
+              <ul style="margin-top: 31px;">
+                  <li><a href="">Trang chủ</a></li>
+                  <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">Giới thiệu</a></li>
+                  <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active">Liên hệ</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-6">
+              <h4 class="top-tittle text-md-left">Đặc sắc</h4>
+              <ul style="margin-top: 31px;">
+                  <li><a [routerLink]="['/xahoi']" routerLinkActive="router-link-active">Xã hội</a></li>
+                  <li><a [routerLink]="['/suckhoe']" routerLinkActive="router-link-active">Sức khỏe</a></li>
+                  <li><a [routerLink]="['/phapluat']" routerLinkActive="router-link-active">Pháp luật</a></li>
+                  <li><a [routerLink]="['/doisong']" routerLinkActive="router-link-active">Đời sống</a></li>
+                  <li><a [routerLink]="['/thethao']" routerLinkActive="router-link-active">Thể thao</a></li>
+                  <li><a [routerLink]="['/thegioi']" routerLinkActive="router-link-active">Thế giới</a></li>
+              </ul>
+          </div>
 
-        <div class="col">
-            <h3 class="top-tittle">Theo dõi QTN24h trên:</h3>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-3 text-lg-left">
+            <h4 class="top-tittle">Theo dõi QTN24h trên</h4>
             <div class="social-icons">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                <i class="fab fa-youtube" aria-hidden="true"></i>
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-                <i class="fab fa-youtube" aria-hidden="true"></i>
+              <ul>
+                <li><a class="facebook-bg-hvr"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a class="youtube-bg-hvr"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a class="twitter-bg-hvr"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="instagram-bg-hvr"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a class="pinterest-bg-hvr"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+              </ul>
             </div>
             <div>
                 <ul class="list">
@@ -55,10 +62,11 @@
                         <p style="font-weight: 500;">SĐT: 0974838004</p>
                     </li>
                     <li>
-                        <p style="font-weight: 500;">Địa chỉ: ĐH Nông Lâm TP.HCM, Linh Trung, TP.Thủ Đức, TP.HCM</p>
+                        <p style="font-weight: 500;">Địa chỉ: Trường ĐH Nông Lâm TP.HCM, Linh Trung, TP.Thủ Đức, TP.HCM</p>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+  </div>
 </footer>

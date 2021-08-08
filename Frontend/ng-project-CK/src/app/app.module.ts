@@ -39,7 +39,9 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { ArticleContentComponent } from './single-post/article-content/article-content.component';
 import { ScrolltopComponent } from './scrolltop/scrolltop.component';
 import { SportNewsComponent } from './home/main-bottom/sport-news/sport-news.component';
-import { HeadlineNewsComponent } from './header/headline-news/headline-news.component';
+import { HeadlineNewsComponent } from './home/headline-news/headline-news.component';
+import { SearchComponent } from './search/search.component';
+import { RelatedNewsComponent } from './single-post/related-news/related-news.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { HeadlineNewsComponent } from './header/headline-news/headline-news.comp
     ArticleContentComponent,
     ScrolltopComponent,
     SportNewsComponent,
-    HeadlineNewsComponent
+    HeadlineNewsComponent,
+    SearchComponent,
+    RelatedNewsComponent
   ],
   imports: [
     BrowserModule,

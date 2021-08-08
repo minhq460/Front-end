@@ -5,6 +5,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { SearchComponent } from './search/search.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'single-post', component: SinglePostComponent },
+  { path: 'search', component: SearchComponent },
   { path: ':url', component: CategoriesComponent },
   { path: '**', component: NoPageFoundComponent },
 ];

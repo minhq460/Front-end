@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewsDetail } from '../model/news-detail.model';
 import { RssItem } from '../model/news-rss';
 import { NavService } from '../service/nav.service';
@@ -15,26 +16,38 @@ export class SinglePostComponent implements OnInit {
   newsDetail: NewsDetail[]=[];
   items!:RssItem[];
   currentNews!: NewsDetail;
+  title!:string;
 
-
-  constructor(private _navService: NavService, private newsdService: NewsService ) {
+  constructor(private _navService: NavService, private _newsService: NewsService, private activeRouted: ActivatedRoute ) {
     this.items = this._navService.getItemHome();
   }
 
   ngOnInit(): void {
     // this.getNewsDetailItems();
-    this.currentNews = this.newsdService.currentNews;
-    console.log('SinglePost running');
+    // this.currentNews = this._newsService.currentNews;
 
+    this.getQueryParams();
+    this.newsSearchResult();
   }
 
   getNewsDetailItems() {
-    this.newsdService.getNewsDetail().subscribe((res: any) => {
+    this._newsService.getNewsDetail().subscribe((res: any) => {
       this.newsDetail = res;
       console.log("res",res);
     });
-
   }
 
+  newsSearchResult(){
+    this._newsService.getNewsSearch(this.title).subscribe((data:any) =>{
+      this.newsDetail = data;
+    });
+  }
+
+  getQueryParams() {
+    this.activeRouted.queryParams.subscribe((res: any) => {
+      console.log(res.title, 'display query');
+      this.title = res.title;
+    });
+  }
 
 }

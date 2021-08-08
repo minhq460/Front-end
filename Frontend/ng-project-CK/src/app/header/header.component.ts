@@ -5,6 +5,8 @@ import { User } from 'src/app/model/user.model';
 import { UserService } from '../service/user.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NewsService } from '../service/news.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +19,10 @@ export class HeaderComponent implements OnInit {
   message: string = "";
   selectedItemId: any
 
-  constructor(public dialog: MatDialog, public _navService:NavService, private userService : UserService){}
+  constructor(public dialog: MatDialog, public _navService:NavService, public _newsService:NewsService, private userService : UserService, private router:Router){}
+
   openDialogLogin(){
-    let dialog = this.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent);
   }
 
   openDialogRegister(){
@@ -34,6 +37,24 @@ export class HeaderComponent implements OnInit {
   }
   onLogOut(){
     this.userService.logout();
+  }
+
+  public onInput(keyword: any){
+    console.log(keyword);
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 500);
+    setTimeout(() => {
+      this.router.navigate(['/search'], {queryParams:{'keyword': keyword}});
+    }, 500);
+  }
+
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+        console.log(currentUrl);
+    });
   }
 
 }

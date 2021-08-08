@@ -16,18 +16,30 @@ export class LatestPostsComponent implements OnInit {
   constructor(private router: Router, private _newsService: NewsService) {}
 
   ngOnInit(): void {}
+
   getTitle(title: any) {
-    let a = title.trim();
+    let a = title[0].trim();
     console.log('a:', a);
 
-    this._newsService.setCurrentTitle(a);
+    // this._newsService.setCurrentTitle(a);
     setTimeout(() => {
-      this.router.navigate(['/single-post']);
-    }, 5000);
+      this.router.navigate(['/home']);
+    }, 500);
+    setTimeout(() => {
+      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+    }, 500);
   }
 
   clicktop(){
     document.body.scrollTop=0;
     document.documentElement.scrollTop=0;
   }
+
+  refresh(): void {
+    let currentUrl = this.router.url;
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([currentUrl]);
+  }
+
 }

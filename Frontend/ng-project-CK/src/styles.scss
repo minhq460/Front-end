@@ -5,16 +5,12 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-* {
-  margin: 0;
   padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -124,14 +120,54 @@ body {
   }
 }
 
+.post-imageUrl {
+  .pswp-content__wrapimage {
+    .pswp-content__image {
+      figure {
+        margin: 0;
+        a {
+          display: block;
+          img {
+            object-fit: cover;
+            height: 150px;
+            width: 100%;
+            &:hover {
+              opacity: 0.85;
+              transition-duration: 500ms;
+            }
+          }
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+    .pswp-content__caption {
+      display: none;
+    }
+  }
+}
+
+.adbro-animated {
+  img {
+    display: none;
+  }
+}
 .post-title {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .single-popular-post {
-    a {
-        h6 {
-            cursor: pointer;
-        }
+  a {
+    h6 {
+      cursor: pointer;
     }
+  }
+}
+.vjs-tech {
+  width: 100%;
+  height: 200px;
+}
+.ThanhNienPlayer-area-control{
+  display: none !important;
 }

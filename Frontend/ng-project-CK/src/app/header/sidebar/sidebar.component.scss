@@ -10,6 +10,10 @@ a {
   color: #0487d9;
 }
 
+.active{
+  color: #0487d9 !important;
+}
+
 #navbarDropdownMenuLink:hover {
   color: #0487d9;
 }
@@ -23,7 +27,7 @@ a {
   display: block;
   animation-name: example;
   animation-duration: 500ms;
-  animation-fill-mode: forwards;
+  animation-fill-mode: example;
   @keyframes example {
     from {
       top: 45px;
