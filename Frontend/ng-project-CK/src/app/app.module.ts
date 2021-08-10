@@ -73,7 +73,7 @@ import { RelatedNewsComponent } from './single-post/related-news/related-news.co
     SportNewsComponent,
     HeadlineNewsComponent,
     SearchComponent,
-    RelatedNewsComponent
+    RelatedNewsComponent,
   ],
   imports: [
     BrowserModule,
