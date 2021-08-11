@@ -28,7 +28,7 @@
 </mat-dialog-actions> -->
 
 <!-- test -->
-<div class="box">
+<!-- <div class="box">
     <div class="box__title">
         <p style="margin-left: 35%;font-size: 25px;">Đăng ký</p>
     </div>
@@ -62,4 +62,117 @@
 </div>
 <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close>Đóng</button>
-</mat-dialog-actions>
+</mat-dialog-actions> -->
+<div class="login-content">
+    <div class="login-table">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="register-form" id="form" method="get" action="register">
+          <span class="login-heading">Đăng Ký </span>
+          <div class="wrap-input">
+            <input
+              type="text"
+              formControlName="fullname"
+              class="pix-text"
+              [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }"
+              placeholder="Họ và tên"
+            />
+            <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+              <div *ngIf="f.fullname.errors.required">Chưa nhập họ tên</div>
+            </div>
+          </div>
+      
+          <div class="wrap-input">
+            <input
+              type="text"
+              formControlName="username"
+              class="pix-text"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              placeholder="Tên đăng nhập ( Tối thiểu 6 ký tự )"
+            />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Chưa nhập tên đăng nhập</div>
+              <div *ngIf="f.username.errors.minlength">
+                Tên đăng nhập tối thiểu 6 ký tự
+              </div>
+              <div *ngIf="f.username.errors.maxlength">
+                  Tên đăng nhập tối đa 20 ký tự
+              </div>
+            </div>
+          </div>
+      
+          <div class="wrap-input">
+            <input
+              type="text"
+              formControlName="email"
+              class="pix-text"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              placeholder="Nhập Email"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Chưa nhập email</div>
+              <div *ngIf="f.email.errors.email">Email không hợp lệ</div>
+            </div>
+          </div>
+      
+          <div class="wrap-input">
+            <input
+              type="password"
+              formControlName="password"
+              class="pix-text"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              placeholder="Mật khẩu ( Tối thiểu 8 ký tự )"
+            />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Chưa nhập password</div>
+              <div *ngIf="f.password.errors.minlength">
+                Mật khẩu tối thiểu 8 ký tự
+              </div>
+              <div *ngIf="f.password.errors.maxlength">
+                  Mật khẩu tối đa 40 ký tự
+              </div>
+            </div>
+          </div>
+      
+          <div class="wrap-input">
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              class="pix-text"
+              [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+              placeholder="Nhập lại mật khẩu"
+            />
+            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required">
+                Chưa nhập lại mật khẩu
+              </div>
+              <div *ngIf="f.confirmPassword.errors.matching">
+                  Xác nhận mật khẩu không khớp
+              </div>
+            </div>
+          </div>
+      
+          <!-- <div class="wrap-input form-check">
+            <input
+              type="checkbox"
+              formControlName="acceptTerms"
+              class="form-check-input"
+              [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }"
+            />
+            <label for="acceptTerms" class="form-check-label"
+              >I have read and agree to the Terms</label>
+            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+              Accept Terms is required
+            </div>
+          </div> -->
+      
+          <div class="btn">
+              <button class="form-btn">ĐĂNG KÝ</button>
+          </div>
+          <div class="message">
+              <a (click)='openDialogLogin()'> Đăng Nhập</a>
+          </div>
+        </form>
+    </div>
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Đóng</button>
+  </mat-dialog-actions>
