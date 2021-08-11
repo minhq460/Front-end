@@ -9,6 +9,8 @@ import { NewsDetail } from 'src/app/model/news-detail.model';
 export class ArticleContentComponent implements OnInit {
 
   @Input('itemNewsDetail') item!:NewsDetail;
+  relatedCategories:any;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +18,8 @@ export class ArticleContentComponent implements OnInit {
     // setTimeout(() => {
     //   console.log('ArticleContentComponent running:',this.item);
     // }, 2000);
+    this.relatedCategories=this.item.category
+    console.log("thể loại liên quan: ",this.relatedCategories);
 
   }
 

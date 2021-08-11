@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-related-news',
@@ -7,22 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelatedNewsComponent implements OnInit {
 
+  @Input() getRelatedCategories!:any
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  // getTitle(title: any) {
-  //   let a = title.trim();
-  //   console.log('a:', a);
-
-  //   this._newsService.setCurrentTitle(a);
-  //   setTimeout(() => {
-  //     this.router.navigate(['/home']);
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     this.router.navigate(['/single-post']);
-  //   }, 5000);
-  // }
+  }
 
   clicktop(){
     document.body.scrollTop=0;

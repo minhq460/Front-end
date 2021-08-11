@@ -47,8 +47,13 @@ export class NewsService {
 
   public getNewsSearch(keyword:string): Observable<NewsDetail[]> {
     const url = `${this.REST_API_SERVER}/newsDetail/?newsTitle_like=${keyword}`;
-    console.log(keyword,"day ne");
     return this._http.get<NewsDetail[]>(url, this.httpOptions);
   }
 
+  public getProductsRelated(page: Number,category: string): Observable<NewsDetail[]> {
+    const url = `${this.REST_API_SERVER}/newsDetail?category=${category}&_limit=2&_page=${page}`;
+    return this._http.get<NewsDetail[]>(url, this.httpOptions);
+  }
+
+  public category: BehaviorSubject<string> = new BehaviorSubject<string>(null!);
 }
