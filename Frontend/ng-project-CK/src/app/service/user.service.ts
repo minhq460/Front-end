@@ -6,11 +6,12 @@ import { User } from '../model/user.model';
   providedIn: 'root'
 })
 export class UserService {
+  
+  a: User = new User("truonguchiha","harimon21@gmail.com","truong","123","123","0934111111",1);
+  b: User = new User("trungsasuke","trung123@gmail.com","trung","123","123","0974445551",2);
+  c: User = new User("chauquan","chauquan666@gmail.com","Châu Vũ Minh Quân","12345678","12345678","0397987561",2)
 
-  a: User = new User("truonguchiha","harimon21@gmail.com","truong","123","0934111111",1);
-  b: User = new User("trungsasuke","trung123@gmail.com","trung","123","0974445551",2);
-
-  loginUser: User = new User("","","","","",2);
+  loginUser: User = new User("","","","","","",2);
   index: number = -1;
   message: string = "";
 
@@ -35,12 +36,12 @@ export class UserService {
 
    }
 
-  login(email:string,password:string){
+  login(username:string,password:string){
     let stateLogin = 0;
     console.log("list user:",this.userList);
 
     this.userList.forEach(value => {
-      if (email === value.email) {
+      if (username === value.username) {
         if (password === value.password) {
           this.loginUser = value;
           this.index = this.userList.indexOf(value);
@@ -57,7 +58,7 @@ export class UserService {
   }
 
   logout(){
-    this.loginUser = new User("","","","","",2);
+    this.loginUser = new User("","","","","","",2);
     this.index = -1;
     this.currentUserObserver.next(this.loginUser);
     this.currentIndexObserver.next(this.index);
@@ -72,8 +73,8 @@ export class UserService {
 
   removeUser(user: User){
     this.userList.forEach((value,index) => {
-      if (value.getAccount == user.getAccount) {
-        console.log(user.getAccount, "is removed");
+      if (value.getUsername == user.getUsername) {
+        console.log(user.getUsername, "is removed");
         this.userList.splice(index,1);
       }
     });

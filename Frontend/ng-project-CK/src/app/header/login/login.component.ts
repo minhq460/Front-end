@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from '../register/register.component';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/service/user.service';
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   currentIndex: number = -1;
   message: string = "";
 
-  constructor(public dialog: MatDialog,private userService: UserService, private route:Router){}
+  constructor(public dialog: MatDialog,private userService: UserService, private route:Router, private fb:FormBuilder){}
 
   openDialogRegister(){
     this.dialog.open(RegisterComponent);
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   login(form: NgForm){
     console.log("inside login method");
 
-    console.log(form.value.email,form.value.password);
-    let state = this.userService.login(form.value.email,form.value.password);
+    console.log(form.value.username,form.value.password);
+    let state = this.userService.login(form.value.username,form.value.password);
     console.log(this.currentUser);
     console.log(this.currentIndex);
     console.log(this.message);

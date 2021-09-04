@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
 
     this.form = this.formBuilder.group(
       {
-        fullname: ['', Validators.required],
+        fullName: ['', Validators.required],
         username: [
           '',
           [
@@ -47,7 +47,6 @@ export class RegisterComponent implements OnInit {
           ]
         ],
         confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
       },
       {
         validators: [Validation.match('password', 'confirmPassword')]
@@ -57,28 +56,16 @@ export class RegisterComponent implements OnInit {
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
-
   onSubmit(): void {
     this.submitted = true;
-
-    if (this.form.invalid) {
-      return;
-    }
-
+    // alert("Đăng ký thành công")
     console.log(JSON.stringify(this.form.value, null, 2));
   }
 
-  onReset(): void {
-    this.submitted = false;
-    this.form.reset();
-  }
-  register(form : NgForm){
-    this.userService.addUser(new User(form.value.account,form.value.email,form.value.fullName,form.value.password,form.value.phoneNumber,2));
+  register(form: { value: { username: string; email: string; fullName: string; password: string; confirmPassword: string; phoneNumber: string; }; valid: any; }){
+    this.userService.addUser(new User(form.value.username,form.value.email,form.value.fullName,form.value.password,form.value.confirmPassword,form.value.phoneNumber,2));
     this.route.navigate(['home']);
     console.log(this.register);
-    if(form.valid){
-      this.data = form.value;
-    }
   }
 
 }

@@ -2,20 +2,32 @@
     <mat-toolbar color="#0487D9">
         <div class="logo">
             <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.png" alt="" style="height: 80px; width: 200px;"></a>
-
         </div>
         <div class="space"></div>
-        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ currentUser.account }}
-          </a>
-        <a mat-button (click)="openDialogLogin()">Đăng nhập</a>
-        <a mat-button (click)="openDialogRegister()">Đăng ký</a>
-        <div class="search-form">
-            <form action="">
-                <input #box (keyup.enter)="onInput(box.value)"  type="search" name="search" class="form-control" placeholder="Tìm kiếm">
-                <button type="submit" (click)="onInput(box.value)" ><i class="fal fa-search"></i></button>
-            </form>
+        <div style="display: flex;" *ngIf="currentIndex !== -1; else elseBlock">
+            <a mat-button aria-haspopup="true" aria-expanded="false">
+                {{currentUser.username}}
+            </a>
+            <a mat-button (click)="onLogOut()">Đăng xuất</a>
+            <div class="search-form">
+                <form action="">
+                    <input #box (keyup.enter)="onInput(box.value)"  type="search" name="search" class="form-control" placeholder="Tìm kiếm">
+                    <button type="submit" (click)="onInput(box.value)" ><i class="fal fa-search"></i></button>
+                </form>
+            </div>
         </div>
+
+        <ng-template #elseBlock>
+            <a mat-button (click)="openDialogLogin()">Đăng nhập</a>
+            <a mat-button (click)="openDialogRegister()">Đăng ký</a>
+            <div class="search-form">
+                <form action="">
+                    <input #box (keyup.enter)="onInput(box.value)"  type="search" name="search" class="form-control" placeholder="Tìm kiếm">
+                    <button type="submit" (click)="onInput(box.value)" ><i class="fal fa-search"></i></button>
+                </form>
+            </div>
+        </ng-template>
+        
     </mat-toolbar>
     <app-sidebar></app-sidebar>
 </header>
