@@ -1,9 +1,12 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "cli": {
+        "analytics": "6faf75f8-993e-4602-8eeb-85a7b2ea92f0"
+    },
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "ng-project-CK": {
+        "news-project": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -20,7 +23,12 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/ng-project-CK",
+                        "allowedCommonJsDependencies": [
+                            "rxjs-compat",
+                            "safe-buffer",
+                            "ng2-sticky-nav"
+                        ],
+                        "outputPath": "dist/news-project",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -31,13 +39,10 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "node_modules/font-awesome/css/font-awesome.css",
                             "src/styles.scss"
                         ],
                         "scripts": [
-                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "./node_modules/jquery/dist/jquery.min.js"
+                          "node_modules/jquery/dist/jquery.min.js"
                         ]
                     },
                     "configurations": {
@@ -74,10 +79,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "ng-project-CK:build:production"
+                            "browserTarget": "news-project:build:production"
                         },
                         "development": {
-                            "browserTarget": "ng-project-CK:build:development"
+                            "browserTarget": "news-project:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -85,7 +90,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "ng-project-CK:build"
+                        "browserTarget": "news-project:build"
                     }
                 },
                 "test": {
@@ -109,5 +114,5 @@
             }
         }
     },
-    "defaultProject": "ng-project-CK"
+    "defaultProject": "news-project"
 }

@@ -1,54 +1,21 @@
 <header class="header-area">
-    <!-- <div class="top-header-area">
-        <div class="container">
-            <div class="col-12">
-                <div class="top-header-content">
-                    <div class="logo">
-                        <a href=""><img src="assets/img/logo.png" alt=""></a>
-                    </div>
-                    <div class="login-register-search">
-                        <div class="login">
-                            <a href="">Đăng nhập</a>
-                            <a href="">Đăng ký</a>
-                        </div>
-                        <div class="search-form">
-                            <form action="">
-                                <input type="search" name="search" class="form-control" placeholder="Tìm kiếm">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <mat-toolbar color="#0487D9">
         <div class="logo">
             <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.png" alt="" style="height: 80px; width: 200px;"></a>
+
         </div>
         <div class="space"></div>
-        <a mat-button [routerLink]="['/login']" routerLinkActive="router-link-active">Đăng nhập</a>
-        <a mat-button [routerLink]="['/register']" routerLinkActive="router-link">Đăng ký</a>
+        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ currentUser.account }}
+          </a>
+        <a mat-button (click)="openDialogLogin()">Đăng nhập</a>
+        <a mat-button (click)="openDialogRegister()">Đăng ký</a>
         <div class="search-form">
             <form action="">
-                <input type="search" name="search" class="form-control" placeholder="Tìm kiếm">
-                <button type="submit"><i class="fa fa-search" aria-hidden="true" style="font-family: 'FontAwesome';"></i></button>
+                <input #box (keyup.enter)="onInput(box.value)"  type="search" name="search" class="form-control" placeholder="Tìm kiếm">
+                <button type="submit" (click)="onInput(box.value)" ><i class="fal fa-search"></i></button>
             </form>
         </div>
     </mat-toolbar>
-    <div class="navbar">
-        <a [routerLink]="['/home']" routerLinkActive="router-link-active">Trang chủ</a>
-        <a [routerLink]="['/xahoi']" routerLinkActive="router-link-active">Xã hội</a>
-        <a [routerLink]="['/suckhoe']" routerLinkActive="router-link-active">Sức khỏe</a>
-        <a [routerLink]="['/giaitri']" routerLinkActive="router-link-active">Giải trí</a>
-        <a [routerLink]="['/thethao']" routerLinkActive="router-link-active">Thể thao</a>
-        <a [routerLink]="['/thegioi']" routerLinkActive="router-link-active">Thế giới</a>
-        <a [routerLink]="['/vanhoa']" routerLinkActive="router-link-active">Văn hóa</a>
-        <a [routerLink]="['/phapluat']" routerLinkActive="router-link-active">Pháp luật</a>
-        <a [routerLink]="['/doisong']" routerLinkActive="router-link-active">Đời sống</a>
-        <a [routerLink]="['/about']" routerLinkActive="router-link-active">Giới thiệu</a>
-        <a [routerLink]="['/contact']" routerLinkActive="router-link-active">Liên hệ</a>
-    </div>
-
+    <app-sidebar></app-sidebar>
 </header>

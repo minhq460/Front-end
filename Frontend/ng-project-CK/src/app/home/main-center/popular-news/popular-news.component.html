@@ -1,0 +1,21 @@
+<div class="single-blog-post style-3">
+    <div class="post-image">
+        <a target="_blank"><img src="{{ item.image }}" alt="" /></a>
+    </div>
+    <div class="post-data">
+        <!-- <a class="post-catagory" target="_blank"></a> -->
+        <a class="post-title" (click)="getTitle(item.title)" (click)="clicktop()">
+            <h6>{{ item.title }}</h6>
+        </a>
+        <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+            <span>{{item.getTime()}}</span>
+        </p>
+        <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+            <span>{{item.getTime()}}, </span>{{item.getDate()}}
+        </p>
+        <div class="post-meta d-flex align-items-center">
+            <a class="post-like"><img src="../../../assets/img/like.png" alt="" /> <span>13</span></a>
+            <a class="post-comment"><img src="../../../assets/img/chat.png" alt="" /> <span>0</span></a>
+        </div>
+    </div>
+</div>

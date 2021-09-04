@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { SearchComponent } from './search/search.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [
-  {path:"home",component:HomeComponent},
-  {path:"",component:HomeComponent},
-  {path:"about",component:AboutComponent},
-  {path:"contact",component:ContactComponent},
-  {path:"register",component:RegisterComponent},
-  {path:"login",component:LoginComponent},
-  {path:"single-post",component:SinglePostComponent},
-
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  // {path:"",component:HomeComponent},
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'single-post', component: SinglePostComponent },
+  { path: 'search', component: SearchComponent },
+  { path: ':url', component: CategoriesComponent },
+  { path: '**', component: NoPageFoundComponent },
 ];
 
 @NgModule({
@@ -23,4 +25,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [HomeComponent, ContactComponent]

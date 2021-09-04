@@ -1,0 +1,21 @@
+<div class="single-video-post">
+  <div class="img-video-size">
+    <img src="{{item.image}}" alt="" />
+  </div>
+  <div class="post-meta">
+    <a (click)="getTitle(item.title)" class="post-title">{{ item.title }}</a>
+    <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+      <span>{{item.getTime()}}</span>
+    </p>
+    <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+        <span>{{item.getTime()}}, </span>{{item.getDate()}}
+    </p>
+  </div>
+
+  <!-- Video Button -->
+  <div class="videobtn">
+    <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer">
+      <i class="fa fa-play" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>

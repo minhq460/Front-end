@@ -1,3 +1,128 @@
-<app-header></app-header>
-<a>Home Page</a>
-<app-footer></app-footer>
+<app-headline-news></app-headline-news>
+<!-- ##### Main Top Start ##### -->
+  <div class="main-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-8">
+                  <div class="row">
+                      <div class="col-12 col-lg-7">
+                        <!-- Main Big -->
+                        <ng-container *ngFor="let item of items; index as id">
+                          <app-main-big *ngIf="id<1" [itemMainBig]='item'></app-main-big>
+                        </ng-container>
+                      </div>
+
+                      <div class="col-12 col-lg-5">
+                        <!-- Main Small -->
+                        <ng-container *ngFor="let item of items; index as id">
+                          <app-main-small *ngIf="id>=1 && id<3" [itemMainSmall]='item'></app-main-small>
+                        </ng-container>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+                  <!-- Latest post home -->
+                <ng-container *ngFor="let item of items; index as id">
+                  <app-latest-posts *ngIf="id>=3 && id<9" [itemLatestPost]='item'></app-latest-posts>
+                </ng-container>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Top End ##### -->
+
+  <!-- ##### Main Center Start ##### -->
+  <div class="main-center padding-80-50">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-lg-8">
+                  <div class="section-heading">
+                      <h6>Tin Tức Phổ Biến</h6>
+                  </div>
+                      <!-- Popular News -->
+                  <div class="row">
+                    <div class="col-12 col-md-6" *ngFor="let item of items; index as id">
+                      <app-popular-news *ngIf="id>=8 && id<12" [itemPopular]='item'></app-popular-news>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                  <div class="section-heading">
+                      <h6>Tin Mới</h6>
+                  </div>
+                  <!-- Hot News -->
+                  <div class="hot-news mb-30">
+                      <h3>Tin Tức Phổ Biến</h3>
+                      <ng-container *ngFor="let item of items; index as id">
+                        <app-hot-news *ngIf="id>=12 && id<18" [itemHot]='item'></app-hot-news>
+                      </ng-container>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Center End ##### -->
+
+  <!-- ##### Video News Start ##### -->
+  <div class="video-post-area bg-img bg-overlay" style="background-image: url(../../assets/img/bg1.jpg);">
+      <div class="container">
+        <!-- Single Video Post -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-6 col-md-3" *ngFor="let item of itemVideo; index as id">
+            <app-video-news *ngIf="id<8" [itemVideo]='item'></app-video-news>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- ##### Video News End ##### -->
+
+  <!-- ##### Main Bottom Start ##### -->
+  <div class="main-bottom padding-80-50">
+      <div class="container">
+          <div class="row">
+              <!-- Fast News -->
+              <div class="col-12 col-md-7 col-lg-9">
+                  <div class="section-heading">
+                      <h6>Tin Nhanh</h6>
+                  </div>
+                  <!-- Fast News -->
+                  <div class="row">
+                    <div class="col-12 col-lg-4" *ngFor="let item of items; index as id">
+                      <app-fast-news *ngIf="id>=18 && id<24" [itemFast]='item'></app-fast-news>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- World News -->
+              <div class="col-12 col-md-5 col-lg-3">
+                  <div class="section-heading">
+                      <h6>Tin Thể Thao</h6>
+                  </div>
+                  <!-- Single Post -->
+                  <div class="scrolling">
+                    <ng-container *ngFor="let item of itemSport; index as id">
+                      <app-sport-news *ngIf="id<4" [itemSport]='item'></app-sport-news>
+                    </ng-container>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ##### Main Bottom End ##### -->
+
+  <!-- ##### Footer Add Area Start ##### -->
+  <div class="footer-advertisement">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="img-advertisement">
+                      <!-- <a href="#"><img src="../../assets/img/footer-add.gif" alt=""></a> -->
+                      <a href="#"><img src="https://ai.thanhnien.vn/ai-resources/img/vendor/vnpt/top-banner/vnpt-top-mobile-1000-170.jpg" alt=""></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

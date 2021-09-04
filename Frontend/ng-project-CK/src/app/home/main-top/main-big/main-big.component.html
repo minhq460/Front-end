@@ -1,0 +1,25 @@
+<div class="single-post featured-post">
+    <div class="post-image">
+        <a><img src="{{item.image}}" alt=""></a>
+    </div>
+    <div class="post-data">
+        <!-- <a class="post-catagory"></a> -->
+        <a class="post-title" (click)="getTitle(item.title)" (click)="clicktop()">
+            <h6>{{item.title}}</h6>
+        </a>
+        <div class="post-meta">
+            <!-- <p class="post-author">Tác Giả <a></a></p> -->
+            <p class="post-excerp">{{item.description}}</p>
+            <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+                <span>{{item.getTime()}}</span>
+            </p>
+            <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+                <span>{{item.getTime()}}, </span>{{item.getDate()}}
+            </p>
+            <!-- Post Like & Post Comment -->
+            <div class="d-flex align-items-center">
+                <a class="post-like"><img src="../../../../assets/img/like.png" alt=""> <span>13</span></a>
+                <a class="post-comment"><img src="../../../../assets/img/chat.png" alt=""> <span>0</span></a>
+            </div>
+        </div>
+    </div>

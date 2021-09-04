@@ -12,28 +12,200 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ng-project-CK-primary: mat.define-palette(mat.$indigo-palette);
-$ng-project-CK-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$news-project-primary: mat.define-palette(mat.$indigo-palette);
+$news-project-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$ng-project-CK-warn: mat.define-palette(mat.$red-palette);
+$news-project-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$ng-project-CK-theme: mat.define-light-theme((
+$news-project-theme: mat.define-light-theme((
   color: (
-    primary: $ng-project-CK-primary,
-    accent: $ng-project-CK-accent,
-    warn: $ng-project-CK-warn,
+    primary: $news-project-primary,
+    accent: $news-project-accent,
+    warn: $news-project-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($ng-project-CK-theme);
+@include mat.all-component-themes($news-project-theme);
 
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #152535;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+p {
+  color: #828282;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+a,
+a:hover,
+a:focus {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  text-decoration: none;
+  outline: 0 solid transparent;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  li {
+    list-style: none;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-dialog-container {
+  background: #fff;
+  color: #000;
+}
+
+.post-excerp {
+  a {
+    img {
+      display: none;
+    }
+  }
+}
+
+.pswp-content__wrapimage {
+  .pswp-content__image {
+    figure {
+      margin: 0;
+      a {
+        display: block;
+        img {
+          display: block;
+          background-size: cover;
+          background-repeat: no-repeat;
+          transition-duration: 500ms;
+          &:hover {
+            opacity: 0.85;
+            transition-duration: 500ms;
+          }
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .pswp-content__caption {
+    .imgcaption {
+      color: #555;
+      padding-bottom: 10px;
+      margin-top: 10px;
+      border-bottom: 1px dotted #c2c2c2;
+      .source {
+        font-size: 11px !important;
+        color: #aaa;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.post-imageUrl {
+  .pswp-content__wrapimage {
+    .pswp-content__image {
+      figure {
+        margin: 0;
+        a {
+          display: block;
+          img {
+            object-fit: cover;
+            height: 150px;
+            width: 100%;
+            &:hover {
+              opacity: 0.85;
+              transition-duration: 500ms;
+            }
+          }
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+    .pswp-content__caption {
+      display: none;
+    }
+  }
+}
+
+.adbro-animated {
+  img {
+    display: none;
+  }
+}
+.post-title {
+  cursor: pointer;
+}
+
+.single-popular-post {
+  a {
+    h6 {
+      cursor: pointer;
+    }
+  }
+}
+.vjs-tech {
+  width: 100%;
+  height: 200px;
+}
+.ThanhNienPlayer-area-control{
+  display: none !important;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

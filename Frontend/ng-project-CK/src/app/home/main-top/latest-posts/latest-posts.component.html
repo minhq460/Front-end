@@ -1,0 +1,23 @@
+<!-- Single Featured Post -->
+
+<div class="single-blog-post small-featured-post d-flex">
+    <div class="post-image">
+        <a><img src="{{item.image}}" alt="" /></a>
+    </div>
+    <div class="post-data">
+        <a class="post-catagory"></a>
+        <div class="post-meta">
+            <a class="post-title" (click)="getTitle(item.title)" (click)="refresh()" (click)="clicktop()">
+                <h6>
+                    {{item.title}}
+                </h6>
+            </a>
+            <p class="post-date" *ngIf="item.getDate()=='Hôm nay'">
+                <span>{{item.getTime()}}</span>
+            </p>
+            <p class="post-date" *ngIf="item.getDate()!='Hôm nay'">
+                <span>{{item.getTime()}}, </span>{{item.getDate()}}
+            </p>
+        </div>
+    </div>
+</div>

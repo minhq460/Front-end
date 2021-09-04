@@ -1,97 +1,72 @@
-<!-- <footer class="footer-area">
-    <div class="main-footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="footer-widget-area">
-                    <ul class="list">
-                        <li>
-                            <div class="logo">
-                                <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.png" alt="" style="height: 80px; width: 200px;"></a>
-                            </div>
-                        </li>
-                        <li>
-                            <p style="color: #fff;margin: 0;">Tin tức và phong cách sống</p>
-                        </li>
-                        <li><a href="#">Tạp chí điện tử Tri thức trực tuyến</a></li>
-                        <li><a href="#">Cơ quan chủ quản: Hội Xuất bản Việt Nam</a></li>
-                        <li><a href="#">Toàn bộ bản quyền thuộc Tri thức trực tuyến</a></li>
-                    </ul>
-                </div>
-                <div class="footer-widget-area">
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-4 text-lg-left">
+            <img src="../../assets/img/logo.png" alt="" style="height: 80px; width: 200px; margin-top: -20px;">
+            <ul style="padding-left: 15px;">
+                <li>
+                    <p style="font-weight: 500;">Tin tức và phong cách sống</p>
+                </li>
+                <li>
+                    <p style="font-weight: 500;">Tạp chí điện tử Tri thức trực tuyến</p>
+                </li>
+                <li>
+                    <p style="font-weight: 500;">Cơ quan chủ quản: Hội Xuất bản Việt Nam</p>
+                </li>
+                <li>
+                    <p style="font-weight: 500;">Toàn bộ bản quyền thuộc Tri thức trực tuyến</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-lg-5">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4 class="top-tittle text-md-left">Liên kết nhanh</h4>
+              <ul style="margin-top: 31px;">
+                  <li><a href="">Trang chủ</a></li>
+                  <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">Giới thiệu</a></li>
+                  <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active">Liên hệ</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-6">
+              <h4 class="top-tittle text-md-left">Đặc sắc</h4>
+              <ul style="margin-top: 31px;">
+                  <li><a [routerLink]="['/xahoi']" routerLinkActive="router-link-active">Xã hội</a></li>
+                  <li><a [routerLink]="['/suckhoe']" routerLinkActive="router-link-active">Sức khỏe</a></li>
+                  <li><a [routerLink]="['/phapluat']" routerLinkActive="router-link-active">Pháp luật</a></li>
+                  <li><a [routerLink]="['/doisong']" routerLinkActive="router-link-active">Đời sống</a></li>
+                  <li><a [routerLink]="['/thethao']" routerLinkActive="router-link-active">Thể thao</a></li>
+                  <li><a [routerLink]="['/thegioi']" routerLinkActive="router-link-active">Thế giới</a></li>
+              </ul>
+          </div>
 
-                    <ul class="list">
-                        <li>
-                            <p style="color: #fff;font-size: 18px;font-weight: bold;">Theo dõi QTN24h trên:</p>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                        <li><a href="#">Email: 18130259@st.hcmuaf.edu.vn</a></li>
-                        <li><a href="#">SĐT: 0974838004</a></li>
-                        <li><a href="#">Địa chỉ: ĐH Nông Lâm TP.HCM, Linh Trung, TP.Thủ Đức, TP.HCM</a></li>
-                    </ul>
-                </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-3 text-lg-left">
+            <h4 class="top-tittle">Theo dõi QTN24h trên</h4>
+            <div class="social-icons">
+              <ul>
+                <li><a class="facebook-bg-hvr"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a class="youtube-bg-hvr"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a class="twitter-bg-hvr"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="instagram-bg-hvr"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a class="pinterest-bg-hvr"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+            <div>
+                <ul class="list">
+                    <li>
+                        <p style="font-weight: 500;">Email: 18130259@st.hcmuaf.edu.vn</p>
+                    </li>
+                    <li>
+                        <p style="font-weight: 500;">SĐT: 0974838004</p>
+                    </li>
+                    <li>
+                        <p style="font-weight: 500;">Địa chỉ: Trường ĐH Nông Lâm TP.HCM, Linh Trung, TP.Thủ Đức, TP.HCM</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</footer> -->
-<footer class="footer-area">
-    <div class="main-footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="footer-widget-area">
-                        <!-- Footer Logo -->
-                        <div class="footer-logo">
-                            <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.png" alt="" style="height: 80px; width: 200px;"></a>
-                        </div>
-                        <!-- List -->
-                        <ul class="list" style="margin-left: -15px;">
-                            <li>
-                                <p>Tin tức và phong cách sống</p>
-                            </li>
-                            <li>
-                                <p>Tạp chí điện tử Tri thức trực tuyến</p>
-                            </li>
-                            <li>
-                                <p>Cơ quan chủ quản: Hội Xuất bản Việt Nam</p>
-                            </li>
-                            <li>
-                                <p>Toàn bộ bản quyền thuộc Tri thức trực tuyến</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="footer-widget-area">
-                        <h4 class="widget-title">Đặc sắc</h4>
-                        <ul class="list">
-                            <li><a [routerLink]="['/xahoi']" routerLinkActive="router-link-active">Xã hội</a></li>
-                            <li><a [routerLink]="['/suckhoe']" routerLinkActive="router-link-active">Sức khỏe</a></li>
-                            <li><a [routerLink]="['/phapluat']" routerLinkActive="router-link-active">Pháp luật</a></li>
-                            <li><a [routerLink]="['/doisong']" routerLinkActive="router-link-active">Đời sống</a></li>
-                            <li><a [routerLink]="['/thethao']" routerLinkActive="router-link-active">Thể thao</a></li>
-                            <li><a [routerLink]="['/thegioi']" routerLinkActive="router-link-active">Thế giới</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="footer-widget-area">
-                        <h4 class="widget-title">Theo dõi QTN24h trên:</h4>
-                        <ul class="list">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="background-color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook</i></a><a href="https://www.youtube.com/"
-                                    target="_blank"><i class="fa fa-youtube" aria-hidden="true" style="background-color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Youtube</i></a></li>
-                            <li>
-                                <p>Email: 18130259@st.hcmuaf.edu.vn</p>
-                            </li>
-                            <li>
-                                <p>SĐT: 0974838004</p>
-                            </li>
-                            <li>
-                                <p>Địa chỉ: ĐH Nông Lâm TP.HCM, Linh Trung, TP.Thủ Đức, TP.HCM</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>

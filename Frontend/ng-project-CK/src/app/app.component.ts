@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  styleUrls: ['./app.component.scss'],
-  templateUrl:'./app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-project-CK';
+  title = 'news-project';
+
+
 }

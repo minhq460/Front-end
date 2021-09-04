@@ -1,0 +1,45 @@
+a {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+.dropdown-item:hover{
+  color: #0487d9;
+}
+
+.active{
+  color: #0487d9 !important;
+}
+
+#navbarDropdownMenuLink:hover {
+  color: #0487d9;
+}
+
+.active {
+  cursor: pointer;
+}
+
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  animation-name: example;
+  animation-duration: 500ms;
+  animation-fill-mode: example;
+  @keyframes example {
+    from {
+      top: 45px;
+      opacity: 0;
+    }
+    to {
+      top: 40px;
+      opacity: 1;
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}

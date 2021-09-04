@@ -1,83 +1,115 @@
-// .footer-area {
-//     background-color: #02031c;
-//     position: absolute;
-//     bottom: 0;
-//     display: block;
-//     width: 100%;
-//     .main-footer-area {
-//         .footer-widget-area {
-//             flex: 1;
-//             padding-top: 20px;
-//             padding-bottom: 20px;
-//             i:nth-child(1) {
-//                 font-family: 'FontAwesome';
-//                 font-size: 25px;
-//                 padding: 10px 0px 0px 15px;
-//                 width: 45px;
-//                 height: 45px;
-//             }
-//             li {
-//                 list-style: none;
-//                 margin-bottom: 5px;
-//             }
-//         }
-//         .logo {
-//             width: 200px;
-//             height: 80px;
-//             margin-left: -15px;
-//         }
-//     }
-// }
-// a {
-//     text-decoration: none;
-//     color: #fff;
-// }
-.footer-area {
+p {
+  color: #c0c0c0;
+}
+.container {
+  max-width: 1150px;
+}
+
+
+footer {
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h4 {
     position: relative;
-    z-index: 1;
-    width: 100%;
-    background-color: #02031c;
-    .footer-widget-area {
-        position: relative;
-        z-index: 1;
-        .footer-logo {
-            margin-bottom: 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      margin-bottom: 12px;
+      a {
+        text-decoration: none;
+        color: #c0c0c0;
+        &:hover {
+          color: #fff;
         }
-        .widget-title {
-            display: block;
-            margin: 30px 30px 30px 30px;
-            color: #fff;
-            font-size: 23px;
-            font-weight: 500;
-        }
-        .list {
-            position: relative;
-            z-index: 1;
-            li {
-                display: block;
-                p {
-                    display: block;
-                    color: rgba(255, 255, 255, 0.5);
-                }
-                a {
-                    display: block;
-                    padding: 5px 0;
-                    color: rgba(255, 255, 255, 0.5);
-                    text-decoration: none;
-                    i {
-                        width: 42px;
-                        height: 42px;
-                        padding: 15px;
-                        border-radius: 50%;
-                    }
-                }
-                a:hover {
-                    color: #fff;
-                }
-                a:focus {
-                    color: #fff;
-                }
-            }
-        }
+      }
     }
+  }
+
+  .social-icons li {
+    display: inline-block;
+    padding: 15px 5px 15px 0px;
+    margin-bottom: 0;
+    color: #000000;
+  }
+
+  .social-icons {
+    li a {
+      font-size: 18px;
+      height: 40px;
+      width: 40px;
+      border-radius: 30px;
+      color: #fff;
+      background: transparent;
+      line-height: 38px;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+    }
+    .facebook-bg-hvr:hover {
+      background: #4267b2;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+
+    .twitter-bg-hvr:hover {
+      background: #1da1f2;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+
+    .instagram-bg-hvr:hover {
+      color: #ffffff;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#aa2fb5),
+        color-stop(93%, #f1762c)
+      );
+      background: -o-linear-gradient(top, #aa2fb5 0%, #f1762c 93%);
+      background: linear-gradient(to bottom, #aa2fb5 0%, #f1762c 93%);
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    .linkedin-bg-hvr:hover {
+      background: #0077b5;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+
+    .pinterest-bg-hvr:hover {
+      background: #bd081c;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+
+    .youtube-bg-hvr:hover {
+      background: #f00;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+  }
+
+  .top-tittle {
+    color: #fff;
+    font-weight: 900;
+    font-size: 21px;
+  }
+  @media only screen and (max-width: 768px) {
+    div{
+      text-align: center;
+    }
+  }
 }

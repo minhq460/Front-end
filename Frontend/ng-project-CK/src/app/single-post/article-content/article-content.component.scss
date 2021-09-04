@@ -1,0 +1,129 @@
+.single-blog-post {
+  position: relative;
+  z-index: 1;
+  .post-data {
+    padding: 30px 0;
+    .post-catagory {
+      font-size: 18px;
+      color: #0487d9;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .post-title {
+      display: block;
+      h6 {
+        transition-duration: 500ms;
+        line-height: 1.9;
+        color: #152535;
+        &:hover,
+        &:focus {
+          color: #0487d9;
+        }
+      }
+    }
+    .post-desciption {
+      margin: 0px !important;
+      margin-bottom: 15px !important;
+      font-size: 18px;
+      font-weight: 500;
+      color: #152535;
+    }
+    .post-meta {
+      .post-date {
+        width: 172px;
+        font-size: 16px;
+        display: block;
+        &:hover,
+        &:focus {
+          color: #0487d9;
+        }
+      }
+      .post-content {
+        margin: 0px !important;
+        text-align: justify;
+        color: #152535;
+        font-size: 18px;
+      }
+      .post-like {
+        display: flex;
+        align-items: flex-end;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          color: #828282;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+      .post-comment {
+        margin-left: 20px;
+        display: flex;
+        align-items: flex-end;
+        color: #828282;
+        span {
+          line-height: 1;
+          margin-left: 15px;
+          &:hover,
+          &:focus {
+            color: #0487d9;
+          }
+        }
+      }
+    }
+  }
+  &.featured-post {
+    position: relative;
+    z-index: 1;
+    .post-data {
+      padding: 30px 0;
+      .post-title {
+        h6 {
+          font-size: 40px;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          font-weight: 500;
+          @media (max-width: 767px) {
+            font-size: 24px;
+          }
+        }
+      }
+      .post-author {
+        display: block;
+        width: 100%;
+        a {
+          font-size: 16px;
+          display: inline-block;
+          color: #0487d9;
+        }
+      }
+      .post-excerp {
+        font-weight: 500;
+        display: block;
+        line-height: 2.1;
+      }
+    }
+    &.single-post {
+      .post-data {
+        padding: 20px 0;
+        p {
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+.post-like-comments {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+  @media (max-width: 767px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
