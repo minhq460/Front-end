@@ -13,7 +13,9 @@
                       {{k.title[0].name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" data-animations="fadeInDown fadeInRight fadeInUp fadeInLeft">
-                        <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.linkItem)' [routerLink]="[c.linkItem]"><a class="dropdown-item" (click)="clicktop()">{{c.nameItem}}</a></li>
+                        <li *ngFor="let c of k.child" (click)='this._navService.changeCategoryItem(c.linkItem)' [routerLink]="[c.linkItem]" >
+                          <a class="dropdown-item" (click)="clicktop()" [ngClass]="{'activeItem': selectedItemId === c}" (click)="selectedItemId = c">{{c.nameItem}}</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

@@ -38,7 +38,6 @@ export class FeaturedPostComponent implements OnInit {
   clicktop(){
       document.body.scrollTop=0;
       document.documentElement.scrollTop>=0;
-      window.scroll(0,0);
   }
 
   // scrollOnTop() {

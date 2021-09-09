@@ -37,7 +37,7 @@ const scraperObject = {
                 });
 
                 if (await newPage.$('.breadcrumbs')) {
-                    dataObj['category'] = await newPage.$eval('.breadcrumbs > span > a >span', text => text.textContent);
+                    dataObj['category'] = await newPage.$eval('.breadcrumbs', text => text.textContent);
                     console.log('có thẻ category');
                 } else {
                     dataObj['category'] = '';

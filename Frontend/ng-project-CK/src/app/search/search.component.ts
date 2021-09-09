@@ -10,10 +10,6 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-  // filterOptions:any = {};
-  // searchTerm!: string;
-  // @Input() name!: string;
   keyword!: string;
   key!:string
   searchResule!: NewsDetail[];
@@ -77,4 +73,5 @@ export class SearchComponent implements OnInit {
         console.log(currentUrl);
     });
   }
+
 }
