@@ -43,7 +43,7 @@
                       <!-- Popular News -->
                   <div class="row">
                     <div class="col-12 col-md-6" *ngFor="let item of items; index as id">
-                      <app-popular-news *ngIf="id>=8 && id<12" [itemPopular]='item'></app-popular-news>
+                      <app-popular-news *ngIf="id>=10 && id<14" [itemPopular]='item'></app-popular-news>
                     </div>
                   </div>
               </div>
@@ -56,7 +56,7 @@
                   <div class="hot-news mb-30">
                       <h3>Tin Tức Phổ Biến</h3>
                       <ng-container *ngFor="let item of items; index as id">
-                        <app-hot-news *ngIf="id>=12 && id<18" [itemHot]='item'></app-hot-news>
+                        <app-hot-news *ngIf="id>=14 && id<20" [itemHot]='item'></app-hot-news>
                       </ng-container>
                   </div>
 
@@ -67,7 +67,7 @@
   <!-- ##### Main Center End ##### -->
 
   <!-- ##### Video News Start ##### -->
-  <div class="video-post-area bg-img bg-overlay" style="background-image: url(../../assets/img/bg1.jpg);">
+  <div class="video-post-area bg-img bg-overlay" style="background-image: url(../../assets/img/globalization.jpg);">
       <div class="container">
         <!-- Single Video Post -->
         <div class="row justify-content-center">
@@ -91,7 +91,7 @@
                   <!-- Fast News -->
                   <div class="row">
                     <div class="col-12 col-lg-4" *ngFor="let item of items; index as id">
-                      <app-fast-news *ngIf="id>=18 && id<24" [itemFast]='item'></app-fast-news>
+                      <app-fast-news *ngIf="id>=21 && id<27" [itemFast]='item'></app-fast-news>
                     </div>
                   </div>
               </div>

@@ -46,7 +46,7 @@ export class SearchComponent implements OnInit {
     console.log(keyword);
     // setTimeout(() => {
     //   this.router.navigate(['/home']);
-    // }, 500);
+    // }, 50);
     setTimeout(() => {
       this.router.navigate(['/search'], {queryParams:{'keyword': keyword}});
     }, 500);

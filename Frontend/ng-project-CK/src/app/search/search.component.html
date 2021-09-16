@@ -6,7 +6,7 @@
       <div class="search-input">
         <form action="">
           <input #box (keyup.enter)="onInput(box.value)" (keyup.enter)="reloadCurrentRoute()" [value]="this.keyword" type="search" name="search" class="form-control" placeholder="Từ khoá tìm kiếm">
-          <button type="submit" class="btn"><i class="fal fa-search"></i></button>
+          <button type="submit" class="btn" (click)="onInput(box.value)" (click)="reloadCurrentRoute()"><i class="fal fa-search"></i></button>
         </form>
       </div>
        <!-- search result -->
@@ -14,7 +14,7 @@
         <div class="num-result">
           <span>Tìm thấy {{this.searchResule.length}} kết quả về </span> <strong>{{this.keyword}}</strong>
         </div>
-        <div class="row featured-post"  *ngFor="let item of searchResule | paginate: { itemsPerPage: 10, currentPage: p, totalItems:totalLenght }">
+        <div class="row featured-post"  *ngFor="let item of searchResule | paginate: { itemsPerPage: 7, currentPage: p, totalItems:totalLenght }">
           <div class="col-12 col-lg-3 col-md-3 post-imageUrl">
             <div innerHtml="{{ item.imageUrl }}"></div>
           </div>

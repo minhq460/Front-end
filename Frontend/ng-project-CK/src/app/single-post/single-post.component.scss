@@ -1,11 +1,11 @@
 .container {
     max-width: 1140px;
   }
-  
+
   .mb-50 {
       margin-bottom: 50px !important;
   }
-  
+
   .mt-40 {
     margin-top: 40px !important;
   }
@@ -13,7 +13,7 @@
       padding-top: 80px;
       padding-bottom: 0;
   }
-  
+
   .section-heading {
       position: relative;
       z-index: 1;
@@ -71,7 +71,7 @@
           .comment-author {
               // @include flex(0 0 51px);
               min-width: 51px;
-              margin-right: 45px;
+              margin-right: 15px;
               height: 51px;
               border-radius: 50%;
               img {
@@ -81,7 +81,7 @@
               }
           }
           .comment-meta {
-              margin-bottom: 30px;
+              // margin-bottom: 30px;
               .post-author {
                   margin-bottom: 5px;
                   display: block;
@@ -94,7 +94,7 @@
                   margin-bottom: 0;
                   color: #656565;
                   display: block;
-                  margin-bottom: 15px;
+                  // margin-bottom: 15px;
               }
               p {
                   margin-bottom: 15px;
@@ -116,9 +116,9 @@
               margin-top: 30px;
           }
       }
-      
+
     }
-    
+
     .post-a-comment-area {
       position: relative;
       z-index: 1;
@@ -133,7 +133,7 @@
       // @media #{$breakpoint-md} {
       //     margin-bottom: 80px;
       // }
-      
+
       // @media #{$breakpoint-xs} {
       //     margin-bottom: 80px;
       // }
@@ -185,4 +185,3 @@
           }
       }
   }
-  
