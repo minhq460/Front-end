@@ -4,10 +4,11 @@
             <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.jpg" alt="" style="height: 80px; width: 200px;"></a>
         </div>
         <div class="space"></div>
-        <div style="display: flex;" *ngIf="currentIndex !== -1; else elseBlock">
+        <div class="nav" style="display: flex;" *ngIf="currentIndex !== -1; else elseBlock">
             <a mat-button aria-haspopup="true" aria-expanded="false">
                 {{currentUser.username}}
             </a>
+            
             <a mat-button (click)="onLogOut()">Đăng xuất</a>
             <div class="search-form">
                 <form action="">
