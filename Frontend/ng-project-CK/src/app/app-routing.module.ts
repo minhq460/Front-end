@@ -4,9 +4,9 @@ import { AboutComponent } from './about/about.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { SearchComponent } from './search/search.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'single-post', component: SinglePostComponent },
   { path: 'search', component: SearchComponent },
   { path: ':url', component: CategoriesComponent },
-  { path: '**', component: NoPageFoundComponent },
+  {path:'**', component:NoPageFoundComponent},
 ];
 
 @NgModule({
