@@ -47,7 +47,7 @@ export class UserService {
           this.index = this.userList.indexOf(value);
           this.currentUserObserver.next(this.loginUser);
           this.currentIndexObserver.next(this.index);
-          this.currentMessageObserver.next("login susscess");
+          this.currentMessageObserver.next("Đăng nhập thành công");
           stateLogin = 1;
         }
       }
@@ -62,19 +62,19 @@ export class UserService {
     this.index = -1;
     this.currentUserObserver.next(this.loginUser);
     this.currentIndexObserver.next(this.index);
-    this.currentMessageObserver.next("logout susscess");
+    this.currentMessageObserver.next("Đăng xuất thành công");
   }
 
   addUser(user: User){
     this.userList.push(user);
-    console.log("user added");
+    console.log("Đã thêm user");
     this.UserListObserver.next(this.userList);
   }
 
   removeUser(user: User){
     this.userList.forEach((value,index) => {
       if (value.getUsername == user.getUsername) {
-        console.log(user.getUsername, "is removed");
+        console.log(user.getUsername, "Xóa thành công");
         this.userList.splice(index,1);
       }
     });
@@ -89,7 +89,7 @@ export class UserService {
       this.userList[this.index] = user;
     }
     this.currentUserObserver.next(this.loginUser);
-    this.currentMessageObserver.next("edited");
+    this.currentMessageObserver.next("Sửa thông tin thành công");
     this.UserListObserver.next(this.userList);
   }
 
