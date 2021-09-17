@@ -14,8 +14,6 @@ export class SearchComponent implements OnInit {
   key!:string
   searchResule!: NewsDetail[];
 
-  numberOfResult={count: 0};
-
   currentPage: any;
   totalLenght: any;
   p: number = 1;
@@ -31,7 +29,6 @@ export class SearchComponent implements OnInit {
   newsSearchResult(){
     this._newsService.getNewsSearch(this.keyword).subscribe((data:any) =>{
       this.searchResule = data;
-
     });
   }
 
@@ -46,14 +43,13 @@ export class SearchComponent implements OnInit {
     console.log(keyword);
     // setTimeout(() => {
     //   this.router.navigate(['/home']);
-    // }, 50);
+    // }, 500);
     setTimeout(() => {
       this.router.navigate(['/search'], {queryParams:{'keyword': keyword}});
     }, 500);
   }
 
   getTitle(title: any) {
-
     setTimeout(() => {
       this.router.navigate(['/single-post'], {queryParams:{'title': title}});
     }, 500);
