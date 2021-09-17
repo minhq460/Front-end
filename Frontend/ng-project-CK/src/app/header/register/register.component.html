@@ -1,3 +1,4 @@
+
 <div class="login-content">
     <div class="login-table">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" #registerForm="ngForm" (ngSubmit)="register(registerForm)" class="register-form" id="form" method="post" action="register">
@@ -101,6 +102,7 @@
       
           <div class="btn">
               <button type="submit" class="form-btn">ĐĂNG KÝ</button>
+              
           </div>
           <div class="message">
               <a (click)='openDialogLogin()'> Đăng Nhập</a>

@@ -14,6 +14,7 @@ import Validation from './validation';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  alert: boolean=false;
   message: string = "";
   data: any;
   form!: FormGroup;
@@ -57,27 +58,30 @@ export class RegisterComponent implements OnInit {
     return this.form.controls;
   }
   onSubmit(): void {
-    if(this.submitted = false){
-      alert("Đăng ký không thành công, vui lòng kiểm tra lại thông tin");
-      // console.log(JSON.stringify(this.form.value, null, 2));
-    }else{
-      this.register(this.form)
-      console.log(JSON.stringify(this.form.value, null, 2));
-    }
-    
+    this.submitted = true;
+    // alert("Đăng ký thành công")
+    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
-  register(form: { value: { username: string; email: string; fullName: string; password: string; confirmPassword: string; phoneNumber: string; }; valid: any; }){
-    if(this.form.value.invalid){
+  register(form: { value: { username: string; 
+    email: string; fullName: string; 
+    password: string; 
+    confirmPassword: string; 
+    phoneNumber: string; }; valid: any; }){
+    if(this.form.invalid){
       alert("Đăng ký không thành công, vui lòng kiểm tra lại thông tin");
     }else{
-      this.userService.addUser(new User(form.value.username,form.value.email,form.value.fullName,form.value.password,form.value.confirmPassword,form.value.phoneNumber,2));
-      // this.dialog.closeAll()
-      // this.openDialogLogin()
+      this.userService.addUser(new User(form.value.username,form.value.email,form.value.fullName,
+        form.value.password,form.value.confirmPassword,form.value.phoneNumber,2));
+      this.dialog.closeAll()
+      this.openDialogLogin()
       console.log(this.register);
-      // alert("Đăng ký thành công")
-    }
-   
+      alert("Đăng ký thành công")
+      this.alert= true
+      this.form.reset({})
   }
-
+  }
+  closeAlert(){
+    this.alert = false
+  }
 }
