@@ -10,15 +10,9 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-  // filterOptions:any = {};
-  // searchTerm!: string;
-  // @Input() name!: string;
   keyword!: string;
   key!:string
   searchResule!: NewsDetail[];
-
-  numberOfResult={count: 0};
 
   currentPage: any;
   totalLenght: any;
@@ -35,7 +29,6 @@ export class SearchComponent implements OnInit {
   newsSearchResult(){
     this._newsService.getNewsSearch(this.keyword).subscribe((data:any) =>{
       this.searchResule = data;
-
     });
   }
 
@@ -57,7 +50,6 @@ export class SearchComponent implements OnInit {
   }
 
   getTitle(title: any) {
-
     setTimeout(() => {
       this.router.navigate(['/single-post'], {queryParams:{'title': title}});
     }, 500);
@@ -77,4 +69,5 @@ export class SearchComponent implements OnInit {
         console.log(currentUrl);
     });
   }
+
 }

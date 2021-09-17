@@ -14,7 +14,7 @@ p {
     line-height: 2;
     font-weight: 400;
 }
-
+.mat-toolbar,
 .mat-toolbar-row,
 .mat-toolbar-single-row {
     height: 100%;
@@ -23,6 +23,9 @@ p {
     height: 100px;
     .logo {
         margin-left: 7rem;
+        a:hover{
+          background-color: #0487D9;
+        }
     }
     .space {
         flex: 1 auto;

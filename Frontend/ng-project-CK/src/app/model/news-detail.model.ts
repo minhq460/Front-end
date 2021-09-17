@@ -1,5 +1,5 @@
 export class NewsDetail {
-  categories: String;
+  category: String;
   newsTitle: String;
   pubDate:String;
   description: String;
@@ -7,8 +7,8 @@ export class NewsDetail {
   author:String;
   content: String;
 
-  constructor(categories='', newsTitle = '', pubDate='', description = '',imageUrl = '', author='' , content = '') {
-    this.categories=categories;
+  constructor(category='', newsTitle = '', pubDate='', description = '',imageUrl = '', author='' , content = '') {
+    this.category=category;
     this.newsTitle = newsTitle;
     this.pubDate=pubDate;
     this.description = description;

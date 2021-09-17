@@ -37,11 +37,11 @@ const scraperObject = {
                 });
 
                 if (await newPage.$('.breadcrumbs')) {
-                    dataObj['categories'] = await newPage.$eval('.breadcrumbs > span > a >span', text => text.textContent);
-                    console.log('có thẻ categories');
+                    dataObj['category'] = await newPage.$eval('.breadcrumbs', text => text.textContent);
+                    console.log('có thẻ category');
                 } else {
-                    dataObj['categories'] = '';
-                    console.log('không tìm thấy categories');
+                    dataObj['category'] = '';
+                    console.log('không tìm thấy category');
                 }
 
                 if (await newPage.$('h1')) {

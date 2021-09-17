@@ -3,7 +3,7 @@
   <div class="post-image">
       <a><img class="col-lg-12 col-md-12 col-sm-12" src="{{item.image}}" alt=""></a>
   </div>
-  <div class="post-data" *ngFor="let a of rssData!.rss.channel">
+  <div class="post-data" *ngFor="let a of rssData!.rss.channel ">
       <a class="post-catagory">{{a.title}}</a>
       <a class="post-title" (click)="getTitle(item.title)" (Click)="clicktop()">
           <h6>{{item.title}}</h6>

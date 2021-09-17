@@ -9,14 +9,10 @@ import { NewsDetail } from 'src/app/model/news-detail.model';
 export class ArticleContentComponent implements OnInit {
 
   @Input('itemNewsDetail') item!:NewsDetail;
+
   constructor() { }
 
   ngOnInit(): void {
-    // this.currentNews = this._newsService.currentNews;
-    // setTimeout(() => {
-    //   console.log('ArticleContentComponent running:',this.item);
-    // }, 2000);
-
   }
 
 }

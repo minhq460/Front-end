@@ -248,7 +248,6 @@ export class NavService {
   itemWorld: RssItem[] = [];
   itemVideo: RssItem[] = [];
 
-  url: string='';
   api:string='https://api-cors-cross.herokuapp.com/api?url='
 
   constructor(private _newsService: NewsService, public actRoute: ActivatedRoute) {
@@ -270,14 +269,14 @@ export class NavService {
   }
 
   ngOnInit(): void {
-    this.actRoute.paramMap.subscribe(params =>{
-      this.url = params.get('url')??'';
+    this.actRoute.paramMap.subscribe((params:any) =>{
+      this.categories = params.get('url');
       // this.urlItem = params.get('urlItem')??'';
-      this.changeCategory(this.currentCategoryChoosen);
-      this.changeCategoryItem(this.currentCategoryItemChoosen);
+
       // this.getItems;
     })
-
+    this.changeCategory(this.currentCategoryChoosen);
+    this.changeCategoryItem(this.currentCategoryItemChoosen);
   }
 
   changeCategory(_k: string) {

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavService } from 'src/app/service/nav.service';
 
 @Component({
   selector: 'app-related-news',
@@ -7,22 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelatedNewsComponent implements OnInit {
 
-  constructor() { }
+  @Input() getRelatedCategories!:any
+  constructor(private _navService:NavService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  // getTitle(title: any) {
-  //   let a = title.trim();
-  //   console.log('a:', a);
+  }
 
-  //   this._newsService.setCurrentTitle(a);
-  //   setTimeout(() => {
-  //     this.router.navigate(['/home']);
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     this.router.navigate(['/single-post']);
-  //   }, 5000);
-  // }
+  get RssData() {
+    return this._navService.RssData;
+  }
+
+  getTitle(title: any) {
+    let a = title[0].trim();
+    console.log('a:', a);
+
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 500);
+    setTimeout(() => {
+      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+    }, 500);
+  }
 
   clicktop(){
     document.body.scrollTop=0;
