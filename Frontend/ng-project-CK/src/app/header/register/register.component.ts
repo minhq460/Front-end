@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   constructor(public dialog: MatDialog,private userService: UserService, private route: Router, private formBuilder:FormBuilder){}
 
   openDialogLogin(){
+    this.dialog.closeAll();
     this.dialog.open(LoginComponent);
   }
   ngOnInit(): void {
@@ -80,8 +81,5 @@ export class RegisterComponent implements OnInit {
       this.alert= true
       this.form.reset({})
   }
-  }
-  closeAlert(){
-    this.alert = false
   }
 }

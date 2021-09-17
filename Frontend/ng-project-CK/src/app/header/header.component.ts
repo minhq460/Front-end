@@ -22,10 +22,12 @@ export class HeaderComponent implements OnInit {
   constructor(public dialog: MatDialog, public _navService:NavService, public _newsService:NewsService, private userService : UserService, private router:Router){}
 
   openDialogLogin(){
+    this.dialog.closeAll()
     this.dialog.open(LoginComponent);
   }
 
   openDialogRegister(){
+    this.dialog.closeAll()
     this.dialog.open(RegisterComponent);
   }
 
