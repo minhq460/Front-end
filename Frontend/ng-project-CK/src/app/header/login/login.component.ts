@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog,private userService: UserService, private route:Router, private formBuilder:FormBuilder){}
 
   openDialogRegister(){
+    this.dialog.closeAll();
     this.dialog.open(RegisterComponent);
   }
 
