@@ -6,6 +6,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StickyNavModule } from 'ng2-sticky-nav';
@@ -42,6 +44,9 @@ import { SportNewsComponent } from './home/main-bottom/sport-news/sport-news.com
 import { HeadlineNewsComponent } from './home/headline-news/headline-news.component';
 import { SearchComponent } from './search/search.component';
 import { RelatedNewsComponent } from './single-post/related-news/related-news.component';
+import { ChangePasswordComponent } from './header/change-password/change-password.component';
+import { AlertifyService } from './service/alertify.service';
+import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -74,6 +79,7 @@ import { RelatedNewsComponent } from './single-post/related-news/related-news.co
     HeadlineNewsComponent,
     SearchComponent,
     RelatedNewsComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +88,7 @@ import { RelatedNewsComponent } from './single-post/related-news/related-news.co
     MatToolbarModule,
     MatDialogModule,
     MatButtonModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     LoadingBarHttpClientModule,
     NgxPaginationModule,
@@ -89,7 +96,7 @@ import { RelatedNewsComponent } from './single-post/related-news/related-news.co
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [NewsService, NavService],
+  providers: [NewsService, NavService, AlertifyService, AuthenticationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
-import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { User } from 'src/app/model/user.model';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
 import { UserService } from 'src/app/service/user.service';
-import Validation from './validation';
+import { AlertifyService } from 'src/app/service/alertify.service';
+import { User } from 'src/app/model/user';
 
 
 @Component({
@@ -14,20 +13,28 @@ import Validation from './validation';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  alert: boolean=false;
-  message: string = "";
-  data: any;
   form!: FormGroup;
+  user!: User;
   submitted = false;
-  constructor(public dialog: MatDialog,private userService: UserService, private route: Router, private formBuilder:FormBuilder){}
+
+  constructor(
+    public dialog: MatDialog,
+    private userService: UserService, 
+    private formBuilder:FormBuilder,
+    private alertify:AlertifyService,
+    ){}
+
+  ngOnInit(): void {
+    this.createRegisterForm()
+
+  }
 
   openDialogLogin(){
     this.dialog.closeAll();
     this.dialog.open(LoginComponent);
   }
-  ngOnInit(): void {
-    this.userService.currentMessage.subscribe(message => this.message = message);
 
+  createRegisterForm(){
     this.form = this.formBuilder.group(
       {
         fullName: ['', Validators.required],
@@ -44,42 +51,75 @@ export class RegisterComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.minLength(6),
+            Validators.minLength(8),
             Validators.maxLength(40)
           ]
         ],
         confirmPassword: ['', Validators.required],
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: this.match('password', 'confirmPassword')
       }
     );
   }
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
-  }
-  onSubmit(): void {
-    this.submitted = true;
-    // alert("Đăng ký thành công")
-    console.log(JSON.stringify(this.form.value, null, 2));
+  match(controlName: string, checkControlName: string): ValidatorFn {
+    return (controls: AbstractControl) => {
+      const control = controls.get(controlName);
+      const checkControl = controls.get(checkControlName);
+
+      if (checkControl?.errors && !checkControl.errors.matching) {
+        return null;
+      }
+
+      if (control?.value !== checkControl?.value) {
+        controls.get(checkControlName)?.setErrors({ matching: true });
+        return { matching: true };
+      } else {
+        return null;
+      }
+    };
   }
 
-  register(form: { value: { username: string; 
-    email: string; fullName: string; 
-    password: string; 
-    confirmPassword: string; 
-    phoneNumber: string; }; valid: any; }){
+  get f() { return this.form.controls }
+
+  onSubmit() {
+    this.submitted = true;
+  
     if(this.form.invalid){
-      alert("Đăng ký không thành công, vui lòng kiểm tra lại thông tin");
+      this.alertify.error("Vui lòng kiểm tra lại thông tin");
     }else{
-      this.userService.addUser(new User(form.value.username,form.value.email,form.value.fullName,
-        form.value.password,form.value.confirmPassword,form.value.phoneNumber,2));
+      this.userService.addUser(this.userData())
+      this.form.reset()
+      this.submitted = false
+      this.alertify.success("Đăng ký thành công, bạn có thể đăng nhập")
       this.dialog.closeAll()
       this.openDialogLogin()
-      console.log(this.register);
-      alert("Đăng ký thành công")
-      this.alert= true
-      this.form.reset({})
+    }
   }
+  
+  userData(): User {
+    return this.user = {
+      username: this.username.value,
+      email: this.email.value,
+      fullName: this.fullName.value,
+      password: this.password.value,
+      confirmPassword: this.confirmPassword.value,
+    }
   }
+  get username() {
+    return this.form.get('username') as FormControl;
+  }
+  get email() {
+    return this.form.get('email') as FormControl;
+  }
+  get fullName() {
+    return this.form.get('fullName') as FormControl;
+  }
+  get password() {
+    return this.form.get('password') as FormControl;
+  }
+  get confirmPassword() {
+    return this.form.get('confirmPassword') as FormControl;
+  }
+  
 }

@@ -27,11 +27,10 @@ export class FeaturedPostComponent implements OnInit {
   }
 
   getTitle(title: any) {
-    let a = title[0].trim();
-    console.log('a:', a);
-
+    // let a = title[0].trim();
+    // console.log('a:', a);
     setTimeout(() => {
-      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+      this.router.navigate(['/single-post'], {queryParams:{'title':title}});
     }, 500);
   }
 

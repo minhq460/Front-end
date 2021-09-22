@@ -24,7 +24,7 @@ export class HotNewsComponent implements OnInit {
       this.router.navigate(['/home']);
     }, 500);
     setTimeout(() => {
-      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+      this.router.navigate(['/single-post'], {queryParams:{'title':title}});
     }, 500);
   }
 

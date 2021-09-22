@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-
+// @import '~bootstrap/dist/css/bootstrap.min.css';
 
 h1,
 h3 {
@@ -14,6 +14,7 @@ p {
     line-height: 2;
     font-weight: 400;
 }
+
 .mat-toolbar,
 .mat-toolbar-row,
 .mat-toolbar-single-row {
@@ -22,7 +23,7 @@ p {
     background-color: #0487D9;
     height: 100px;
     .logo {
-        margin-left: 7rem;
+        margin-left: 4rem;
         a:hover{
           background-color: #0487D9;
         }
@@ -30,19 +31,7 @@ p {
     .space {
         flex: 1 auto;
     }
-    .nav .dropdown{
-        position: relative;
-        display: inline-block;
-        .dropdown-content{
-            display: none;
-            position: absolute;
-            background-color: #e9d8f4;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1;
-        }
-    }
+    
     a {
         padding: 0.8rem 1.4rem;
 
@@ -54,6 +43,7 @@ p {
       cursor: pointer;
     }
         color: #fff;
+        background-color: #0487d9;
     }
     .search-form {
         margin: -21px 7rem 0px -30px;

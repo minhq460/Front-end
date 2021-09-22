@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { ChangePasswordComponent } from './header/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'single-post', component: SinglePostComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'changePassword', component: ChangePasswordComponent },
   { path: ':url', component: CategoriesComponent },
   {path:'**', component:NoPageFoundComponent},
 ];

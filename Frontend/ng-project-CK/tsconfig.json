@@ -23,7 +23,8 @@
     "paths": {
       "stream": ["./node_modules/readable-stream"],
       "timers": [
-        "node_modules/timers-browserify"
+        "node_modules/timers-browserify",
+        "src/alertifytype.d.ts"
       ],
 
     }

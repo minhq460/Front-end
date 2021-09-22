@@ -22,7 +22,7 @@ export class MainSmallComponent implements OnInit {
 
     // this._newsService.setCurrentTitle(a);
     setTimeout(() => {
-      this.router.navigate(['/single-post'], {queryParams:{'title':a}});
+      this.router.navigate(['/single-post'], {queryParams:{'title':title}});
     }, 500);
   }
 

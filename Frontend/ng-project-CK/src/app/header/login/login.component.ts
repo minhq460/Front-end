@@ -3,8 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from '../register/register.component';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/service/user.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
+import { AlertifyService } from 'src/app/service/alertify.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,18 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  currentUser : User | undefined;
-  currentIndex: number = -1;
-  message: string = "";
   form!: FormGroup;
+  submitted = false;
 
-  constructor(public dialog: MatDialog,private userService: UserService, private route:Router, private formBuilder:FormBuilder){}
+  constructor(
+    public dialog: MatDialog,
+    private userService: UserService, 
+    private router:Router, 
+    private formBuilder:FormBuilder,
+    private authService: AuthenticationService,
+    private alertify:AlertifyService,
+
+    ){}
 
   openDialogRegister(){
     this.dialog.closeAll();
@@ -25,9 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.currentUser.subscribe(user => this.currentUser = user);
-    this.userService.currentIndex.subscribe(value => this.currentIndex = value);
-    this.userService.currentMessage.subscribe(message => this.message = message);
     this.form = this.formBuilder.group(
       {
         username: [
@@ -50,17 +54,21 @@ export class LoginComponent implements OnInit {
       
     );
   }
-  login(form: { value: { username: string; password: string; }; valid: any; }){
-    console.log("inside login method");
-
-    console.log(form.value.username,form.value.password);
-    let state = this.userService.login(form.value.username,form.value.password);
-    console.log(this.currentUser);
-    console.log(this.currentIndex);
-    console.log(this.message);
-    if (state) {
-      this.route.navigate(['home'])
+  onSubmit(loginForm: NgForm){
+    this.submitted = true;
+    // console.log(loginForm.value)
+    const token = this.authService.authUser(loginForm.value)
+    if(token){
+      localStorage.setItem('token', token.username)
+      
+      console.log(localStorage.setItem('token', token.username))
+      this.alertify.success("Đăng nhập thành công")
       this.dialog.closeAll()
+      this.router.navigate(['home'])
+    }else{
+      this.alertify.error("Đăng nhập không thành công")
     }
+    
   }
+  
 }

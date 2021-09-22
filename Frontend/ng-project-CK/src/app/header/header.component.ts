@@ -1,12 +1,13 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NavService } from '../service/nav.service';
-import { User } from 'src/app/model/user.model';
+import { User } from 'src/app/model/user';
 import { UserService } from '../service/user.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewsService } from '../service/news.service';
 import { Router } from '@angular/router';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  currentUser!: User;
+  currentUser!: string|null;
   currentIndex: number = -1;
   message: string = "";
   selectedItemId: any
@@ -30,22 +31,26 @@ export class HeaderComponent implements OnInit {
     this.dialog.closeAll()
     this.dialog.open(RegisterComponent);
   }
-
+  openDialogChangePass(){
+    this.dialog.closeAll();
+    this.dialog.open(ChangePasswordComponent);
+  }
   ngOnInit(): void {
-    this.userService.currentUser.subscribe(user => this.currentUser = user);
-    this.userService.currentIndex.subscribe(value => this.currentIndex = value);
-    this.userService.currentMessage.subscribe(message => this.message = message);
+    
 
   }
+  loggined(){
+    this.currentUser = localStorage.getItem('token');
+    return this.currentUser;
+  }
   onLogOut(){
-    this.userService.logout();
+    return localStorage.removeItem('token');
+    // this.userService.logout();
   }
 
   public onInput(keyword: any){
     console.log(keyword);
-    setTimeout(() => {
-      this.router.navigate(['/home']);
-    }, 500);
+    
     setTimeout(() => {
       this.router.navigate(['/search'], {queryParams:{'keyword': keyword}});
     }, 500);
@@ -60,3 +65,7 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+function MatMenuTrigger(MatMenuTrigger: any) {
+  throw new Error('Function not implemented.');
+}
+

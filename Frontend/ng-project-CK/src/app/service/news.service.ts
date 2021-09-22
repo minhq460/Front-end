@@ -41,6 +41,7 @@ export class NewsService {
   //       }
   //     });
   //     console.log('current News:',this.currentNews);
+ // gọi getnewsearch với phương thức http.get lấy data từ đường dẫn url
 
   //   })
   // }
@@ -49,5 +50,4 @@ export class NewsService {
     const url = `${this.REST_API_SERVER}/newsDetail/?newsTitle_like=${keyword}`;
     return this._http.get<NewsDetail[]>(url, this.httpOptions);
   }
-
 }

@@ -2,19 +2,19 @@
 <div class="login-content">
     <div class="login-table">
         <!-- LOGIN -->
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="login-form" id="#login" method="get" action="login">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login-form" id="#login" method="get" action="login">
             <span class="login-heading">Đăng Nhập </span>
             <div class="wrap-input" data-validate="Nhập tên đăng nhập">
                 <div class="text-alert alert-missing-uname">
                     <p>Nhập tên đăng nhập</p>
                 </div>
-                <input class="pix-text" type="text" name="username" placeholder="Tên đăng nhập" ngModel>
+                <input class="pix-text" type="text" required ngModel name="username" placeholder="Tên đăng nhập" ngModel>
             </div>
             <div class="wrap-input ">
                 <div class="text-alert alert-missing-pass">
                     <p>Nhập mật khẩu</p>
                 </div>
-                <input class="pix-text" id="pass" type="password" name="password" placeholder="Mật khẩu" ngModel>
+                <input class="pix-text" id="pass" type="password" required ngModel name="password" placeholder="Mật khẩu" ngModel>
             </div>
             <div class="forgetPw message">
                 <a href="#">Quên mật khẩu?</a>

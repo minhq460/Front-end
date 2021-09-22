@@ -38,6 +38,7 @@ export class SearchComponent implements OnInit {
       this.keyword = res.keyword;
     });
   }
+  
 
   public onInput(keyword: any){
     console.log(keyword);

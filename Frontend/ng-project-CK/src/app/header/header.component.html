@@ -1,13 +1,22 @@
+<!-- <mat-menu class="mat-menu" style="background-color: #0487d9;" #appMenu="matMenu">
+    <button mat-menu-item (click)="openDialogChangePass()">Change password</button>
+    <button mat-menu-item>Edit Account</button>
+    <button mat-menu-item>Log Out</button>
+</mat-menu> -->
+<!-- [matMenuTriggerFor]="appMenu" -->
 <header class="header-area">
     <mat-toolbar color="#0487D9">
         <div class="logo">
             <a [routerLink]="['/home']" routerLinkActive="router-link-active"><img src="assets/img/logo.jpg" alt="" style="height: 80px; width: 200px;"></a>
         </div>
         <div class="space"></div>
-        <div class="nav" style="display: flex;" *ngIf="currentIndex !== -1; else elseBlock">
-            <a mat-button aria-haspopup="true" aria-expanded="false">
-                {{currentUser.username}}
-            </a>
+        <div class="nav" style="display: flex;" *ngIf="loggined() else elseBlock" mdbDropdown >
+            <div class="btn-group">
+                <a mat-flat-button  aria-haspopup="true" aria-expanded="false" >
+                    {{currentUser}}
+                </a>       
+            </div>
+
             <a mat-button (click)="onLogOut()">Đăng xuất</a>
             <div class="search-form">
                 <form action="">

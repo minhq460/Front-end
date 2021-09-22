@@ -11,20 +11,7 @@ import { NewsService } from './news.service';
 export class NavService {
 
   categories: any[] = [
-    // {
-    //   title: [{ name: 'Video', url: 'video', link:'video'}],
-    //   child: [
-    //     { nameItem: 'Thời Sự', urlItem:'video/thoi-su',  linkItem: '/thoi-su'},
-    //     { nameItem: 'Phóng Sự', urlItem:'video/phong-su', linkItem: '/phong-su' },
-    //     { nameItem: 'Giải Trí', urlItem:'video/giai-tri', linkItem: '/giai-tri' },
-    //     { nameItem: 'Món Ngon', urlItem:'video/mon-ngon', linkItem: '/mon-ngon' },
-    //     { nameItem: 'Thể Thao', urlItem:'video/video-the-theo', linkItem: '/video-the-thao' },
-    //     { nameItem: 'Thế Giới', urlItem:'video/the-gioi', linkItem: '/the-gioi' },
-    //     { nameItem: 'Trực Tuyến', urlItem:'video/truc-tuyen', linkItem: '/truc-tuyen' },
-    //     { nameItem: 'Em Nhảy Ghen Cô Vy', urlItem:'video/em-nhay-ghen-co-vy', linkItem: '/em-nhay-ghen-co-vy' },
-    //   ],
-    //   empty:[{ nameItem: '', linkItem: '' }],
-    // },
+    
     {
       title: [{ name: 'Thời Sự', url: 'thoi-su', link:'rss/thoi-su' }],
       child: [
@@ -34,15 +21,9 @@ export class NavService {
         { nameItem: 'Dân Sinh', urlItem:'thoi-su/dan-sinh', linkItem: '/dan-sinh' },
         { nameItem: 'Quyền Được Biết', urlItem:'thoi-su/quyen-duoc-biet', linkItem: '/quyen-duoc-biet' },
         { nameItem: 'Lao Động - Việc Làm', urlItem:'thoi-su/lao-dong-viec-lam', linkItem: '/lao-dong-viec-lam' },
-        // { nameItem: 'Cần Biết', urlItem:'thoi-su/can-biet', linkItem: '/can-biet' },
-        // { nameItem: 'Nghề Hot', urlItem:'thoi-su/nghe-hot', linkItem: '/nghe-hot' },
-        // { nameItem: 'Kỹ Năng Tìm Viẹc', urlItem:'thoi-su/ki-nang-tim-viec', linkItem: '/ki-nang-tim-viec' },
-        // { nameItem: 'Tuyển Dụng', urlItem:'thoi-su/tuyen-dung', linkItem: '/tuyen-dung' },
-        // { nameItem: 'Săn Việc', urlItem:'thoi-su/san-viec', linkItem: '/san-viec' },
         { nameItem: 'Chính Trị', urlItem:'thoi-su/chinh-tri', linkItem: '/chinh-tri' },
         { nameItem: 'Đại Hội XIII', urlItem:'thoi-su/dai-hoi-xiii', linkItem: '/dai-hoi-xiii' },
         { nameItem: 'Tôi Đón Tết', urlItem:'thoi-su/toi-don-tet', linkItem: '/toi-don-tet' },
-        // { nameItem: 'Vượt Qua Covid-19', urlItem:'thoi-su/vuot-qua-covid-19', linkItem: '/vuot-qua-covid-19' },
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
@@ -125,30 +106,8 @@ export class NavService {
         { nameItem: 'Chọn Nghề', urlItem:'giao-duc/chon-nghe', linkItem: '/chon-nghe' },
         { nameItem: 'Người Thầy', urlItem:'giao-duc/nguoi-thay', linkItem: '/nguoi-thay' },
         { nameItem: 'Chọn Trường', urlItem:'giao-duc/chon-truong', linkItem: '/chon-truong' },
-        // { nameItem: 'Hộp Thư Tư Vấn 24/7', urlItem:'giao-duc/hop-thu-tu-van-24-7', linkItem: '/hop-thu-tu-van-24-7' },
-        // { nameItem: ' Ôn Thi THPT Quốc Gia 2019', urlItem:'giao-duc/on-thi-thpt-quoc-gia-2019', linkItem: '/on-thi-thpt-quoc-gia-2019'},
-        // { nameItem: 'Tra Cứu Điểm Thi 2021', urlItem:'giao-duc/tuyen-sinh/2021/tra-cuu', linkItem: '/tuyen-sinh/2021/tra-cuu'},
-        // { nameItem: 'Tuyển Sinh 2021', urlItem:'giao-duc/tuyen-sinh/2021', linkItem: '/tuyen-sinh/2021' },
+       
         { nameItem: 'Sức Khoẻ Học Đường', urlItem:'giao-duc/suc-khoe-hoc-duong', linkItem: '/suc-khoe-hoc-duong' },
-        // { nameItem: 'Cẩm Nang Tuyển Sinh 2021', urlItem:'giao-duc/cam-nang-tuyen-sinh-2021', linkItem: '/cam-nang-tuyen-sinh-2021'},
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
-    {
-      title: [{ name: 'Thể Thao', url: 'the-thao', link:'the-thao' }],
-      child: [
-        { nameItem: 'Bóng Đá Việt Nam', urlItem:'the-thao/bong-da-viet-nam', linkItem: '/bong-da-viet-nam' },
-        { nameItem: 'Bóng Đá Quốc Tế', urlItem:'the-thao/bong-da-quoc-te', linkItem: '/bong-da-quoc-te' },
-        { nameItem: 'Bình Luận', urlItem:'the-thao/binh-luan', linkItem: '/binh-luan' },
-        { nameItem: 'Quần Vợt', urlItem:'the-thao/quan-vot', linkItem: '/quan-vot' },
-        { nameItem: 'Hậu Trường', urlItem:'the-thao/hau-truong', linkItem: '/hau-truong' },
-        { nameItem: 'Thể Thao Khác', urlItem:'the-thao/toan-canh-the-thao', linkItem: '/toan-canh-the-thao' },
-        { nameItem: 'Sea Game 2019', urlItem:'the-thao/sea-games-2019', linkItem: '/sea-games-2019' },
-        { nameItem: 'Tin Chuyển Nhượng', urlItem:'the-thao/tin-chuyen-nhuong', linkItem: '/tin-chuyen-nhuong' },
-        { nameItem: 'Thể Thao & Cộng Đồng', urlItem:'the-thao/the-thao-cong-dong', linkItem: '/the-thao-cong-dong' },
-        { nameItem: 'Bóng Rổ', urlItem:'the-thao/bong-ro', linkItem: '/bong-ro' },
-        { nameItem: 'Sôi Động Cùng V-League', urlItem:'the-thao/soi-dong-cung-vleague', linkItem: '/soi-dong-cung-vleague' },
-        { nameItem: 'Euro 2020', urlItem:'the-thao/euro-2020', linkItem: '/euro-2020' },
       ],
       empty:[{ nameItem: '', linkItem: '' }],
     },
@@ -183,45 +142,6 @@ export class NavService {
       empty:[{ nameItem: '', linkItem: '' }],
     },
     {
-      title: [{ name: 'Xe', url: 'xe', link:'xe' }],
-      child: [
-        { nameItem: 'Thị Trường Xe', urlItem:'xe/thi-truong-xe', linkItem: '/thi-truong-xe' },
-        { nameItem: 'Tư Vấn Xe', urlItem:'xe/tu-van-xe', linkItem: '/tu-van-xe' },
-        { nameItem: 'Đánh Giá Xe', urlItem:'xe/danh-gia-xe', linkItem: '/danh-gia-xe' },
-        { nameItem: 'Khám Phá Xe', urlItem:'xe/kham-pha-xe', linkItem: '/kham-pha-xe' },
-        // { nameItem: 'Video', urlItem:'xe/video-xe', linkItem: '/video-xe' },
-        { nameItem: 'Diễn Đàn Xe', urlItem:'xe/dien-dan-xe', linkItem: '/dien-dan-xe' },
-      ],
-      empty:[{ nameItem: '', linkItem: '' }],
-    },
-    // {
-    //   title: [{ name: 'Game', url: 'game', link:'game' }],
-    //   child: [
-    //     { nameItem: 'Tin Tức', urlItem:'game/tin-tuc-game', linkItem: '/tin-tuc-game' },
-    //     { nameItem: 'Lịch Thi Đấu', urlItem:'game/lich-thi-dau', linkItem: '/lich-thi-dau' },
-    //     { nameItem: 'Thủ Thuật', urlItem:'game/thu-thuat', linkItem: '/thu-thuat' },
-    //     { nameItem: 'Phòng Máy', urlItem:'game/phong-may', linkItem: '/phong-may' },
-    //     { nameItem: 'Công Nghệ Game', urlItem:'game/cong-nghe', linkItem: '/cong-nghe' },
-    //     { nameItem: 'Cộng Đồng', urlItem:'game/cong-dong', linkItem: '/cong-dong' },
-    //     { nameItem: 'Video', urlItem:'game/video-game', linkItem: '/video-game' },
-    //     { nameItem: 'ESport', urlItem:'game/esports', linkItem: '/esports' },
-    //   ],
-    //   empty:[{ nameItem: '', linkItem: '' }],
-    // },
-    // {
-    //   title: [{ name: 'Thời Trang Trẻ', url: 'ttt', link:'rss/ttt' }],
-    //   child: [
-    //     { nameItem: 'Phong Cách', urlItem:'ttt/phong-cach', linkItem: '/phong-cach' },
-    //     { nameItem: 'Sống Khoẻ', urlItem:'ttt/song-khoe', linkItem: '/song-khoe' },
-    //     { nameItem: 'Chân Dung', urlItem:'ttt/chan-dung', linkItem: '/chan-dung' },
-    //     { nameItem: 'Kỹ Năng Sống', urlItem:'ttt/ky-nang-song', linkItem: '/ky-nang-song' },
-    //     { nameItem: 'Tận Hưởng', urlItem:'ttt/tan-huong', linkItem: '/tan-huong' },
-    //     { nameItem: 'Tin Tức', urlItem:'ttt/tin-tuc-ttt', linkItem: '/tin-tuc-ttt' },
-    //     // { nameItem: 'Video', urlItem:'ttt/video', linkItem: '/video' },
-    //   ],
-    //   empty:[{ nameItem: '', linkItem: '' }],
-    // },
-    {
       title: [{ name: 'Bạn Cần Biết', url: 'ban-can-biet', link:'rss/ban-can-biet' }],
       child: [
         { nameItem: 'Tuyển Dụng', urlItem:'ban-can-biet/tuyen-dung', linkItem: '/tuyen-dung' },
@@ -248,8 +168,7 @@ export class NavService {
   itemWorld: RssItem[] = [];
   itemVideo: RssItem[] = [];
 
-  api:string='https://api-cors-cross.herokuapp.com/api?url='
-
+  //https://thanhnien.vn/rss/thoi-su/phap-luat.rss
   constructor(private _newsService: NewsService, public actRoute: ActivatedRoute) {
     /*Read Data*/
     this._newsService.getNews('https://thanhnien.vn/'  + this.currentCategoryChoosen + this.currentCategoryItemChoosen + '.rss',{
